@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>Animal's Lives are Important!!</title>
+</head>
+
+<body onscroll="scrollfind()">
+    <header id="header">
+    <div class="androidmenu" id="androidmenu">
+        <img src="img/mainlogo.jfif" alt="logo" class="android_logo">
+        <span class="material-icons menu" onclick="resmenu()">menu</span>
+    </div>
+        <nav id="nav">
+            <ul>
+                <img src="img/mainlogo.jfif" alt="logo" class="logo">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Vulnerable</a></li>
+                <li><a href="#">Endangered</a></li>
+                <li><a href="#">Critically Endangered</a></li>
+            </ul>
+        </nav>
+        <div class="searchlogin" id="searchlogin">
+            <div class="searchbox">
+                <input class="search" type="text" placeholder="Search">
+                <button class="search_button material-icons">&#xe8b6;</button>
+            </div>
+            <span class="material-icons login" style="display: inline-flex;">&#xea77;
+                <a href="#" style="margin-left: 0.5em;">Login</a>
+                <p>/</p><a href="#">Signup</a>
+            </span>
+        </div>
+
+    </header>
+    <div class="slider" id="slider">
+        <button class="material-icons arrow" onclick="sliderforward()">navigate_next</button>
+        <button class="material-icons arrow" style="left: 2vw;" >navigate_before</button>
+        <div class="mainslider" id="mainslider">
+        <div class="sliderimgdiv" id="sliderimgdiv">
+            <img src="img/panda.jpg" class="sliderimg" id="sldimg0" alt="images"><img src="img/elephant.jpg" class="sliderimg" id="sldimg1" alt="images"><img src="img/rhino.jpg" class="sliderimg" id="sldimg2" alt="images"><img src="img/leopard.jpg" class="sliderimg" id="sldimg3" alt="images"><img src="img/tiger.jpg" class="sliderimg" id="sldimg4" alt="images"><img src="img/tortoise.jpg" class="sliderimg" id="sldimg5" alt="images">
+        </div>
+        </div>
+        <div class="buttons" id="buttons">
+            <span class="circle_slider" id="circle0" style="border-color:rgb(99, 95, 95);
+            background-color: gray;" onclick="test()"></span>
+            <span class="circle_slider" id="circle1" onclick="test1()"></span>
+            <span class="circle_slider" id="circle2"></span>
+            <span class="circle_slider" id="circle3"></span>
+            <span class="circle_slider" id="circle4"></span>
+            <span class="circle_slider" id="circle5"></span>
+        </div>
+    </div>
+    <button class="material-icons" id="go_up" onclick="scrolling()">&#xe5ce;</button>
+    <section class="flexbox" id="flexbox">
+        <div class="flexitems" id="flex1"><img src="img/blackmonke.jpg" alt="fleximage" >
+            <h4>Black Spider Monkey</h4>
+            <p>The black spider monkey—also known as the Guiana or red-faced spider monkey—is found in eastern South America in areas north of the Amazon River. They are one of seven species of spider monkeys................
+            </p>
+            <button class="flex_buttons">Read More</button>
+        </div>
+        <div class="flexitems" id="flex2">
+            <img src="img/blue whale.jpg" alt="fleximage" >
+            <h4>Blue Whale</h4>
+            <p>The blue whale is the largest animal on the planet, weighing as much as 200 tons (approximately 33 elephants). The blue whale has a heart the size of a Volkswagen Beetle. Its stomach can hold one ton of of krill............</p>
+            <button class="flex_buttons">Read More</button>
+        </div>
+        <div class="flexitems" id="flex3"><img src="img/orangutan.jpg" alt="fleximage" >
+            <h4>Orangutan</h4>
+            <p>
+                The name orangutan means "man of the forest" in the Malay language. In the lowland forests in which they reside, orangutans live solitary existences. They feast on wild fruits like lychees, mangosteens.............
+            </p>
+            <button class="flex_buttons">Read More</button>
+        </div>
+    </section>
+    <footer id="footer">Copyright &copy; Hussain developer. All Rights Reserved</footer>
+</body>
+<script src="index.js"></script>
+</html>

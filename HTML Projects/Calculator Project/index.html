@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <h1 class="h1">Basic Calculator</h1>
+    <main>
+        <center>
+            <div class="main_body">
+                <div id="textinp">
+                    <input type="text" class="input" size="60"  id="input" value="0" autocomplete="off"
+                        spellcheck="false" autofocus=true readonly onkeypress="prs(event)" onkeydown="dle()">
+                </div>
+                    <span class="warn" id="warn">Max length of Input is 55 characters!</span>
+                <div class="btn-cont">
+                    <button class="buttons symbols" id="power" onclick="input('^')">X<sup>y</sup></button>
+                    <button class="buttons symbols" id="/" onclick="input('√')">√</button>
+                    <button class="buttons symbols" id="*" onclick="input('x')">x</button>
+                    <button class="buttons" onclick="clr()" onmousedown="del()" onmouseup="clrtime()" id="clr">C/CE</button>
+                    <button class="buttons" onclick="input(7)" id="7">7</button>
+                    <button class="buttons" onclick="input(8)" id="8">8</button>
+                    <button class="buttons" onclick="input(9)" id="9">9</button>
+                    <button class="buttons symbols" onclick="input('-')" id="-">-</button>
+                    <button class="buttons" onclick="input(4)" id="4">4</button>
+                    <button class="buttons" onclick="input(5)" id="5">5</button>
+                    <button class="buttons" onclick="input(6)" id="6">6</button>
+                    <button class="buttons symbols" onclick="input('+')" id="+">+</button>
+                    <button class="buttons" onclick="input(1)" id="1">1</button>
+                    <button class="buttons" onclick="input(2)" id="2">2</button>
+                    <button class="buttons" onclick="input(3)" id="3">3</button>
+                    <button class="buttons equal" onclick="calculate()"> = </button>
+                    <button class="buttons" onclick="input(0)" id="0">0</button>
+                    <button class="buttons dot" onclick="input('.')" id=".">.</button>
+                    <button class="buttons symbols" onclick="input('÷')" id="%">÷</button>
+                </div>
+            </div>
+        </center>
+
+    </main>
+</body>
+<script src="index.js"></script>
+
+</html>

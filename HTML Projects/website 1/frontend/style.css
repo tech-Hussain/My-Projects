@@ -1,0 +1,291 @@
+*{
+    padding: 0;
+    margin: 0px;
+    font-family: 'STIX Two Text', serif;
+    font-size: 1.07rem;
+}
+html{
+    scroll-behavior: smooth;
+}
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.2vw 0;
+    background-color: rgb(6, 144, 179);
+    color: white;
+    justify-content: space-between ;
+    overflow: hidden;
+   
+}
+.searchlogin{
+    display: flex;
+    margin-right: 2vw;
+    align-items: center;
+}
+
+header ul{
+    display: flex;
+    margin-left: 2vw;
+    align-items: center;
+}
+.logo{
+    border-radius: 100%;
+    width: 8vw;
+    height: 8vw;
+}
+header li{
+    display: inline-block;
+    height: max-content;
+    list-style: none;
+    margin: 0 1vw;
+    cursor: pointer;
+    border: groove 2px rgba(6, 144, 179, 0);
+    transition-property:border;
+    transition-duration: 0.8s;
+    transition-timing-function: cubic-bezier(1, 0.55, 0.9, 1.43);
+}
+header li a{
+    text-decoration: none;
+    color: white;
+}
+header li:hover{
+    color: rgba(255, 255, 255, 0.589);
+    border-bottom: groove 2px rgb(31, 85, 92);
+}
+.search{
+    width: 90%;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    border: none;
+}
+.searchbox{
+    width: 16vw;
+    display: inline-flex;
+    background-color: rgb(255, 255, 255);
+    border: 4px groove rgb(0, 200, 250);
+    border-radius: 8px;
+    padding: 5px 15px;
+    align-items: center;
+}
+
+.search_button{
+    cursor: pointer;
+    background-color:inherit;
+    margin: 0.2em;
+    border:none;
+    
+}
+.login{
+    cursor: pointer;
+    margin-left: 1em;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+}
+.login a{
+    color: white;
+    text-decoration:none;
+}
+.login a:hover{
+    color: rgb(214, 214, 214);
+}
+footer{
+    display: flex;
+    position:relative;
+    width: 100%;
+    background-color: rgb(6, 144, 179);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.9vw 0;
+    
+}
+.androidmenu{
+    display: none !important;
+}
+#go_up{
+    visibility: hidden;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: white;
+    color: rgb(6, 113, 155);
+    position: fixed;
+    bottom: 2vw;
+    right: 2vw;
+    z-index: 2;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 2rem !important;
+    font-weight: lighter !important;
+    border: none;
+    transition: opacity 0.5s ease-in,visibility 0.5s ease-in;
+}
+.slider{
+    width: 100%;
+    background-color: grey ;
+    display:flex;
+    flex-shrink: 0;
+    height: 35vw;
+    justify-content: center;
+    position: relative;
+}
+.mainslider{
+    width: 100%;
+    overflow: hidden;
+}
+.sliderimgdiv{
+    width: max-content;
+    height: 100%;
+    transition: transform 1s cubic-bezier(1, 0.01, 0.59, 0.05);
+}
+.sliderimg{
+    height: 100%;
+}
+
+.buttons{
+    position: absolute;
+    bottom: 0;
+}
+.arrow{
+    color: rgb(34, 148, 163);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+    position: absolute;
+    right: 2vw;
+    font-size: 4rem !important;
+    font-weight: 100 !important;
+    z-index: 2;
+}
+.circle_slider{
+    border: 2px solid rgb(27, 20, 20);
+    display: inline-block;
+    height: 19px;
+    width: 19px;
+    margin: 6px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: border 1s ease-in,background-color 1s ease-in;
+}
+
+.flexbox{
+    overflow: hidden;
+    visibility: visible;
+    width: 95vw;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.flexitems{
+    opacity: 0;
+    position: relative;
+    visibility: hidden;
+    width:25%;
+    border: 4px groove rgb(95, 212, 248);
+    border-radius: 8px;
+    margin: 4px;
+    height: max-content;
+}
+.flexitems p{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+}
+.flex_buttons{
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    padding: 4px;
+    border: 2px solid rgb(15, 170, 28);
+    background-color: rgb(221, 199, 127);
+    margin-bottom: 4px;
+    color:white;
+    bottom: 2px;
+}
+.flexitems img{
+    height:15vw;
+    width: 100%;
+    border-radius: 6px 5px 0 0;
+}
+.flexitems h4{
+    text-align: center;
+    font-weight:600;
+    font-size: 1.2rem;
+    border-bottom: 2px dashed rgb(39, 173, 133);
+}
+@media only screen and (max-width: 970px)
+{
+    .logo{
+        display: none;
+    }
+    .flexitems{
+        width: 250px;
+    }
+    .flexitems img{
+        height: 30vw;
+    }
+    .androidmenu{
+        display: flex !important;
+        justify-content: space-between;
+        width: 100vw;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        transition: height 0.5s cubic-bezier(1, 0.1, 0.98, 1.01);
+    }
+    nav ul{
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0px;
+    }
+    nav ul li{
+        font-size: 2rem;
+    }
+    .searchlogin{
+        display: flex;
+        margin: 5px;
+        width: 99vw;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .searchbox{
+        width: 70%;
+    }
+    .login{
+        margin-right:8px;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    .android_logo{
+        width:10vw;
+        height:10vw;
+        border-radius: 100%;
+        margin:7px;
+    }
+    .menu{
+        align-self: center;
+        font-size: 2rem !important;
+        margin: 7px;
+    }
+    .circle_slider{
+        height: 16px;
+        width: 16px;
+        margin: 4px;
+    }
+    .arrow{
+        font-size: 3rem !important;
+        font-weight: lighter !important;
+    }
+    .slider{
+        height: 45vw;
+    }
+}
