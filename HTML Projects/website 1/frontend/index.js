@@ -276,3 +276,36 @@ window.addEventListener("scroll",()=>{
             }
         }
 })
+var val1=Number(document.getElementById("animate_1").innerHTML)
+var val2=Number(document.getElementById("animate_2").innerHTML)
+var val3=Number(document.getElementById("animate_3").innerHTML)
+function animate(){
+    window.requestAnimationFrame(animate)
+    if (val1<41415) {
+        document.getElementById("animate_1").innerHTML=val1
+        val1+=33
+    }
+    else{
+      document.getElementById("animate_1").innerHTML="41,415"
+    }
+    if (val2<16306) {
+        document.getElementById("animate_2").innerHTML=val2
+        val2+=18
+    } else {
+        document.getElementById("animate_2").innerHTML="16,306"
+    }
+    if (val3<48) {
+        document.getElementById("animate_3").innerHTML=val3
+        val3+=1
+    } else {
+        document.getElementById("animate_3").innerHTML=48
+    }
+}
+window.addEventListener("scroll",()=>{
+    let position=document.getElementById("flex-animate").getBoundingClientRect().top
+    let windowsize=window.innerHeight/1.1
+    if (position<windowsize) {
+        // 41,415, 16,306, 48
+        window.requestAnimationFrame(animate)
+    }
+})

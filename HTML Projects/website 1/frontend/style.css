@@ -252,25 +252,26 @@ footer{
 }
 .flex-animate{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top:25px;
     align-items: center;
 }
-.flex-animate span{
+.child{
     align-self: flex-start;
-    font-size: 1.8rem;
     color: rgb(255, 38, 0);
     padding: 5px;
-}
-.tick{
-    color: chartreuse !important;
-}
-.first_top{
-    align-self: flex-start;
-}
-#last_tick{
     display: flex;
     flex-direction: column;
+}
+.tick{
+    color: chartreuse;
+    font-size: 1.8rem !important;
+    padding: 5px;
+}
+.first-top{
+    align-self: flex-start;
+
 }
 @media only screen and (max-width: 970px)
 {
