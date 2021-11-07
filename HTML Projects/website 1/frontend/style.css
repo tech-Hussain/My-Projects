@@ -226,6 +226,7 @@ footer{
     padding:10px;
     opacity: 1;
     line-height: 30px;
+    margin-bottom: 10px;
 }
 .info p{
     font-size: 1.1rem;
@@ -272,6 +273,16 @@ footer{
 .first-top{
     align-self: flex-start;
 
+}
+#protect img,#protect div{
+    width: 49%;
+    display: inline-block;
+    border-radius: 0 40px 0 40px;
+}
+.quote{
+    font-family: 'Pinyon Script', cursive;
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 @media only screen and (max-width: 970px)
 {

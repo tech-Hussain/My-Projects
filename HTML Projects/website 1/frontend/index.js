@@ -283,7 +283,7 @@ function animate(){
     window.requestAnimationFrame(animate)
     if (val1<41415) {
         document.getElementById("animate_1").innerHTML=val1
-        val1+=33
+        val1+=45
     }
     else{
       document.getElementById("animate_1").innerHTML="41,415"
