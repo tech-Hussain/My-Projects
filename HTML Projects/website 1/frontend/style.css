@@ -274,10 +274,31 @@ footer{
     align-self: flex-start;
 
 }
-#protect img,#protect div{
+#protect{
+    background-color: blanchedalmond;
+}
+#protect h3{
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(78, 74, 74);
+    margin: 8px;
+}
+#protect figure,#protect div{
     width: 49%;
     display: inline-block;
+}
+#protect img{
+    width: 100%;
     border-radius: 0 40px 0 40px;
+}
+#protect div{
+    margin-left: 15px;
+    line-height: 28px;
+}
+#protect figcaption{
+    text-align: center;
+    font-weight: 600;
+    color: rgb(35, 78, 119);
 }
 .quote{
     font-family: 'Pinyon Script', cursive;
