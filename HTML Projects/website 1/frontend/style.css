@@ -226,7 +226,7 @@ footer{
     padding:10px;
     opacity: 1;
     line-height: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 .info p{
     font-size: 1.1rem;
@@ -276,6 +276,8 @@ footer{
 }
 #protect{
     background-color: blanchedalmond;
+    padding: 20px;
+    margin-bottom: 25px;
 }
 #protect h3{
     text-align: center;
@@ -304,6 +306,28 @@ footer{
     font-family: 'Pinyon Script', cursive;
     font-size: 1.4rem;
     font-weight: 700;
+    margin-top: 10px;
+}
+#ways{
+    background-color: rgb(195, 239, 250);
+    padding: 15px;
+    line-height: 28px;
+    color: rgb(54, 54, 54);
+}
+#ways h3{
+    font-size: 1.8rem;
+    text-align: center;
+}
+.toggle{
+    background-color: wheat;
+    width: 80%;
+    padding: 10px;
+    text-align: left;
+    border: 2px solid wheat;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    margin:10px 0;
 }
 @media only screen and (max-width: 970px)
 {
@@ -314,6 +338,7 @@ footer{
         flex-direction: column;
         align-items: center;
     }
+    
     .flexitems{
         width: 50%;
     }
@@ -375,6 +400,10 @@ footer{
     }
     .slider{
         height: 45vw;
+    }
+    #protect figure,#protect div{
+        width: 100%;
+        display: block;
     }
 }
 @media only screen and (max-width: 425px){

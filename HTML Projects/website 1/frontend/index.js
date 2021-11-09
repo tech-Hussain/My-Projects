@@ -256,7 +256,7 @@ window.addEventListener("scroll",()=>{
     let position=document.getElementById("flex1").getBoundingClientRect().top
     let position3=document.getElementById("flex2").getBoundingClientRect().top
     let position2=document.getElementById("flex3").getBoundingClientRect().top
-    let windowsize=window.innerHeight/1.5
+    let windowsize=window.innerHeight/1.1
     if (position < windowsize) {
     if (window.getComputedStyle(document.getElementById('flex1')).getPropertyValue("visibility")===`hidden`) {
         window.requestAnimationFrame(main)    
