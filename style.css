@@ -100,7 +100,8 @@ body{
     font-family: 'Scheherazade New', serif;
     position: absolute;
     z-index: 2;
-    margin: 105px auto;
+    top: 30%;
+    left: 30%;
     text-align: center;
     font-size: 3rem;
     color: rgb(66, 87, 35);
