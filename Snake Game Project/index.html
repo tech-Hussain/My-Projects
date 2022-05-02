@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/images.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet">
+    <title>Snake Game</title>
+</head>
+
+<body tabindex="-1" onkeydown="keydetect(event)">
+    <section>
+        <img src="img/snake.jpg" alt="snake pic" class="snk">
+        <div class="main-screen">
+            <div class="score">Score:<span id="score_real" style="margin-left: 8px;"></span></div>
+            <h1 class="title">Snake Adventure</h1>
+            <button class="volume" id="volume_on"  style="visibility: hidden;"><span class="material-icons" onclick="volume()" style="font-size: 1.8rem !important;">
+                volume_up
+            </span></button>
+            <button class="volume" id="volume_off" style="visibility: visible;"><span class="material-icons" onclick="volume()" style="font-size: 1.8rem !important;" >
+                volume_off
+            </span></button>
+            <button class="start" id="start" onclick="changeinter()" style="display:inline-block;">Play Game</button>   
+            <div class="game-screen" id="game_screen" style="display: none;"> 
+                <img src="img/food.jpg" alt="food" id="food">
+                <span class="boxes_head boxes" style="background-color: rgb(86, 199, 243);transform: rotate(0deg);" id="boxes_head"></span>
+            </div>   
+    </div>
+</section>
+</body>
+<script src="index.js"></script>
+</html>
