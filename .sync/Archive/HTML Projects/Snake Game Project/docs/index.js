@@ -229,7 +229,7 @@ function end() {
     gameover_h1.innerHTML="Game Over"
     gamescore.innerHTML=`Your Score is ${score}`
     if (localStorage.getItem("high_score")) {
-        // dekhte hain
+        
     } else {
         
     }
