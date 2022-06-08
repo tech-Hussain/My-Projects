@@ -228,12 +228,6 @@ function end() {
     gameover_div.classList.add("gameover")
     gameover_h1.innerHTML="Game Over"
     gamescore.innerHTML=`Your Score is ${score}`
-    if (localStorage.getItem("high_score")) {
-        
-    } else {
-        
-    }
-    localStorage.setItem("high_score",score)
     if (document.getElementById('volume_on').style.visibility === "visible") {
         gameover.play()
     }

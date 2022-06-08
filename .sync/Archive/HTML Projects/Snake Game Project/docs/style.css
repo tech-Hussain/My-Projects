@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(3, 110, 110);
+    display: flex;
+    justify-content: center;
+}
+.main-screen{
+    position: relative;
+    margin-top: 6vw;
+    width: 60vw;
+    height: 42vw;
+    background-color: rgb(22, 83, 46);  
+    border-radius: 26px;
+    text-align: center;
+}
+.game-screen{
+    grid-template-columns: repeat(38,1fr);
+    grid-template-rows: repeat(23,1fr);
+    overflow: hidden;
+    row-gap: 0;
+    column-gap: 0;
+    margin:35px auto;
+    border-radius: 14px;
+    width: 760px;
+    height: 460px;
+    background-color: greenyellow;
+}
+.title{
+    color: rgb(186, 252, 5);
+    font-size: 3.4rem;
+    padding-top: 5px;
+}
+.start{
+    font-style: italic;
+    font-weight: 600;
+    font-family: 'Koh Santepheap', cursive;
+    font-size: 1.7rem;
+    width: 20vw;
+    height: 4vw;
+    margin-top: 150px;
+    border-radius: 26px;
+    background-color: rgb(13, 160, 165);
+    cursor: pointer;
+    border: 2px solid rgb(201, 245, 160);
+    animation: startButton 0.35s linear infinite alternate;
+}
+@keyframes startButton {
+    from{
+        font-size: 1.7rem;
+        width: 20vw;
+        height: 4vw;
+    }
+    to{
+        font-size: 1.9rem;
+        width: 23vw;
+        height: 5vw;
+    }
+}
+.volume{
+    border: none;
+    background-color: inherit;
+    position: absolute;
+    cursor: pointer;
+    top: 25px;
+    right: 65px;
+    font-size: 1.8rem !important;
+}
+.snk{
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+.boxes_head{
+    background-color: rgb(86, 199, 243);
+    border-radius: 0 10px 10px 0;
+} 
+.boxes{
+    background-color: grey;
+}
+#food{
+ width: 18px;
+ height:18px;
+}
+.score{
+    color: rgb(248, 250, 161);
+    padding: 10px;
+    text-align: left;
+    width: 124px;
+    background-color: rgb(127, 177, 168);
+    border-radius: 5px;
+    font-size: 1.5rem;
+    left: 12px;
+    top: 15px;
+    position: absolute;
+}
+.gameover{
+    font-family: 'Scheherazade New', serif;
+    position: absolute;
+    z-index: 2;
+    margin: 105px auto;
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(66, 87, 35);
+}
