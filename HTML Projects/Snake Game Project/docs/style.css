@@ -64,8 +64,8 @@ body{
     background-color: inherit;
     position: absolute;
     cursor: pointer;
-    top: 25px;
-    right: 65px;
+    top: 75px;
+    right: 20px;
     font-size: 1.8rem !important;
 }
 .snk{
@@ -92,7 +92,6 @@ body{
     background-color: rgb(127, 177, 168);
     border-radius: 5px;
     font-size: 1.5rem;
-    left: 12px;
     top: 15px;
     position: absolute;
 }

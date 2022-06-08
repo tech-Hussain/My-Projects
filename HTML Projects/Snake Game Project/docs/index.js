@@ -18,6 +18,11 @@ var box;
 var boxes_head=document.getElementById("boxes_head")
 var real_rotate;
 var snake=document.getElementsByClassName("boxes")
+var key=localStorage.getItem("high-score")
+if (key==null) {
+    localStorage.setItem("high-score","0")
+} 
+document.getElementById("score_high").innerHTML=localStorage.getItem("high-score")
 boxes_head.style.gridColumnStart=x_axis;
 boxes_head.style.gridRowStart=y_axis;
 function getRndInteger(min, max) {
@@ -228,12 +233,12 @@ function end() {
     gameover_div.classList.add("gameover")
     gameover_h1.innerHTML="Game Over"
     gamescore.innerHTML=`Your Score is ${score}`
-    if (localStorage.getItem("high_score")) {
-        // dekhte hain
-    } else {
-        
-    }
-    localStorage.setItem("high_score",score)
+    if ((Number(localStorage.getItem("high-score")))<score) {
+        localStorage.setItem("high-score",score)
+        document.getElementById("score_high").innerHTML=localStorage.getItem("high-score")
+
+    } 
+    
     if (document.getElementById('volume_on').style.visibility === "visible") {
         gameover.play()
     }
