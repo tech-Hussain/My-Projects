@@ -11,7 +11,7 @@ var x_axisarr=[],y_axisarr=[]
 var food_x = getRndInteger(1, 38), food_y = getRndInteger(1, 23);
 foodrand()
 var last_detected_keys;
-var speed = 8;
+var speed = 12;
 var score = 0;
 var food_voice;
 var box;
@@ -248,8 +248,22 @@ function end() {
         gameover.play()
     }
     try_again.addEventListener("click",()=>{
-        window.top.location.reload(true)
+        gameover_div.remove()
+        x_axis = 3, y_axis = 13;
+        score=0
+        real_rotate=0
+        last_detected_keys="right"
+        setTimeout(() => {
+            x_axisarr=[],y_axisarr=[]
+            delete_boxes=document.getElementsByClassName("boxes")
+            const delete_boxes_length=delete_boxes.length
+            for (let index = 1; index < delete_boxes_length; index++) {
+                delete_boxes[1].remove();
+            }
+            foodrand()
+            speed=12
+            snakemover()
+        }, 500);
     })
-
 }
 window.requestAnimationFrame(main)
