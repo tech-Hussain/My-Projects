@@ -6,10 +6,11 @@ body{
     background-color: rgb(3, 110, 110);
     display: flex;
     justify-content: center;
+    max-height: 100vh;
 }
 .main-screen{
     position: relative;
-    margin-top: 6vw;
+    margin-top: 6%;
     width: 60vw;
     height: 42vw;
     background-color: rgb(22, 83, 46);  

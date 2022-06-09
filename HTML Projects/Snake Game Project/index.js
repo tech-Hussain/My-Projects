@@ -248,21 +248,22 @@ function end() {
         gameover.play()
     }
     try_again.addEventListener("click",()=>{
-        // window.top.location.reload(true)
         gameover_div.remove()
         x_axis = 3, y_axis = 13;
         score=0
+        real_rotate=0
+        last_detected_keys="right"
         setTimeout(() => {
             x_axisarr=[],y_axisarr=[]
             delete_boxes=document.getElementsByClassName("boxes")
-            for (const key in delete_boxes) {
-                if (key!=0) {
-                    delete_boxes[key].remove()
-                }
+            const delete_boxes_length=delete_boxes.length
+            for (let index = 1; index < delete_boxes_length; index++) {
+                delete_boxes[1].remove();
             }
+            foodrand()
             speed=12
             snakemover()
-        }, 2000);
+        }, 500);
     })
 }
 window.requestAnimationFrame(main)
