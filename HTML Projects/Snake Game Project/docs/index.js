@@ -226,9 +226,14 @@ function end() {
     var gameover_div=document.createElement("div")
     var gameover_h1=document.createElement("h1")
     var gamescore=document.createElement("h1")
+    var try_again=document.createElement("button")
+    try_again.innerHTML="Try Again!"
+    try_again.classList.add("try_again")
+    
     gamescreen.appendChild(gameover_div)
     gameover_div.appendChild(gameover_h1)
     gameover_div.appendChild(gamescore)
+    gameover_div.appendChild(try_again)
     gamescore.style.fontSize="2rem"
     gameover_div.classList.add("gameover")
     gameover_h1.innerHTML="Game Over"
@@ -236,12 +241,15 @@ function end() {
     if ((Number(localStorage.getItem("high-score")))<score) {
         localStorage.setItem("high-score",score)
         document.getElementById("score_high").innerHTML=localStorage.getItem("high-score")
-
+        
     } 
     
     if (document.getElementById('volume_on').style.visibility === "visible") {
         gameover.play()
     }
+    try_again.addEventListener("click",()=>{
+        window.top.location.reload(true)
+    })
 
 }
 window.requestAnimationFrame(main)
