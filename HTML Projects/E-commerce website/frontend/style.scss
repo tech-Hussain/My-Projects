@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+
+}
+
+#header{
+    margin-top: 20px;
+    height: 50vw;
+    clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
+    background: rgb(58,144,212);
+    background: linear-gradient(122deg, rgba(58,144,212,1) 0%, rgba(0,212,255,1) 100%);
+}
+.span_login{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin-top: 2vw;
+}
