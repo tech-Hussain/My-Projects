@@ -8,13 +8,50 @@
 }
 
 #header {
-  height: calc(95vh);
+  height: 95vh;
   -webkit-clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
           clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
-  background: url("../img/background.jpg");
+  background: url("../img/background2.jpg");
   background-size: 100% 100%;
-  background-color: black;
-  background-blend-mode: darken;
+  background-color: #1000a3;
+  background-blend-mode: color-burn;
+  color: white;
+  padding: 0.8vw 2vw;
+}
+
+#header h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 10%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#header p {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 2vw;
+}
+
+#changeui {
+  margin-top: 3vw !important;
+  font-size: 2.5rem !important;
+  text-transform: uppercase;
+  color: #c4c4f3;
+}
+
+#changeui span {
+  letter-spacing: 4px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#blinking {
+  margin-left: 20px;
+}
+
+.visibility {
+  visibility: hidden;
 }
 
 .logo {
@@ -35,7 +72,6 @@
       grid-template-rows: 1fr 1fr;
   -ms-grid-columns: 1fr 11fr;
       grid-template-columns: 1fr 11fr;
-  padding: 0.8vw 2vw;
 }
 
 .span_login {
@@ -48,7 +84,6 @@
   width: 12vw;
   min-width: 160px;
   font-size: 15px;
-  color: white;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -77,7 +112,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  color: white;
   font-size: 1.2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
