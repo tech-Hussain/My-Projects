@@ -8,10 +8,14 @@
 
 #header{
     // margin-top: 20px;
-    height: 95vh;
+    height: calc(95vh);
     clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
-    background: rgb(58,144,212);
-    background: linear-gradient(122deg, rgba(58,144,212,1) 0%, rgba(0,212,255,1) 100%);
+    // background: rgb(58,144,212);
+    // background: linear-gradient(122deg, rgba(58,144,212,1) 0%, rgba(0,212,255,1) 100%);
+    background: url("../img/background.jpg");
+    background-size: 100% 100%;
+    background-color: black;
+    background-blend-mode: darken;
 }
 .logo{
     width: 138px;
@@ -53,7 +57,7 @@
     min-width: 500px;
     justify-content: space-between;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     align-items: center;
     justify-self: end;
     li{

@@ -8,11 +8,13 @@
 }
 
 #header {
-  height: 95vh;
+  height: calc(95vh);
   -webkit-clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
           clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
-  background: #3a90d4;
-  background: linear-gradient(122deg, #3a90d4 0%, #00d4ff 100%);
+  background: url("../img/background.jpg");
+  background-size: 100% 100%;
+  background-color: black;
+  background-blend-mode: darken;
 }
 
 .logo {
@@ -76,7 +78,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
