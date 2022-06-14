@@ -27,21 +27,21 @@
 
     }
     p{
-        text-align: center;
-        font-size: 1.5rem;
-        margin-top: 2vw;
-    }
-}
-#changeui{
+    text-align: center;
     margin-top: 3vw !important;
-    font-size: 2.5rem !important;
+    font-size: 2rem !important;
     text-transform: uppercase;
     color: rgb(196, 196, 243);
     span{
-        letter-spacing: 4px;
         font-family: 'Montserrat', sans-serif;
+        color: rgb(81, 255, 255);
     }
-
+}
+#change_content{
+    margin-left: 20px;
+    letter-spacing: 4px;
+    color: white !important;
+}
 }
 #blinking{
     margin-left: 20px;
@@ -79,7 +79,7 @@
         transition: all 0.5s ;
     }
     li:hover{
-        color: rgb(92, 94, 90);
+        color: rgb(64, 217, 255);
     }
 }
 .nav{
@@ -95,6 +95,6 @@
         transition: all 0.5s ;
     }
     li:hover{
-        color: rgb(92, 94, 90);
+        color: rgb(64, 217, 255);
     }
 }
