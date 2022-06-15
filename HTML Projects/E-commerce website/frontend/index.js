@@ -74,3 +74,30 @@ document.querySelector("#sale1").addEventListener("mouseleave",()=>{
   document.querySelector("#sale1").classList.add("sale1")
   document.querySelector("#sale1").classList.remove("sale2")
 })
+if (window.innerWidth<=870) {
+  let height=`${(document.querySelector(".menu").offsetTop)+(Number(window.getComputedStyle(document.querySelector(".menu"),null).getPropertyValue("height").slice(0,-2)))}px`
+  console.log(height);
+  document.querySelector(".navbar").style.height=height
+  console.log(`${(document.querySelector(".menu").offsetTop)+(Number(window.getComputedStyle(document.querySelector(".menu"),null).getPropertyValue("height").slice(0,-2)))}px`)
+}
+const menu=()=>{
+  let initialHeight=`${(document.querySelector(".menu").offsetTop)+(Number(window.getComputedStyle(document.querySelector(".menu"),null).getPropertyValue("height").slice(0,-2)))}px`
+  console.log(initialHeight);
+  let navHeight=window.getComputedStyle(document.querySelector(".navbar"),null).getPropertyValue("height")
+  let maxHeight=`${(document.querySelector(".nav").offsetTop)+(Number(window.getComputedStyle(document.querySelector(".nav"),null).getPropertyValue("height").slice(0,-2)))}px`
+  console.log(navHeight,initialHeight,maxHeight);
+
+  if (navHeight===initialHeight) {
+    document.querySelector(".navbar").style.height=maxHeight
+    console.log(document.querySelector(".navbar").style.height)
+    console.log(maxHeight);
+  }
+  else if(navHeight===maxHeight){
+    document.querySelector(".navbar").style.height=initialHeight
+    console.log("tum");
+  }
+  else{
+    console.log("koi");
+    console.log(navHeight,initialHeight,maxHeight);
+  }
+}

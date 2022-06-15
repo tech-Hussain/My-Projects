@@ -64,6 +64,9 @@
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 11fr;
   width: 95vw;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .span_login {
@@ -134,8 +137,25 @@
 }
 
 @media only screen and (max-width: 870px) {
-  .navbar ul li, .nav {
+  .span_login li {
     display: none;
+  }
+
+  .navbar {
+    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    transition: height 1s;
+  }
+
+  .nav {
+    flex-direction: column;
+    justify-self: center;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 
   .user {
@@ -150,5 +170,15 @@
   .logo {
     width: 110px;
     height: 80;
+    align-self: center;
+  }
+
+  .menu {
+    display: inline-block !important;
+    justify-self: end;
+    padding-right: 10px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
   }
 }/*# sourceMappingURL=style.css.map */
