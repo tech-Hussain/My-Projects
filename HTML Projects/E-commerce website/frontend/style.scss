@@ -5,10 +5,8 @@
     box-sizing: border-box;
     list-style: none;
 }
-
 #header{
     min-height: 95vh;
-    overflow: overlay;
     clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
     background-image: url("../img/background2.jpg");
     background-size: 100% 100%;
@@ -124,6 +122,56 @@
     border-color: black; 
     
 }
+.swiper {
+    width: 80%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    flex-direction: column;
+    filter: drop-shadow(4px 3px 4px rgb(143, 143, 143));
+    background-color: rgb(216, 216, 216);
+    border-radius: 2%;
+    width: 60%;
+    div{
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+  }
+ 
+  .swiper-slide img {
+    display: block;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 2% 2% 5% 5%;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .flex{
+    display: flex;
+    
+  }
                                                 // RESPONSIVE DESIGNING
 @media only screen and (max-width: 870px)  {
     .span_login li{
@@ -133,13 +181,15 @@
         grid-template-rows: 1fr 1fr 3fr;
         grid-template-columns: 1fr 1fr;
         overflow: hidden;
-        transition: height 1s;
+        transition: height 0.5s;
         width: 100vw;
         padding-right: 20px;
     }
     .nav{
         flex-direction: column;
-        justify-self: center;
+        justify-self: start;
+        padding: 10px;
+        align-items: flex-start;
         min-width: max-content;
         grid-column-start: 1;
         grid-column-end: 3;

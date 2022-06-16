@@ -8,7 +8,6 @@
 
 #header {
   min-height: 95vh;
-  overflow: overlay;
   -webkit-clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
           clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
   background-image: url("../img/background2.jpg");
@@ -136,6 +135,48 @@
   border-color: black;
 }
 
+.swiper {
+  width: 80%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  filter: drop-shadow(4px 3px 4px rgb(143, 143, 143));
+  background-color: rgb(216, 216, 216);
+  border-radius: 2%;
+  width: 60%;
+}
+.swiper-slide div {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.swiper-slide img {
+  display: block;
+  height: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 2% 2% 5% 5%;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
 @media only screen and (max-width: 870px) {
   .span_login li {
     display: none;
@@ -145,14 +186,16 @@
     grid-template-rows: 1fr 1fr 3fr;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
-    transition: height 1s;
+    transition: height 0.5s;
     width: 100vw;
     padding-right: 20px;
   }
 
   .nav {
     flex-direction: column;
-    justify-self: center;
+    justify-self: start;
+    padding: 10px;
+    align-items: flex-start;
     min-width: -webkit-max-content;
     min-width: -moz-max-content;
     min-width: max-content;
