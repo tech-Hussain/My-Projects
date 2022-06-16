@@ -76,28 +76,26 @@ document.querySelector("#sale1").addEventListener("mouseleave",()=>{
 })
 if (window.innerWidth<=870) {
   let height=`${(document.querySelector(".menu").offsetTop)+(Number(window.getComputedStyle(document.querySelector(".menu"),null).getPropertyValue("height").slice(0,-2)))}px`
-  console.log(height);
   document.querySelector(".navbar").style.height=height
-  console.log(`${(document.querySelector(".menu").offsetTop)+(Number(window.getComputedStyle(document.querySelector(".menu"),null).getPropertyValue("height").slice(0,-2)))}px`)
 }
 const menu=()=>{
-  let initialHeight=`${(document.querySelector(".menu").offsetTop)+(Number(window.getComputedStyle(document.querySelector(".menu"),null).getPropertyValue("height").slice(0,-2)))}px`
-  console.log(initialHeight);
-  let navHeight=window.getComputedStyle(document.querySelector(".navbar"),null).getPropertyValue("height")
-  let maxHeight=`${(document.querySelector(".nav").offsetTop)+(Number(window.getComputedStyle(document.querySelector(".nav"),null).getPropertyValue("height").slice(0,-2)))}px`
-  console.log(navHeight,initialHeight,maxHeight);
+  let initialHeight=(document.querySelector(".menu").offsetTop)+(Number(window.getComputedStyle(document.querySelector(".menu"),null).getPropertyValue("height").slice(0,-2)))
+  let navHeight=window.getComputedStyle(document.querySelector(".navbar"),null).getPropertyValue("height").slice(0,-2)
+  let maxHeight=(document.querySelector(".nav").offsetTop)+(Number(window.getComputedStyle(document.querySelector(".nav"),null).getPropertyValue("height").slice(0,-2)))
 
-  if (navHeight===initialHeight) {
-    document.querySelector(".navbar").style.height=maxHeight
-    console.log(document.querySelector(".navbar").style.height)
-    console.log(maxHeight);
+  if ((Math.abs(navHeight-initialHeight))<(Math.abs(navHeight-maxHeight))) {
+    document.querySelector(".navbar").style.height=(maxHeight+50)+"px"
+    document.querySelector(".navbar").style.backdropFilter="blur(10px)"
   }
-  else if(navHeight===maxHeight){
-    document.querySelector(".navbar").style.height=initialHeight
-    console.log("tum");
+  else if((Math.abs(navHeight-initialHeight))>(Math.abs(navHeight-maxHeight))){
+    document.querySelector(".navbar").style.height=initialHeight+"px"
+    setTimeout(() => {
+      document.querySelector(".navbar").style.backdropFilter="blur(0px)"
+      
+    }, 1000);
   }
-  else{
-    console.log("koi");
-    console.log(navHeight,initialHeight,maxHeight);
-  }
+}
+if (window.innerWidth<=530) {
+  document.querySelector("#change_content").insertAdjacentHTML("beforebegin",`<br>`)
+  document.querySelector("#change_content").insertAdjacentHTML("beforebegin",`<br>`)
 }

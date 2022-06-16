@@ -146,6 +146,8 @@
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
     transition: height 1s;
+    width: 100vw;
+    padding-right: 20px;
   }
 
   .nav {
@@ -180,5 +182,32 @@
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
+  }
+
+  #header h1 {
+    margin-top: 100px;
+    font-size: 2rem;
+  }
+  #header p {
+    font-size: 1.5rem !important;
+    margin-top: 40px !important;
+  }
+
+  .butt {
+    margin-top: 50px;
+  }
+}
+@media only screen and (max-width: 530px) {
+  #header h1 {
+    font-size: 1.5rem;
+    margin-top: 110px;
+  }
+  #header p {
+    font-size: 1.2rem !important;
+    margin-top: 50px !important;
+  }
+
+  .butt {
+    margin-top: 60px;
   }
 }/*# sourceMappingURL=style.css.map */
