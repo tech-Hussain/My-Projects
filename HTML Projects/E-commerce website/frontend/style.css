@@ -198,6 +198,7 @@
   margin: 1.5rem auto;
   position: relative;
 }
+
 .about h3:before {
   content: "";
   position: absolute;
