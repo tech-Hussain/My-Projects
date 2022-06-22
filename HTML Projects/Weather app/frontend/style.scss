@@ -19,9 +19,6 @@ section{
     width: 55rem;
     max-width: 90%;
     height: 30rem;
-    div{
-        height: 50%;
-    }
 
 }
 #temp{
@@ -67,13 +64,18 @@ section{
     padding: 1rem;
     text-transform: uppercase;
     grid-template-columns: repeat(6,1fr);
+    height: 60%;
 }
 #div2{
     display: flex;
-    span{
-        display: grid;
-        width: 50%;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 1fr;
-    }
+    height: 40%;
+    width: 90%;
+    margin: auto;
+}
+.gr2{
+    display: grid;
+    width: 50%;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(4,1fr);
+    align-items: center;
 }
