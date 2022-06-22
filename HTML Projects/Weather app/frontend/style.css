@@ -22,9 +22,6 @@ section {
   max-width: 90%;
   height: 30rem;
 }
-section div {
-  height: 50%;
-}
 
 #temp {
   font-size: 1.8rem;
@@ -75,14 +72,20 @@ section div {
   padding: 1rem;
   text-transform: uppercase;
   grid-template-columns: repeat(6, 1fr);
+  height: 60%;
 }
 
 #div2 {
   display: flex;
+  height: 40%;
+  width: 90%;
+  margin: auto;
 }
-#div2 span {
+
+.gr2 {
   display: grid;
   width: 50%;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */
