@@ -25,6 +25,6 @@ const server = http.createServer((req, res) => {
         res.end('<h1>Error 404</h1>')
     }
 })
-server.listen(5050, '127.0.0.1', () => {
+server.listen(5050, '0.0.0.0', () => {
     console.log("listening to port 5050");
 })
