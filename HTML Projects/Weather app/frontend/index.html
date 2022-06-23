@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="shortcut icon" href="../frontend/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://purepng.com/public/uploads/large/purepng.com-weather-iconsymbolsiconsapple-iosiosios-8-iconsios-8-721522596142qx4ep.png" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="57x57" href="../frontend/img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../frontend/img/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="../frontend/img/favicon/apple-icon-72x72.png">
@@ -47,8 +47,8 @@
         }
 
         section {
-            background: rgb(255, 230, 154);
-            background: linear-gradient(180deg, rgb(255, 230, 154) 18%, rgb(255, 144, 80) 100%);
+            background: rgb(175,204,118);
+            background: linear-gradient(0deg, rgba(175,204,118,1) 0%, rgba(0,212,255,1) 100%);
             border-radius: 1.5rem;
             box-shadow: 10px 10px 12px #c8c8c8;
             width: 55rem;
@@ -190,7 +190,7 @@
         <div id="div2">
             <span class="gr2">
                 <span class="head">Weather</span>
-                <span class="content">{weather}</span>
+                <span id="weather" class="content">{weather}</span>
                 <span class="head">Min temp</span>
                 <span class="content">{mintemp}&#xb0;C</span>
                 <span class="head">Max temp</span>
@@ -222,6 +222,10 @@
         setInterval(() => {
             time()
         }, 5000);
+        if (document.getElementById("weather").innerHTML=='Clouds') {
+            document.querySelector('.cond').innerHTML='cloud'
+            document.querySelector('.cond').style.color='#a9abaa'
+        }
     </script>
 </body>
 
