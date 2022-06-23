@@ -15,54 +15,214 @@
     <link rel="apple-touch-icon" sizes="120x120" href="../frontend/img/favicon/apple-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="144x144" href="../frontend/img/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="../frontend/img/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href=../frontend/img/favicon//apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../frontend/img/favicon//apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../frontend/img/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../frontend/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../frontend/img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../frontend/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../frontend/img/favicon/manifest.json">
+    <!-- <link rel="manifest" href="../frontend/img/favicon/manifest.json"> -->
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../frontend/img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        section {
+            background: rgb(255, 230, 154);
+            background: linear-gradient(180deg, rgb(255, 230, 154) 18%, rgb(255, 144, 80) 100%);
+            border-radius: 1.5rem;
+            box-shadow: 10px 10px 12px #c8c8c8;
+            width: 55rem;
+            height: 30rem;
+        }
+
+        #temp {
+            font-size: 1.8rem;
+            justify-self: end;
+            margin-top: 5px;
+        }
+
+        #grp {
+            display: flex;
+            grid-column: 1/4;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #city {
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+
+        #time {
+            font-size: 0.7rem;
+        }
+
+        #feel {
+            font-size: 0.8rem;
+            text-transform: capitalize;
+        }
+
+        #div1 {
+            display: grid;
+            width: 95%;
+            margin: auto;
+            align-items: center;
+            justify-items: center;
+            padding: 1rem;
+            text-transform: uppercase;
+            grid-template-columns: repeat(6, 1fr);
+            height: 60% !important;
+        }
+
+        #div2 {
+            display: flex;
+            height: 40%;
+            width: 100%;
+            margin: auto;
+            justify-content: space-around;
+        }
+
+        .gr2 {
+            display: grid;
+            width: 40%;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: repeat(4, 1fr);
+            align-items: center;
+        }
+
+        .gr2 span {
+            border-bottom: 1px solid rgb(143, 142, 142);
+        }
+
+        .head {
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .content {
+            width: 100%;
+            text-align: right;
+        }
+
+        .cond {
+            color: #F0A500;
+            font-size: 6rem !important;
+            grid-column: 4/span 3;
+        }
+
+        @media only screen and (max-width: 768px) {
+            #div2 {
+                flex-direction: column;
+            }
+
+            .gr2 {
+                width: 90%;
+                margin: auto;
+                row-gap: 1.5rem;
+            }
+
+            #div1 {
+                height: 15rem !important;
+            }
+
+            .flex2 {
+                margin-top: 1.5rem;
+            }
+
+            section {
+                height: -webkit-max-content;
+                height: -moz-max-content;
+                height: max-content;
+            }
+        }
+
+        @media only screen and (max-width: 768px) and (max-width: 620px) {
+            #div1 {
+                width: 100%;
+            }
+
+            #grp {
+                flex-direction: column;
+            }
+
+            .cond {
+                justify-self: end;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <section>
         <div id="div1">
-            <span id="grp"><span class="info"><span id="city">Karachi</span><span id="time">Wed | 22 Jun | 1:09pm</span></span>
-            <span class="info"><span id="temp">37&#xb0;C</span><span id="feel">Real feel:38&#xb0;C</span></span></span>
+            <span id="grp"><span class="info"><span id="city">{city}</span><span id="time">Wed | 22 Jun |
+                        1:09pm</span></span>
+                <span class="info"><span id="temp">{temp}&#xb0;C</span><span id="feel">Real
+                        feel:{Realtemp}&#xb0;C</span></span></span>
             <span class="material-icons cond">sunny</span>
         </div>
         <div id="div2">
             <span class="gr2">
                 <span class="head">Weather</span>
-                <span class="content">Clear</span>
+                <span class="content">{weather}</span>
                 <span class="head">Min temp</span>
-                <span class="content">22&#xb0;C</span>
+                <span class="content">{mintemp}&#xb0;C</span>
                 <span class="head">Max temp</span>
-                <span class="content">23&#xb0;C</span>
+                <span class="content">{maxtemp}&#xb0;C</span>
                 <span class="head">Pressure</span>
-                <span class="content">1003hPa</span>
+                <span class="content">{pressure}hPa</span>
             </span>
             <span class="gr2 flex2">
                 <span class="head">Wind speed</span>
-                <span class="content">5.14 m/s</span>
+                <span class="content">{speed} km/h</span>
                 <span class="head">humidity</span>
-                <span class="content">78%</span>
+                <span class="content">{humidity}%</span>
                 <span class="head">Visibility</span>
-                <span class="content">3000 m</span>
+                <span class="content">{visibility} km</span>
                 <span class="head">Cloud cover</span>
-                <span class="content">100%</span>
+                <span class="content">{cover}%</span>
             </span>
         </div>
     </section>
-    <script src="index.js"></script>
+    <script>
+        function time() {
+            var time = new Date
+            var day = time.toLocaleDateString('en-AU', { weekday: "short" })
+            var date = time.toLocaleDateString('en-AU', { day: "2-digit", month: 'short' })
+            var curtime = time.toLocaleTimeString('en-AU', { timeStyle: 'short' })
+            document.getElementById("time").innerHTML = `${day} | ${date} | ${curtime}`
+        }
+        time()
+        setInterval(() => {
+            time()
+        }, 5000);
+    </script>
 </body>
 
 </html>
