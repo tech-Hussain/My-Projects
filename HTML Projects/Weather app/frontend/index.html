@@ -6,176 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="shortcut icon" href="https://purepng.com/public/uploads/large/purepng.com-weather-iconsymbolsiconsapple-iosiosios-8-iconsios-8-721522596142qx4ep.png" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="57x57" href="../frontend/img/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="../frontend/img/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../frontend/img/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="../frontend/img/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../frontend/img/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="../frontend/img/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="../frontend/img/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="../frontend/img/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../frontend/img/favicon//apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="../frontend/img/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../frontend/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../frontend/img/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../frontend/img/favicon/favicon-16x16.png">
-    <!-- <link rel="manifest" href="../frontend/img/favicon/manifest.json"> -->
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="../frontend/img/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="shortcut icon" href="img/icon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Roboto", sans-serif;
-        }
-
-        body {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        section {
-            background: rgb(175,204,118);
-            background: linear-gradient(0deg, rgba(175,204,118,1) 0%, rgba(0,212,255,1) 100%);
-            border-radius: 1.5rem;
-            box-shadow: 10px 10px 12px #c8c8c8;
-            width: 55rem;
-            height: 30rem;
-        }
-
-        #temp {
-            font-size: 1.8rem;
-            justify-self: end;
-            margin-top: 5px;
-        }
-
-        #grp {
-            display: flex;
-            grid-column: 1/4;
-            align-items: flex-start;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        #city {
-            font-size: 2.2rem;
-            font-weight: 600;
-        }
-
-        #time {
-            font-size: 0.7rem;
-        }
-
-        #feel {
-            font-size: 0.8rem;
-            text-transform: capitalize;
-        }
-
-        #div1 {
-            display: grid;
-            width: 95%;
-            margin: auto;
-            align-items: center;
-            justify-items: center;
-            padding: 1rem;
-            text-transform: uppercase;
-            grid-template-columns: repeat(6, 1fr);
-            height: 60% !important;
-        }
-
-        #div2 {
-            display: flex;
-            height: 40%;
-            width: 100%;
-            margin: auto;
-            justify-content: space-around;
-        }
-
-        .gr2 {
-            display: grid;
-            width: 40%;
-            grid-template-columns: 1fr 2fr;
-            grid-template-rows: repeat(4, 1fr);
-            align-items: center;
-        }
-
-        .gr2 span {
-            border-bottom: 1px solid rgb(143, 142, 142);
-        }
-
-        .head {
-            font-weight: 600;
-            text-transform: capitalize;
-        }
-
-        .content {
-            width: 100%;
-            text-align: right;
-        }
-
-        .cond {
-            color: #F0A500;
-            font-size: 6rem !important;
-            grid-column: 4/span 3;
-        }
-
-        @media only screen and (max-width: 768px) {
-            #div2 {
-                flex-direction: column;
-            }
-
-            .gr2 {
-                width: 90%;
-                margin: auto;
-                row-gap: 1.5rem;
-            }
-
-            #div1 {
-                height: 15rem !important;
-            }
-
-            .flex2 {
-                margin-top: 1.5rem;
-            }
-
-            section {
-                height: -webkit-max-content;
-                height: -moz-max-content;
-                height: max-content;
-            }
-        }
-
-        @media only screen and (max-width: 768px) and (max-width: 620px) {
-            #div1 {
-                width: 100%;
-            }
-
-            #grp {
-                flex-direction: column;
-            }
-
-            .cond {
-                justify-self: end;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -210,22 +47,7 @@
             </span>
         </div>
     </section>
-    <script>
-        function time() {
-            var time = new Date
-            var day = time.toLocaleDateString('en-AU', { weekday: "short" })
-            var date = time.toLocaleDateString('en-AU', { day: "2-digit", month: 'short' })
-            var curtime = time.toLocaleTimeString('en-AU', { timeStyle: 'short' })
-            document.getElementById("time").innerHTML = `${day} | ${date} | ${curtime}`
-        }
-        time()
-        setInterval(() => {
-            time()
-        }, 5000);
-        if (document.getElementById("weather").innerHTML=='Clouds') {
-            document.querySelector('.cond').innerHTML='cloud'
-            document.querySelector('.cond').style.color='#a9abaa'
-        }
+    <script src="index.js">
     </script>
 </body>
 
