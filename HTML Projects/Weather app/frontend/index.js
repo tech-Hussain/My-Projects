@@ -9,3 +9,7 @@ time()
 setInterval(() => {
     time()
 }, 5000);
+if (document.getElementById("weather").innerHTML=='Clouds') {
+    document.querySelector('.cond').innerHTML='cloud'
+    document.querySelector('.cond').style.color='#a9abaa'
+}
