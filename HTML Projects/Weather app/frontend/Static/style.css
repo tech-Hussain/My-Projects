@@ -51,7 +51,7 @@ section {
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px #dfdfdf inset !important;
+  box-shadow: 0 0 0 30px #dfdfdf inset !important;
 }
 
 #s_query {
