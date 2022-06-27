@@ -14,8 +14,8 @@ body {
 }
 
 section {
-  background: rgb(255, 230, 154);
-  background: linear-gradient(180deg, rgb(255, 230, 154) 18%, rgb(255, 144, 80) 100%);
+  background: rgb(175, 204, 118);
+  background: linear-gradient(0deg, rgb(175, 204, 118) 0%, rgb(0, 212, 255) 100%);
   border-radius: 1.5rem;
   box-shadow: 10px 10px 12px #c8c8c8;
   width: 55rem;
@@ -81,7 +81,7 @@ input:-webkit-autofill {
 }
 
 #city {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
@@ -167,7 +167,7 @@ input:-webkit-autofill {
     height: max-content;
   }
 }
-@media only screen and (max-width: 768px) and (max-width: 620px) {
+@media only screen and (max-width: 620px) {
   #div1 {
     width: 100%;
   }
@@ -178,5 +178,9 @@ input:-webkit-autofill {
 
   .cond {
     justify-self: end;
+  }
+
+  #search {
+    width: 90%;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -14,8 +14,8 @@ body {
 }
 
 section {
-    background: rgb(255, 230, 154);
-    background: linear-gradient(180deg, rgba(255, 230, 154, 1) 18%, rgba(255, 144, 80, 1) 100%);
+    background: rgb(175,204,118);
+    background: linear-gradient(0deg, rgba(175,204,118,1) 0%, rgba(0,212,255,1) 100%);
     border-radius: 1.5rem;
     box-shadow: 10px 10px 12px #c8c8c8;
     width: 55rem;
@@ -81,7 +81,7 @@ input:-webkit-autofill {
 }
 
 #city {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 
@@ -166,17 +166,21 @@ input:-webkit-autofill {
         height: max-content;
     }
 
-    @media only screen and (max-width:620px) {
-        #div1 {
-            width: 100%;
-        }
 
-        #grp {
-            flex-direction: column;
-        }
+}
+@media only screen and (max-width:620px) {
+    #div1 {
+        width: 100%;
+    }
 
-        .cond {
-            justify-self: end;
-        }
+    #grp {
+        flex-direction: column;
+    }
+
+    .cond {
+        justify-self: end;
+    }
+    #search{
+        width: 90%;
     }
 }
