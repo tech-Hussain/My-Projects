@@ -10,6 +10,9 @@
   "author": "Tech-hussain",
   "license": "ISC",
   "dependencies": {
-    "http": "^0.0.1-security"
+    "express": "^4.18.1",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.4.2",
+    "validator": "^13.7.0"
   }
 }
