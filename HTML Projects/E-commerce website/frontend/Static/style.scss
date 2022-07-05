@@ -276,17 +276,43 @@
         background-color: inherit;
         border: none;
         outline:none;
+        border-bottom: 1px groove rgb(9, 1, 82);
     }
     .submit{
         margin-bottom: 2rem;
         align-self: center;
-        width: 30%;
+        width: 50%;
+        padding: 4px;
         cursor: pointer;
-
+        border: 2px solid rgb(9, 1, 82);
+        font-size: 1rem;
+        border-radius: 5px;
+        transition: all 0.5s ;
+    }
+    .submit:hover{
+        background-color: rgb(9, 1, 82);
+        color: rgb(230, 229, 227);
     }
     label{
         display: inline-block;
     }
+}
+.labelI{
+    position: relative;
+    display: flex;
+    padding:0 1rem;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.pass{
+    position: absolute;
+    bottom: 2px;
+    right: 2rem;
+    font-size: 1.2rem;
+    color: rgb(4, 17, 92);
+    cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 // RESPONSIVE DESIGNING
@@ -352,6 +378,9 @@
     .butt {
         margin-top: 50px;
     }
+    .form{
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 530px) {
@@ -373,5 +402,9 @@
 
     .swiper {
         width: 85%;
+    }
+    .form{
+        width: 80%;
+        margin-top: 20vw;
     }
 }
