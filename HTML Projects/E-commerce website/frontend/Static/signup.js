@@ -19,3 +19,19 @@ if (window.innerWidth <= 870) {
       }, 500);
     }
   }
+  function toggle(val0,val){
+    if(val.type=="password"){
+      val.type="text"
+      val0.innerHTML="visibility_off"
+    }
+    else{
+      val.type="password"
+      val0.innerHTML="visibility"
+    }
+  }
+function validate() {
+    if (document.getElementsByName("username")[0].value.length<2) {
+      console.log("hi");
+      return false;
+    }
+}
