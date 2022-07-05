@@ -269,6 +269,9 @@
   outline: none;
   border-bottom: 1px groove rgb(9, 1, 82);
 }
+#sForm input:-webkit-autofill {
+  box-shadow: 0 0 0 30px rgb(230, 229, 227) inset !important;
+}
 #sForm .submit {
   margin-bottom: 2rem;
   align-self: center;
@@ -305,6 +308,16 @@
   cursor: pointer;
   border: none;
   outline: none;
+}
+
+.error {
+  position: absolute;
+  bottom: -50%;
+  right: -20%;
+  color: red;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 0.8rem;
 }
 
 @media only screen and (max-width: 870px) {
