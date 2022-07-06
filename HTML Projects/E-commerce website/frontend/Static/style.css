@@ -313,7 +313,7 @@
 .error {
   position: absolute;
   bottom: -50%;
-  right: -20%;
+  right: 0%;
   color: red;
   visibility: hidden;
   opacity: 0;
@@ -409,5 +409,9 @@
   .form {
     width: 80%;
     margin-top: 20vw;
+  }
+
+  .error {
+    font-size: 0.7rem;
   }
 }/*# sourceMappingURL=style.css.map */
