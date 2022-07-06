@@ -11,7 +11,8 @@ const customersSchema=new mongoose.Schema({
         required:true,
         validate(value){
             if(!validator.isEmail(value)){
-                error="Invalid Email format"
+                 error="Invalid Email format"
+                 throw new Error("Invalid Email format")
             }
         },
         unique:true

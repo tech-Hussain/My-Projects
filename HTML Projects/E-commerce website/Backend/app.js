@@ -33,17 +33,23 @@ app.post("/signup",async(req,res)=>{
             password:req.body.password
         })
         const saveData=await customerdata.save()
-        res.render("signup")
+        res.render("login")
     } catch (err) {
         if (err.code==11000) {
             res.render("signup",{
                 'Eerror':"Email already exists",
+                'uvalue':req.body.username,
+                'pvalue':req.body.password,
+                'cpvalue':req.body.password,
             })
-            console.log("yahan");
+            return;
         }
         if(error=="Invalid Email format"){
             res.render("signup",{
-                Eerror:"Invalid Email format"
+                Eerror:"Invalid Email format",
+                'uvalue':req.body.username,
+                'pvalue':req.body.password,
+                'cpvalue':req.body.password,
             })
         }
     }
