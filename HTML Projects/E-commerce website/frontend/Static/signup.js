@@ -75,6 +75,7 @@ function validate() {
   var errorTime={
     duration:5000,
   }
+  try {
     if (document.getElementsByName("username")[0].value.length<3){
       document.getElementById("uerror").animate(errorKey,errorTime)
       return false;
@@ -87,4 +88,10 @@ function validate() {
       document.getElementById("cperror").animate(errorKey,errorTime)
       return false;
     }
+  } catch (error) {
+    if (document.getElementsByName("password")[0].value.length<6) {
+      document.getElementById("perror").animate(errorKey,errorTime)
+      return false;
+    }
+  }
 }

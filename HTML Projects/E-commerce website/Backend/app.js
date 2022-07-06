@@ -1,6 +1,8 @@
 import express from 'express'
 import path from 'path'
 import hbs from 'hbs'
+import "../Backend/connect.js"
+import {Customerdata,error} from "../Backend/model.js"
 const port=process.env.PORT || 3000
 const app =express()
 const staticPath=path.join(process.cwd(),"../frontend/static")
@@ -23,7 +25,29 @@ app.get("/login",(req,res)=>{
 app.get("/signup",(req,res)=>{
     res.render("signup")
 })
-
+app.post("/signup",async(req,res)=>{
+    try {
+        const customerdata=new Customerdata({
+            username:req.body.username,
+            email:req.body.email,
+            password:req.body.password
+        })
+        const saveData=await customerdata.save()
+        res.render("signup")
+    } catch (err) {
+        if (err.code==11000) {
+            res.render("signup",{
+                'Eerror':"Email already exists",
+            })
+            console.log("yahan");
+        }
+        if(error=="Invalid Email format"){
+            res.render("signup",{
+                Eerror:"Invalid Email format"
+            })
+        }
+    }
+})
 
 app.listen(port,()=>{
     console.log(`Listening to port ${port}`);
