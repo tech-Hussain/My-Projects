@@ -17,24 +17,25 @@
         <form action="/signup" method="POST" id="sForm" onsubmit="return validate()">
             <div class="labelI">
                 <label for="username" class="material-symbols-outlined">account_circle</label>
-                <input type="text" name="username" placeholder="Username" required>
+                <input type="text" name="username" placeholder="Username" value="{{uvalue}}" required>
                 <span class="error" id="uerror">Username must be atleast 3 characters</span>
             </div>
             <div class="labelI">
                 <label for="email" class="material-symbols-outlined">mail</label>
                 <input type="email" name="email" placeholder="Email" required>
-                <span class="error" id="Eerror" >{{Eerror}}</span>
+                <span class="error" id="Eerror">
+                    {{Eerror}}</span>
             </div>
             <div class="labelI">
                 <label for="password" class="material-symbols-outlined">lock</label>
-                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Password" value="{{pvalue}}" required>
                 <button type="button" class="material-symbols-outlined pass"
                     onclick="toggle(this,this.previousElementSibling)">visibility</button>
                 <span class="error" id="perror">Password must be atleast 6 characters</span>
             </div>
             <div class="labelI">
                 <label for="cpassword" class="material-symbols-outlined">lock</label>
-                <input type="password" name="cpassword" placeholder="Confirm Password" required>
+                <input type="password" name="cpassword" placeholder="Confirm Password" value="{{cpvalue}}" required>
                 <button type="button" class="material-symbols-outlined  pass"
                     onclick="toggle(this,this.previousElementSibling)">visibility</button>
                 <span class="error" id="cperror">Kindly confirm your Password</span>

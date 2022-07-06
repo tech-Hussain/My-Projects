@@ -29,24 +29,9 @@ if (window.innerWidth <= 870) {
       val0.innerHTML="visibility"
     }
   }
-function validate() {
-  var errorkey={
-    "0%":{
-        visibility: "visible",
-        opacity: 0
-    },
-    "20%":{
-        opacity: 1,
-    },
-    "90%":{
-        opacity: 1,
-    },
-    "100%":{
-        visibility: "hidden",
-        opacity: 0,
-    }
-  }
-  var errorKey=[
+
+  // ANIMATION
+var errorKey=[
     {
       visibility: "hidden",
       opacity: 0
@@ -75,6 +60,7 @@ function validate() {
   var errorTime={
     duration:5000,
   }
+function validate() {
   try {
     if (document.getElementsByName("username")[0].value.length<3){
       document.getElementById("uerror").animate(errorKey,errorTime)
@@ -94,4 +80,11 @@ function validate() {
       return false;
     }
   }
+}
+
+if ((document.getElementById("Eerror").innerHTML).trim()=="Email already exists") {
+  document.getElementById("Eerror").animate(errorKey,errorTime)
+}
+if ((document.getElementById("Eerror").innerHTML).trim()=="Invalid Email format") {
+  document.getElementById("Eerror").animate(errorKey,errorTime)
 }
