@@ -41,6 +41,7 @@
 }
 
 #Sheader {
+  position: relative;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -308,6 +309,7 @@
   cursor: pointer;
   border: none;
   outline: none;
+  background-color: inherit;
 }
 
 .error {
@@ -318,6 +320,21 @@
   visibility: hidden;
   opacity: 0;
   font-size: 0.8rem;
+}
+
+#prompt {
+  position: absolute;
+  left: 40%;
+  top: 20%;
+  background-color: white;
+  border-radius: 10px;
+  width: 15rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  font-weight: bold;
+  visibility: hidden;
+  opacity: 0;
 }
 
 @media only screen and (max-width: 870px) {

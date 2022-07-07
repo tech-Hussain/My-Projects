@@ -81,10 +81,27 @@ function validate() {
     }
   }
 }
-
-if ((document.getElementById("Eerror").innerHTML).trim()=="Email already exists") {
-  document.getElementById("Eerror").animate(errorKey,errorTime)
+try{
+  if ((document.getElementById("Eerror").innerHTML).trim()=="Email already exists") {
+    document.getElementById("Eerror").animate(errorKey,errorTime)
+  }
+  if ((document.getElementById("Eerror").innerHTML).trim()=="Invalid Email format") {
+    document.getElementById("Eerror").animate(errorKey,errorTime)
+  }
+}catch(err){
+  /////
 }
-if ((document.getElementById("Eerror").innerHTML).trim()=="Invalid Email format") {
-  document.getElementById("Eerror").animate(errorKey,errorTime)
+try {
+  if (document.getElementById("prompt").innerHTML=="Registered Successfully") {
+    document.getElementById("prompt").animate(errorKey,errorTime)
+  }
+} catch (error) {
+  ///////
+}
+try {
+  if ((document.getElementById("Cerror").innerHTML).trim()=="Invalid login details") {
+    document.getElementById("Cerror").animate(errorKey,errorTime)
+  }
+} catch (error) {
+  ////////
 }

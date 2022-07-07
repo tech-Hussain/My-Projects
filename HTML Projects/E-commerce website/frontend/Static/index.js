@@ -124,7 +124,43 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-
+///animation
+var errorKey=[
+  {
+    visibility: "hidden",
+    opacity: 0
+  },
+  {
+    visibility: "visible",
+    opacity: 1
+  },
+  {
+    visibility: "visible",
+    opacity: 1
+  },
+  {
+    visibility: "visible",
+    opacity: 1
+  },
+  {
+    visibility: "visible",
+    opacity: 1
+  },
+  {
+    visibility: "hidden",
+    opacity: 0,
+  }
+]
+var errorTime={
+  duration:5000,
+}
+try {
+  if (document.getElementById("prompt").innerHTML=="Logged in Successfully") {
+    document.getElementById("prompt").animate(errorKey,errorTime)
+  }
+} catch (error) {
+  //////
+}
 
 
 

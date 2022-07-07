@@ -44,6 +44,7 @@
     }
 }
 #Sheader{
+    position: relative;
     height: max-content;
     padding: 0.8vw 2vw;
     background: rgb(16,0,163);
@@ -316,6 +317,7 @@
     cursor: pointer;
     border: none;
     outline: none;
+    background-color: inherit;
 }
 .error{
     position: absolute;
@@ -325,6 +327,20 @@
     visibility: hidden;
     opacity: 0;
     font-size: 0.8rem;
+}
+#prompt{
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    background-color: white;
+    border-radius: 10px;
+    width: 15rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    font-weight: bold;
+    visibility: hidden;
+    opacity:0;
 }
 // RESPONSIVE DESIGNING
 @media only screen and (max-width: 870px) {
