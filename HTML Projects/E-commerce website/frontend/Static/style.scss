@@ -59,6 +59,7 @@
 }
 
 .logo {
+    position: relative;
     width: 138px;
     height: 102px;
     background: url("img/logo.png");
@@ -66,6 +67,12 @@
     background-repeat: no-repeat;
     grid-row-start: 1;
     grid-row-end: 3;
+    a{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
 }
 
 .navbar {
@@ -283,7 +290,7 @@
         box-shadow: 0 0 0 30px rgb(230, 229, 227) inset !important;
       }
     .submit{
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         align-self: center;
         width: 50%;
         padding: 4px;
@@ -342,6 +349,14 @@
     visibility: hidden;
     opacity:0;
 }
+.redirect{
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    a{
+        color: rgb(4, 17, 92);
+    }
+}
 // RESPONSIVE DESIGNING
 @media only screen and (max-width: 870px) {
     .span_login li {
@@ -380,6 +395,7 @@
         width: 110px;
         height: 80;
         align-self: center;
+        
     }
 
     .menu {

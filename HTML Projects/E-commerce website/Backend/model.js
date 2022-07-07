@@ -1,5 +1,6 @@
 import validator  from "validator"
 import mongoose from "mongoose"
+import bcrypt from 'bcryptjs'
 var error;
 const customersSchema=new mongoose.Schema({
     username:{
@@ -21,6 +22,12 @@ const customersSchema=new mongoose.Schema({
         type:String,
         required:true,
     }
+})
+customersSchema.pre("save",async function(next){
+    if(this.isModified("password")){
+        this.password=bcrypt.hashSync(this.password,10)
+    }
+    next()
 })
 const Customerdata=new mongoose.model("Customerdata",customersSchema)
 export  {Customerdata , error}
