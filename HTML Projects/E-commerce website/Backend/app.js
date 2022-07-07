@@ -3,6 +3,7 @@ import path from 'path'
 import hbs from 'hbs'
 import "../Backend/connect.js"
 import {Customerdata,error} from "../Backend/model.js"
+import bcrypt from 'bcryptjs'
 const port=process.env.PORT || 3000
 const app =express()
 const staticPath=path.join(process.cwd(),"../frontend/static")
@@ -69,7 +70,8 @@ app.post("/login",async(req,res)=>{
     const password=req.body.password
     const emailCheck=await Customerdata.findOne({email:email})
     if (emailCheck) {
-        if (emailCheck.password==password) {
+        const passCheck=await bcrypt.compare(password,emailCheck.password)
+        if (passCheck) {
             successmsg="Logged in Successfully"
             res.redirect("/")
         } else {
