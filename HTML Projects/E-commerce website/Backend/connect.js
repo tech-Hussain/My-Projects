@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-const db="mongodb+srv://tech-Hussain:8979%4vW%23VeS%23qDf@cluster0.bgrkw.mongodb.net/Customers?retryWrites=true&w=majority"
-console.log(db);
+const db="mongodb+srv://techHussain:hussainarif@cluster0.482fb.mongodb.net/Customers?retryWrites=true&w=majority"
 mongoose.connect(db,{
     useNewUrlParser: true,
      useUnifiedTopology: true,
