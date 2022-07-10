@@ -1,0 +1,28 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(163, 231, 224);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 66%;
+}
+#root{
+    width: 35rem;
+    min-height: 8rem;
+    border-radius: 2rem;
+    box-shadow: 4px 4px 5px  rgb(233, 210, 4);
+    text-align: center;
+    line-height: 10rem;
+    background-color: rgb(243, 230, 113);
+    span{
+        font-size: 2.2rem;
+    }
+}
+.static{
+    color: rgb(255, 163, 163);
+}
