@@ -146,21 +146,17 @@ input:-webkit-autofill {
   #div2 {
     flex-direction: column;
   }
-
   .gr2 {
     width: 90%;
     margin: auto;
     row-gap: 1.5rem;
   }
-
   #div1 {
     height: 15rem !important;
   }
-
   .flex2 {
     margin-top: 1.5rem;
   }
-
   section {
     height: -webkit-max-content;
     height: -moz-max-content;
@@ -171,15 +167,12 @@ input:-webkit-autofill {
   #div1 {
     width: 100%;
   }
-
   #grp {
     flex-direction: column;
   }
-
   .cond {
     justify-self: end;
   }
-
   #search {
     width: 90%;
   }
