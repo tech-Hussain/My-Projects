@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Item  from './Item.jsx';
 import { ThemeProvider,createTheme } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
@@ -14,16 +15,40 @@ const theme = createTheme({
     }
   });
 const App=()=>{
-
+ const [curr,update]=useState("")
+ const [Dataarr,add]=useState([])
+ const input=(event)=>{
+  update(event.target.value)
+ }
+ const store=(event)=>{
+  update((prev)=>{
+    if (prev!=="") {
+      add([...Dataarr,prev])
+    }
+    return ""
+  })
+ }
+ const AddItems=()=>{
+  return (Dataarr.map((elem,index)=>{
+      return <Item text={elem} key={index} func={Delete}/>
+   }))
+ }
+ function Delete(){
+  console.log(this._reactInternalFiber.key);
+  // add([...Dataarr,prev])
+ }
  return(
     <>
     <ThemeProvider theme={theme}>
-        <section>
+        <section className='first'>
             <h1>ToDo List</h1>
             <div className='container'>
-        <TextField id="input-with-sx" label="Add an Item" variant="standard" />
-            <IconButton style={{backgroundColor:"rgb(72, 206, 255)"}}><AddIcon sx={{ color: 'white'}} /></IconButton>
+        <TextField id="input-with-sx" label="Add an Item" variant="standard" value={curr} onChange={input}/>
+            <IconButton onClick={store} style={{backgroundColor:"rgb(72, 206, 255)"}}><AddIcon sx={{ color: 'white'}} /></IconButton>
             </div>
+        <div className='Data-container'>
+        {AddItems()}
+        </div>
         </section>
         </ThemeProvider>
     </>
