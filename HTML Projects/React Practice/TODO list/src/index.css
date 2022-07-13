@@ -18,7 +18,7 @@ body {
 .first {
   width: 20rem;
   height: 30rem;
-  background-color: lemonchiffon;
+  background-color: rgb(238, 237, 225);
   border-radius: 1rem;
   box-shadow: 2px 6px 6px grey;
   padding-top: 2rem;
@@ -47,6 +47,22 @@ body {
   box-shadow: 2px 2px 4px grey;
   display: flex;
   align-items: center;
+  overflow-x: auto;
+}
+
+.second::-webkit-scrollbar {
+  width: 6px;
+  height: 10px;
+  border-radius: 1rem;
+}
+
+.second::-webkit-scrollbar-track {
+  background-color: rgb(238, 237, 225);
+}
+
+.second::-webkit-scrollbar-thumb {
+  background-color: rgb(106, 215, 255);
+  border-radius: 1rem;
 }
 
 .Data {
@@ -59,4 +75,27 @@ body {
 .Data-container {
   max-height: 70%;
   overflow-y: auto;
+}
+
+.Data-container::-webkit-scrollbar {
+  width: 6px;
+  height: 10px;
+  border-radius: 1rem;
+}
+
+.Data-container::-webkit-scrollbar-track {
+  background-color: rgb(238, 237, 225);
+}
+
+.Data-container::-webkit-scrollbar-thumb {
+  background-color: rgb(106, 215, 255);
+  border-radius: 1rem;
+}
+
+.auto input:-webkit-autofill,
+.auto input:-webkit-autofill:hover,
+.auto input:-webkit-autofill:focus,
+.auto input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
 }/*# sourceMappingURL=index.css.map */
