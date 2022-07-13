@@ -30,12 +30,12 @@ const App=()=>{
  }
  const AddItems=()=>{
   return (Dataarr.map((elem,index)=>{
-      return <Item text={elem} key={index} func={Delete}/>
+      return <Item text={elem} key={index} func={()=>{Delete(index)}}/>
    }))
  }
- function Delete(){
-  console.log(this._reactInternalFiber.key);
-  // add([...Dataarr,prev])
+ function Delete(index){
+  Dataarr.splice(index,1)
+  add([...Dataarr])
  }
  return(
     <>
@@ -43,7 +43,7 @@ const App=()=>{
         <section className='first'>
             <h1>ToDo List</h1>
             <div className='container'>
-        <TextField id="input-with-sx" label="Add an Item" variant="standard" value={curr} onChange={input}/>
+        <TextField id="input-with-sx" className='auto' label="Add an Item" variant="standard" value={curr} onChange={input}/>
             <IconButton onClick={store} style={{backgroundColor:"rgb(72, 206, 255)"}}><AddIcon sx={{ color: 'white'}} /></IconButton>
             </div>
         <div className='Data-container'>
