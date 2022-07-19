@@ -1,10 +1,8 @@
 import React from 'react'
-
+import Page from '@mui/material/Pagination';
 const Pagination = () => {
   return (
-    <div>
-    {/* Pagination */}
-    </div>
+     <Page style={{display:'flex',justifyContent:"center",marginTop:"2rem"}} count={50} />
   )
 }
 
