@@ -7,8 +7,8 @@ const App = () => {
   return (
     <Context>
     <Search/>
-    <Pagination/>
     <Stories/>
+    <Pagination/>
     </Context>
   )
 }

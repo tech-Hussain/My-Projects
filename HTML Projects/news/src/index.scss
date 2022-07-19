@@ -8,7 +8,7 @@
 #root{
     min-width: 100vw;
     min-height: 100vh;
-    background-color: peachpuff;
+    background-color: #C4D7E0;
     align-items: center;
     font-family: 66%;
     padding-top: 2rem;
@@ -18,7 +18,7 @@
         justify-content: center;
         align-items: center;
         display: flex;
-        font-weight: 500;
+        font-weight: bold;
         color: rgb(34, 83, 73);
     }
 }
@@ -26,4 +26,33 @@
     font-size: 2.2rem !important;
     margin-left: 0.5rem !important;
     color: rgb(124, 124, 124);
+}
+.TextInput{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input{
+    display: flex !important;
+    background-color: white;
+    width: 25rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px grey;
+    border-bottom: 3px solid rgb(34, 83, 73) !important;
+    label{
+        left: 1rem !important;
+    }
+    input{
+        padding:0.2rem 1rem;
+    }
+}
+.stories{
+    margin: auto;
+    margin-top: 2rem;
+    width: 40rem;
+    min-height: 10rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 4px grey;
 }
