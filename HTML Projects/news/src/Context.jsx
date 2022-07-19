@@ -3,26 +3,40 @@ import reducer from './reducer'
 const ContextProvider = createContext()
 
 const Context = ({ children }) => {
-    const fetchApi=async()=>{
-     const data=await fetch("https://hn.algolia.com/api/v1/search?query=react")
-     const res=await data.json()
-     dispatch({
+    const fetchApi=async(url)=>{
+        const data=await fetch(url)
+        const res=await data.json()
+        dispatch({
         type:"Get_Data",
         extras:res
-     })
-    }
+    })
+}
     const initialState={
+        isLoading:true,
         hits:[],
         page:0,
         nbPages:0,
-        query:"react"
+        query:"",
+        nbHits:0
     }
-    useEffect(()=>{
-        fetchApi()
-    },[])
     const [state, dispatch] = useReducer(reducer,initialState)
+    useEffect(()=>{
+        fetchApi(`https://hn.algolia.com/api/v1/search?query=${state.query}&page=${state.page}`)
+    },[state.query,state.page])
+    const onChange=(e)=>{
+        dispatch({
+            type:"change",
+            extras:e.target.value
+    })
+    }
+    const deletePost=(id)=>{
+        const filter=state.hits.filter((elem)=>{
+            return elem.objectID !== id
+        })
+        dispatch({type:"delete",extras:filter})
+    }
     return (
-        <ContextProvider.Provider value={{...state}}>{children}</ContextProvider.Provider>
+        <ContextProvider.Provider value={{...state,onChange,deletePost}}>{children}</ContextProvider.Provider>
     )
 }
 const useGlobalContext = () => {

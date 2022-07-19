@@ -1,8 +1,11 @@
 import React from 'react'
 import Page from '@mui/material/Pagination';
+import {useGlobalContext} from "./Context";
+
 const Pagination = () => {
+  const {nbPages}=useGlobalContext()
   return (
-     <Page style={{display:'flex',justifyContent:"center",marginTop:"2rem"}} count={50} />
+     <Page className='page' count={nbPages} />
   )
 }
 
