@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+#root {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: peachpuff;
+  align-items: center;
+  font-family: 66%;
+  padding-top: 2rem;
+}
+
+.search h1 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: 500;
+  color: rgb(34, 83, 73);
+}
+
+.newsIcon {
+  font-size: 2.2rem !important;
+  margin-left: 0.5rem !important;
+  color: rgb(124, 124, 124);
+}/*# sourceMappingURL=index.css.map */
