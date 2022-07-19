@@ -6,10 +6,12 @@
   font-family: "Roboto", sans-serif;
 }
 
-#root {
-  min-width: 100vw;
-  min-height: 100vh;
+body {
   background-color: #C4D7E0;
+}
+
+#root {
+  min-height: 100vh;
   align-items: center;
   font-family: 66%;
   padding-top: 2rem;
@@ -52,6 +54,8 @@
 }
 
 .stories {
+  padding: 2rem;
+  padding-bottom: 1rem;
   margin: auto;
   margin-top: 2rem;
   width: 40rem;
@@ -59,4 +63,48 @@
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 2px 2px 4px grey;
+}
+
+.authData {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: grey;
+}
+.authData .rData {
+  font-weight: bold;
+}
+
+.action {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  align-items: center;
+}
+.action a {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: rgb(109, 193, 221);
+}
+.action a:hover {
+  text-decoration: underline;
+  color: rgb(6, 171, 226);
+}
+
+.loading {
+  font-size: 2rem;
+  text-align: center;
+  margin: 4rem;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.resAmount {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: grey;
 }/*# sourceMappingURL=index.css.map */
