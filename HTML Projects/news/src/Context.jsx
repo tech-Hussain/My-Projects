@@ -35,8 +35,11 @@ const Context = ({ children }) => {
         })
         dispatch({type:"delete",extras:filter})
     }
+    const pageChange=(event,value)=>{
+        dispatch({type:"pagination",extras:value-1})
+    }
     return (
-        <ContextProvider.Provider value={{...state,onChange,deletePost}}>{children}</ContextProvider.Provider>
+        <ContextProvider.Provider value={{...state,onChange,deletePost,pageChange}}>{children}</ContextProvider.Provider>
     )
 }
 const useGlobalContext = () => {

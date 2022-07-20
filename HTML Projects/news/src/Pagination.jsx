@@ -3,9 +3,9 @@ import Page from '@mui/material/Pagination';
 import {useGlobalContext} from "./Context";
 
 const Pagination = () => {
-  const {nbPages}=useGlobalContext()
+  const {nbPages,page,pageChange}=useGlobalContext()
   return (
-     <Page className='page' count={nbPages} />
+     <Page className='page' page={page+1} onChange={pageChange} count={nbPages} />
   )
 }
 
