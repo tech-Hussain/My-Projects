@@ -24,6 +24,7 @@ const Context = ({ children }) => {
         fetchApi(`https://hn.algolia.com/api/v1/search?query=${state.query}&page=${state.page}`)
     },[state.query,state.page])
     const onChange=(e)=>{
+        state.isLoading=true
         dispatch({
             type:"change",
             extras:e.target.value
@@ -36,6 +37,7 @@ const Context = ({ children }) => {
         dispatch({type:"delete",extras:filter})
     }
     const pageChange=(event,value)=>{
+        state.isLoading=true
         dispatch({type:"pagination",extras:value-1})
     }
     return (
