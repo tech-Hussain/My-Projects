@@ -18,7 +18,12 @@ const reducer = (state, action) => {
         case "delete":
             return ({
                 ...state,
-                hits:action.extras
+                hits: action.extras
+            })
+        case "pagination":
+            return ({
+                ...state,
+                page: action.extras
             })
         default:
             break;
