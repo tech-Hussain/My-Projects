@@ -2,11 +2,13 @@ import React from 'react'
 import {useGlobalContext} from "./Context";
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 const Stories = () => {
     const {hits,isLoading,nbHits,deletePost}=useGlobalContext()
     return (<>
         <div className='resAmount'><span>{nbHits.toLocaleString()}</span> results found</div>
-        {isLoading ? <div className='loading'>Loading.....</div> :
+        {isLoading ? <Box sx={{ width: '100%',marginTop:"4rem" }}><LinearProgress/></Box> :
         hits.map((elem)=>{
             return(
                 (elem.title) ?
