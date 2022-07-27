@@ -90,12 +90,6 @@ body {
   color: rgb(6, 171, 226);
 }
 
-.loading {
-  font-size: 2rem;
-  text-align: center;
-  margin: 4rem;
-}
-
 .page {
   display: flex;
   justify-content: center;

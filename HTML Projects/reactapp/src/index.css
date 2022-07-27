@@ -1,8 +1,30 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
-body{
-  
+
+body {
+  font-size: 66% !important;
 }
+
+.navbar {
+  position: relative !important;
+  padding: 0.5rem 0;
+  background-color: white !important;
+}
+.navbar div, .navbar button, .navbar a {
+  font-family: "Lato", sans-serif !important;
+  font-size: 1rem;
+  color: rgb(163, 163, 163) !important;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.active button {
+  border-radius: 0px;
+  color: rgb(0, 0, 0) !important;
+  border-bottom: 2px solid rgb(194, 170, 134);
+}/*# sourceMappingURL=index.css.map */
