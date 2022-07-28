@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -7,6 +10,11 @@
   }
   body{
     font-size: 66% !important;
+  }
+  #root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   .navbar{
     position: relative !important;
@@ -25,5 +33,76 @@
         border-radius: 0px;
         color: rgb(0, 0, 0) !important;
         border-bottom: 2px solid rgb(194, 170, 134);
+    }
+  }
+  .homeDiv{
+    width: 100%;
+    position: relative;
+    margin: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    div{
+      text-transform: uppercase;
+      color: rgb(32, 111, 185);
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    p{
+      margin-top: 1.5rem;
+      font-size: 1.8rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 600;
+    }
+  }
+  .homeDiv::after{
+    content: "";
+    position: absolute;
+    left: 0%;
+    bottom: 0;
+    height: 100%;
+    z-index: -1;
+    width: 50%;
+    background-color: rgb(223 243 255);
+    box-shadow: 2px 4px 12px 12px rgb(223 243 255);
+  }
+  .error{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+      font-size: 3rem;
+      font-weight: bold;
+      color: rgb(255, 1, 1);
+      text-align: center;
+    }
+    h2{
+      font-size: 2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-top: 2rem;
+      font-family: 'Poppins', sans-serif;
+      word-spacing: 0.5rem;
+    }
+    p{
+      font-family: "Roboto";
+      font-size: 1rem;
+      margin-top: 1rem;
+      text-transform: uppercase;
+    }
+    button{
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      color: white;
+      font-size: 1rem;
+      background-color: rgb(114, 206, 236);
+      border-radius: 2rem;
+      border: none;
+      cursor: pointer;
     }
   }
