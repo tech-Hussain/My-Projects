@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
 
 *{
     margin: 0;
@@ -106,3 +106,81 @@
       cursor: pointer;
     }
   }
+  .mainLoginDiv{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginDiv{
+    position: relative;
+    border-radius: 10px;
+    display: grid;
+    gap: 1rem;
+    width:50rem;
+    padding:2rem;
+    grid-template-columns: 1fr 1fr;
+    img{
+      width: 25rem;
+    }
+  }
+  .mainLoginDiv::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(223 243 255);
+    box-shadow: 2px 4px 12px 12px rgb(223 243 255);
+    z-index: -1;
+  }
+  .form{
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    h2{
+      font-size: 1.7rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin:4rem 0.4rem 1.5rem 0.4rem;
+    }
+    .inputs{
+      display: flex;
+      align-items: center;
+      margin:0.4rem 0;
+      border-bottom: 1px solid lightgray;
+      padding-bottom: 0.3rem;
+      min-width: 18rem;
+      input{
+        background-color: inherit;
+        border: none;
+        outline: none;
+        margin-left: 1rem;
+      }
+    }
+    p{
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+    }
+    .linkbtn{
+      color: black;
+      background-color: transparent;
+      padding: 0;
+      margin-left: 0.5rem;
+      text-decoration: underline;
+    }
+    button{
+      cursor: pointer;
+      color:white;
+      font-size: 1rem;
+      margin-top: 1.5rem;
+      width: max-content;
+      padding: 0.5rem 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: rgb(62, 199, 245);
+    }
+  }
+  
