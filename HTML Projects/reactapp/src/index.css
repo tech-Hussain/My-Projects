@@ -13,7 +13,7 @@ body {
 .navbar {
   position: relative !important;
   padding: 0.5rem 0;
-  background-color: white !important;
+  background: white !important;
 }
 .navbar div, .navbar button, .navbar a {
   font-family: "Lato", sans-serif !important;
@@ -23,7 +23,7 @@ body {
   text-decoration: none;
 }
 
-.active button {
+.active button, .active .activeText span {
   border-radius: 0px;
   color: rgb(0, 0, 0) !important;
   border-bottom: 2px solid rgb(194, 170, 134);

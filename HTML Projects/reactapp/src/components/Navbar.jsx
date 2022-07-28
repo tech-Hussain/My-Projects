@@ -26,17 +26,12 @@ function Navbar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
+      <NavLink to="/"><img src="img/logo.png" alt="logo" style={{height:"5rem"}}/></NavLink>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+          (item!=="home")?<ListItem key={item} disablePadding><NavLink to={item}><ListItemButton sx={{ textAlign: 'left' ,textTransform:"capitalize" }}><ListItemText className='activeText' primary={item}/></ListItemButton></NavLink></ListItem>:
+          <ListItem key={item} disablePadding><NavLink to={"/"}><ListItemButton sx={{ textAlign: 'left' ,textTransform:"capitalize" }}><ListItemText className='activeText' primary={item}/></ListItemButton></NavLink></ListItem>
         ))}
       </List>
     </Box>
@@ -62,7 +57,7 @@ function Navbar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            <NavLink to="/"><img src="img/logo.png" alt="logo" style={{height:"5rem"}}/></NavLink>
           </Typography>
           <Box sx={{width:"35%", display: { xs: 'none', sm: 'flex' },justifyContent:"space-between" }}>
             {navItems.map((item) => (
@@ -73,6 +68,7 @@ function Navbar(props) {
       </AppBar>
       <Box component="nav">
         <Drawer
+          className="navbar"
           container={container}
           variant="temporary"
           open={mobileOpen}
