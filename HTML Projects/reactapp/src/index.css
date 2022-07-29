@@ -118,6 +118,13 @@ body {
   align-items: center;
 }
 
+.mainregisterDiv {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .loginDiv {
   position: relative;
   border-radius: 10px;
@@ -129,6 +136,21 @@ body {
 }
 .loginDiv img {
   width: 25rem;
+  align-self: center;
+}
+
+.registerDiv {
+  position: relative;
+  border-radius: 10px;
+  display: grid;
+  gap: 1rem;
+  width: 50rem;
+  padding: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+.registerDiv img {
+  width: 20rem;
+  align-self: center;
 }
 
 .mainLoginDiv::after {
@@ -138,6 +160,18 @@ body {
   width: 50%;
   bottom: 0;
   left: 0;
+  background-color: rgb(223, 243, 255);
+  box-shadow: 2px 4px 12px 12px rgb(223, 243, 255);
+  z-index: -1;
+}
+
+.mainregisterDiv::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  bottom: 0;
+  right: 0;
   background-color: rgb(223, 243, 255);
   box-shadow: 2px 4px 12px 12px rgb(223, 243, 255);
   z-index: -1;
@@ -157,8 +191,9 @@ body {
 }
 .form .inputs {
   display: flex;
+  position: relative;
   align-items: center;
-  margin: 0.4rem 0;
+  margin: 0.6rem 0;
   border-bottom: 1px solid lightgray;
   padding-bottom: 0.3rem;
   min-width: 18rem;
@@ -168,6 +203,7 @@ body {
   border: none;
   outline: none;
   margin-left: 1rem;
+  flex-grow: 0.5;
 }
 .form p {
   margin-top: 1.2rem;
