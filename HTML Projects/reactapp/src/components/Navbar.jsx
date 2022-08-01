@@ -59,7 +59,7 @@ function Navbar(props) {
           >
             <NavLink to="/"><img src="img/logo.png" alt="logo" style={{height:"5rem"}}/></NavLink>
           </Typography>
-          <Box sx={{width:"35%", display: { xs: 'none', sm: 'flex' },justifyContent:"space-between" }}>
+          <Box sx={{minWidth:"35%", display: { xs: 'none', sm: 'flex' },justifyContent:"space-between" }}>
             {navItems.map((item) => (
               (item !== "home")?<NavLink to={item} key={item} ><Button sx={{ color: '#fff',}}>{item}</Button></NavLink>:<NavLink to={"/"} key={item} ><Button sx={{ color: '#fff',}}>{item}</Button></NavLink>
             ))}
@@ -68,7 +68,7 @@ function Navbar(props) {
       </AppBar>
       <Box component="nav">
         <Drawer
-          className="navbar"
+          className="navbar responsiveNav"
           container={container}
           variant="temporary"
           open={mobileOpen}
