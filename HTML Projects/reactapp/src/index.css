@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -76,7 +76,7 @@ body {
   z-index: -1;
   width: 50%;
   background-color: rgb(223, 243, 255);
-  box-shadow: 2px 4px 12px 12px rgb(223, 243, 255);
+  box-shadow: 2px 4px 5px 6px rgb(223, 243, 255);
 }
 
 .error {
@@ -125,7 +125,7 @@ body {
   bottom: 0;
   left: 0;
   background-color: rgb(223, 243, 255);
-  box-shadow: 2px 4px 12px 12px rgb(223, 243, 255);
+  box-shadow: 2px 4px 5px 6px rgb(223, 243, 255);
   z-index: -1;
 }
 
@@ -166,6 +166,7 @@ body {
   gap: 1rem;
   width: 50rem;
   padding: 2rem;
+  justify-content: center;
 }
 .registerDiv img {
   width: 20rem;
@@ -180,7 +181,7 @@ body {
   left: 0;
   bottom: 0;
   background-color: rgb(223, 243, 255);
-  box-shadow: 2px 4px 12px 12px rgb(223, 243, 255);
+  box-shadow: 2px 4px 5px 6px rgb(223, 243, 255);
   z-index: -1;
 }
 
@@ -192,7 +193,7 @@ body {
   bottom: 0;
   right: 0;
   background-color: rgb(223, 243, 255);
-  box-shadow: 2px 4px 12px 12px rgb(223, 243, 255);
+  box-shadow: 2px 4px 5px 6px rgb(223, 243, 255);
   z-index: -1;
 }
 
@@ -266,7 +267,7 @@ body {
   bottom: 0;
   left: 0;
   background-color: rgb(223, 243, 255);
-  box-shadow: 2px 4px 12px 12px rgb(223, 243, 255);
+  box-shadow: 2px 4px 5px 6px rgb(223, 243, 255);
   z-index: -1;
 }
 
@@ -357,6 +358,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 4rem 0 2rem 0;
+  position: relative;
 }
 
 .mainAboutDiv::after {
@@ -367,13 +370,13 @@ body {
   bottom: 0;
   left: 0;
   background-color: rgb(223, 243, 255);
-  box-shadow: 2px 4px 12px 12px rgb(223, 243, 255);
+  box-shadow: 2px 4px 5px 6px rgb(223, 243, 255);
   z-index: -1;
 }
 
 .aboutDiv {
   display: flex;
-  min-width: 45rem;
+  width: 45rem;
   padding: 2rem 0 2rem 3rem;
   box-shadow: 4px 4px 8px 4px rgb(145, 145, 145);
 }
@@ -469,11 +472,6 @@ body {
   font-size: 0.8rem;
 }
 
-@media only screen and (max-width: 730px) {
-  .loginDiv img, .registerDiv img {
-    display: none;
-  }
-}
 @media only screen and (max-width: 1130px) {
   .myInfo {
     width: 50rem;
@@ -496,5 +494,49 @@ body {
     grid-row: 4/6;
     grid-column: 1/1;
     width: 100%;
+  }
+  .aboutDiv {
+    flex-direction: column;
+    width: 95%;
+  }
+  .picLinkSection {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 4rem;
+  }
+  .picLinkSection .links {
+    margin: 0;
+  }
+  .aboutInfoSection {
+    padding: 0;
+    padding-right: 4rem;
+  }
+  .aboutIntro h3 {
+    margin: 1rem 0 !important;
+  }
+}
+@media only screen and (max-width: 730px) {
+  .loginDiv img, .registerDiv img {
+    display: none;
+  }
+  .picLinkSection {
+    padding-right: 2vw;
+  }
+  .aboutInfoSection {
+    padding-right: 2vw;
+  }
+  .aboutDiv {
+    padding-left: 2vw;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .aboutInfoSection {
+    padding-right: 0vw;
+  }
+  .aboutDiv {
+    padding-left: 1vw;
+  }
+  .picLinkSection {
+    padding-right: 0vw;
   }
 }/*# sourceMappingURL=index.css.map */
