@@ -3,6 +3,32 @@ import { useFormik } from 'formik';
 import {Person,Lock,Visibility,VisibilityOff,Email,Phone,AccountBalanceOutlined} from '@mui/icons-material';
 import {useNavigate} from "react-router-dom"
 import ReactPasswordToggleIcon  from "react-password-toggle-icon";
+const validate = values => {
+  const errors = {};
+  if (!values.name) {
+    errors.name = 'Required';
+  }
+  if (!values.profession) {
+    errors.profession = 'Required';
+  }
+  if (!values.password) {
+    errors.password = 'Required';
+  } else if (values.password.length < 5) {
+    errors.password = 'Must be 6 characters atleast';
+  }
+  if (!values.phone) {
+    errors.phone = 'Required';
+  } else if (values.phone.length !== 11 ) {
+    errors.phone = 'Must be 11 characters';
+  }
+  if (!values.email) {
+    errors.email = 'Required';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address';
+  }
+  
+  return errors;
+};
 const Register = () => {
   const navigate=useNavigate()
   let inputRef = useRef();
@@ -17,7 +43,7 @@ const Register = () => {
       profession:"",
       password: '',
       cpassword: '',
-    },
+    },validate,
     onSubmit: (values,{resetForm}) => {
       const {name,email,phone,profession,password}=values
       const options = {
@@ -50,6 +76,7 @@ const Register = () => {
          onChange={formik.handleChange}
          value={formik.values.name}
        />
+       {formik.errors.name ? <div>{formik.errors.name}</div> : null}
        </div>
        <div className='inputs'>
        <label htmlFor="email"><Email/></label>
@@ -62,6 +89,7 @@ const Register = () => {
          onChange={formik.handleChange}
          value={formik.values.email}
        />
+       {formik.errors.email ? <div>{formik.errors.email}</div> : null}
        </div>
        <div className='inputs'>
        <label htmlFor="phone"><Phone/></label>
@@ -74,6 +102,7 @@ const Register = () => {
          onChange={formik.handleChange}
          value={formik.values.phone}
        />
+       {formik.errors.phone ? <div>{formik.errors.phone}</div> : null}
        </div>
        <div className='inputs'>
        <label htmlFor="profession"><AccountBalanceOutlined/></label>
@@ -86,6 +115,7 @@ const Register = () => {
          onChange={formik.handleChange}
          value={formik.values.profession}
        />
+       {formik.errors.profession ? <div>{formik.errors.profession}</div> : null}
        </div>
        <div className='inputs'>
        <label htmlFor="password"><Lock/></label>
@@ -99,6 +129,7 @@ const Register = () => {
          onChange={formik.handleChange}
          value={formik.values.password}
        />
+       {formik.errors.password ? <div>{formik.errors.password}</div> : null}
        <ReactPasswordToggleIcon inputRef={inputRef1} showIcon={showIcon} hideIcon={hideIcon} style={{cursor:"pointer",width:"max-content"}}/>
        </div>
        <div className='inputs'>
