@@ -9,7 +9,7 @@
 }
 
 input:-webkit-autofill {
-  box-shadow: 0 0 0 30px rgba(0, 0, 255, 0) inset !important;
+  box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
 }
 
 body {

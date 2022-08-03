@@ -19,7 +19,18 @@ const Register = () => {
       cpassword: '',
     },
     onSubmit: (values,{resetForm}) => {
-      console.log(values)
+      const {name,email,phone,profession,password}=values
+      const options = {
+        method: 'POST',
+        body: JSON.stringify({name,email,phone,profession,password}),
+        headers:{
+          "Content-Type":"application/json"
+        }
+      };
+      fetch('http://localhost:5000/register', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
       resetForm({values:""})
     },
   });
