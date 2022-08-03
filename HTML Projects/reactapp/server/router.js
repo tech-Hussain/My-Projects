@@ -1,13 +1,14 @@
 import express from "express";
 import Userdata from "./model.js";
+import cors from "cors"
 const router=express.Router()
 router.use(express.json())
-
+router.use(cors())
 router.post("/register",async (req,res)=>{
     try {
-        const {username,email,mobile,profession,password}=req.body
+        const {name,email,phone,profession,password}=req.body
         const userdata=new Userdata({
-            username,email,mobile,profession,password
+            name,email,phone,profession,password
         })
         await userdata.save()
         res.send("registered sucessfully");
