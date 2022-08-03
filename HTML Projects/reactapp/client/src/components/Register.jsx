@@ -2,7 +2,40 @@ import React,{useRef} from 'react'
 import { useFormik } from 'formik';
 import {Person,Lock,Visibility,VisibilityOff,Email,Phone,AccountBalanceOutlined} from '@mui/icons-material';
 import {useNavigate} from "react-router-dom"
+import {ToastContainer,toast} from 'react-toastify';
 import ReactPasswordToggleIcon  from "react-password-toggle-icon";
+const validate = values => {
+  const errors = {};
+  if (!values.name) {
+    errors.name = 'Required';
+  }
+  if (!values.profession) {
+    errors.profession = 'Required';
+  }
+  if (!values.password) {
+    errors.password = 'Required';
+  } else if (values.password.length < 5) {
+    errors.password = 'Must be 6 characters atleast';
+  }
+  if (!values.phone) {
+    errors.phone = 'Required';
+  } else if (values.phone.toString().length !== 10) {
+    errors.phone = `Must be 11 characters ${values.phone.toString().length}`;
+  }
+  if (!values.cpassword) {
+    errors.cpassword = 'Required';
+  } else if (values.cpassword !== values.password) {
+    errors.cpassword = 'Password are not matched';
+  }
+  if (!values.email) {
+    errors.email = 'Required';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address';
+  }
+
+  return errors;
+};
+
 const Register = () => {
   const navigate=useNavigate()
   let inputRef = useRef();
@@ -17,7 +50,7 @@ const Register = () => {
       profession:"",
       password: '',
       cpassword: '',
-    },
+    },validate,
     onSubmit: (values,{resetForm}) => {
       const {name,email,phone,profession,password}=values
       const options = {
@@ -28,10 +61,23 @@ const Register = () => {
         }
       };
       fetch('http://localhost:5000/register', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
+        .then(res=>res.json())
+        .then(()=>{
+          resetForm({values:""})
+          toast.success("Registered Successfully", {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          })
+          setTimeout(() => {
+            navigate("/login")
+          }, 2200);
+        })
         .catch(err => console.error(err));
-      resetForm({values:""})
     },
   });
   return (
@@ -51,6 +97,7 @@ const Register = () => {
          value={formik.values.name}
        />
        </div>
+       {formik.errors.name ? <div className="errormsg">{formik.errors.name}</div> : null}
        <div className='inputs'>
        <label htmlFor="email"><Email/></label>
        <input
@@ -63,6 +110,7 @@ const Register = () => {
          value={formik.values.email}
        />
        </div>
+       {formik.errors.email ? <div className="errormsg">{formik.errors.email}</div> : null}
        <div className='inputs'>
        <label htmlFor="phone"><Phone/></label>
        <input
@@ -75,6 +123,7 @@ const Register = () => {
          value={formik.values.phone}
        />
        </div>
+       {formik.errors.phone ? <div className="errormsg">{formik.errors.phone}</div> : null}
        <div className='inputs'>
        <label htmlFor="profession"><AccountBalanceOutlined/></label>
        <input
@@ -87,6 +136,7 @@ const Register = () => {
          value={formik.values.profession}
        />
        </div>
+       {formik.errors.profession ? <div className="errormsg">{formik.errors.profession}</div> : null}
        <div className='inputs'>
        <label htmlFor="password"><Lock/></label>
        <input
@@ -101,6 +151,7 @@ const Register = () => {
        />
        <ReactPasswordToggleIcon inputRef={inputRef1} showIcon={showIcon} hideIcon={hideIcon} style={{cursor:"pointer",width:"max-content"}}/>
        </div>
+       {formik.errors.password ? <div className="errormsg">{formik.errors.password}</div> : null}
        <div className='inputs'>
        <label htmlFor="cpassword"><Lock/></label>
        <input
@@ -115,7 +166,9 @@ const Register = () => {
        />
        <ReactPasswordToggleIcon inputRef={inputRef} showIcon={showIcon} hideIcon={hideIcon} style={{cursor:"pointer",width:"max-content"}}/>
        </div>
+       {formik.errors.cpassword ? <div className="errormsg">{formik.errors.cpassword}</div> : null}
        <button type="submit">Register</button>
+       <ToastContainer/>
        <p>Already Registered?<button className='linkbtn' onClick={()=>navigate("/login")}>Click to Sign In</button></p>
      </form>
      <img src="img/register.png" alt="login" />
