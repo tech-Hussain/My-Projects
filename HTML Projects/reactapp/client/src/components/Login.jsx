@@ -19,6 +19,7 @@ const Login = () => {
       const options = {
         method: 'POST',
         body: JSON.stringify({ email, password }),
+        credentials: 'include',
         headers: {
           "Content-Type": "application/json"
         }
@@ -41,6 +42,17 @@ const Login = () => {
         }, 2500);
       }
       else if(res==="Invalid Credentials"){
+        toast.error(res, {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      }
+      else if(res==="Server Error"){
         toast.error(res, {
           position: "top-center",
           autoClose: 1000,
