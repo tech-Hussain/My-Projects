@@ -1,6 +1,27 @@
-import React from 'react'
-
+import React,{ useEffect,useState} from 'react'
+import { useNavigate} from "react-router-dom";
 const About = () => {
+  let navigate = useNavigate();
+  const [info, setinfo] = useState({})
+  const checkLogin=async()=>{
+    const options = {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        "Accept":"application/json",
+        "Content-Type": "application/json"
+      }
+    };
+    const data=await fetch('http://localhost:5000/about', options)
+    const UserInfo=await data.json()
+    setinfo(UserInfo)
+    if (!UserInfo) {
+      navigate("/login")
+    }
+  }
+  useEffect(() => {
+    checkLogin()
+  },[])
   return (
     <div className='mainAboutDiv'>
       <div className='aboutDiv'>
@@ -29,8 +50,8 @@ const About = () => {
         <div className='aboutInfoSection'>
           <div className='infoIntro'>
             <div>
-              <h2>Syed Muhammad Hussain</h2>
-              <h3>Web Developer & Designer</h3>
+              <h2>{info.name}</h2>
+              <h3>{info.profession}</h3>
             </div>
             <div style={{ color: "grey", cursor: "pointer" }}>Edit Profile</div>
           </div>
@@ -38,15 +59,15 @@ const About = () => {
             <h3>Your Info</h3>
             <div className='realInfo'>
               <p className='infoTitle'>User Id</p>
-              <p className='infoData'>62c0a85d83e7b8f2d76e5346</p>
+              <p className='infoData'>{info._id}</p>
               <p className='infoTitle'>Name</p>
-              <p className='infoData'>Syed Muhammad Hussain</p>
+              <p className='infoData'>{info.name}</p>
               <p className='infoTitle'>Email</p>
-              <p className='infoData'>hussain@tech.com</p>
+              <p className='infoData'>{info.email}</p>
               <p className='infoTitle'>Phone</p>
-              <p className='infoData'>987643215</p>
+              <p className='infoData'>{info.phone}</p>
               <p className='infoTitle'>Profession</p>
-              <p className='infoData'>Web Developer & Designer</p>
+              <p className='infoData'>{info.profession}</p>
             </div>
           </div>
         </div>
