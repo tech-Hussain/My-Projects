@@ -32,8 +32,11 @@ router.post("/register",async (req,res)=>{
             name,email,phone,profession,password
         })
         await userdata.save()
-        return res.json("registered sucessfully");
+        return res.json("Registered Successfully");
     } catch (error) {
+        if (error.code===11000) {
+            return res.json("Email already exist")
+        }
         console.log(error);
     }
 
