@@ -62,20 +62,34 @@ const Register = () => {
       };
       fetch('http://localhost:5000/register', options)
         .then(res=>res.json())
-        .then(()=>{
-          resetForm({values:""})
-          toast.success("Registered Successfully", {
-            position: "top-center",
-            autoClose: 1000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          })
-          setTimeout(() => {
-            navigate("/login")
-          }, 2500);
+        .then(res=>{
+          console.log(res);
+          if (res==="Registered Successfully") {
+            resetForm({values:""})
+            toast.success(res, {
+              position: "top-center",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            })
+            setTimeout(() => {
+              navigate("/login")
+            }, 2500);
+          }
+          else if(res==="Email already exist"){
+            toast.error(res, {
+              position: "top-center",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            })
+          }
         })
         .catch(err => console.error(err));
     },
