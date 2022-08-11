@@ -28,7 +28,9 @@ body {
   padding: 0.5rem 0;
   background: white !important;
 }
-.navbar div, .navbar button, .navbar a {
+.navbar div,
+.navbar button,
+.navbar a {
   font-family: "Lato", sans-serif !important;
   font-size: 0.8rem;
   color: rgb(163, 163, 163) !important;
@@ -36,7 +38,8 @@ body {
   text-decoration: none;
 }
 
-.active button, .active .activeText span {
+.active button,
+.active .activeText span {
   border-radius: 0px;
   color: rgb(0, 0, 0) !important;
   border-bottom: 2px solid rgb(194, 170, 134);
@@ -328,12 +331,14 @@ body {
   grid-column: 1/4;
   width: 100%;
 }
-.myMsgDiv input, .myMsgDiv textarea {
+.myMsgDiv input,
+.myMsgDiv textarea {
   background-color: transparent;
   border: none;
   outline: none;
 }
-.myMsgDiv input:focus, .myMsgDiv textarea:focus {
+.myMsgDiv input:focus,
+.myMsgDiv textarea:focus {
   border: 1px solid rgb(153, 153, 153);
   border-radius: 0.2rem;
 }
@@ -393,8 +398,7 @@ body {
   width: 100%;
   border-radius: 1rem 1rem 0 0;
 }
-.picLinkSection .img::after {
-  content: "Change Photo";
+.picLinkSection .img #labelFile {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -406,6 +410,9 @@ body {
   text-align: center;
   background-color: rgba(170, 170, 170, 0.856);
   cursor: pointer;
+}
+.picLinkSection .img #labelFile input {
+  display: none;
 }
 .picLinkSection li {
   list-style: none;
@@ -521,7 +528,8 @@ body {
   }
 }
 @media only screen and (max-width: 730px) {
-  .loginDiv img, .registerDiv img {
+  .loginDiv img,
+.registerDiv img {
     display: none;
   }
   .picLinkSection {
