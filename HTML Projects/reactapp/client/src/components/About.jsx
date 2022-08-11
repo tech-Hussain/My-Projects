@@ -28,7 +28,7 @@ const About = () => {
       <div className='aboutDiv'>
         <div className='picLinkSection'>
           <div className='img'>
-            <img src={ProfilePicGen()} alt="profilePic" />
+            <img src={ProfilePicGen(info.name)} alt="profilePic" />
           </div>
           <div className='links'>
             <ul>
