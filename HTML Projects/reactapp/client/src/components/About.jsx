@@ -1,5 +1,6 @@
 import React,{ useEffect,useState} from 'react'
 import { useNavigate} from "react-router-dom";
+import ProfilePicGen from './ProfilePicGen';
 const About = () => {
   let navigate = useNavigate();
   const [info, setinfo] = useState({})
@@ -27,7 +28,7 @@ const About = () => {
       <div className='aboutDiv'>
         <div className='picLinkSection'>
           <div className='img'>
-            <img src="img/profile.jpg" alt="profilePic" />
+            <img src={ProfilePicGen()} alt="profilePic" />
           </div>
           <div className='links'>
             <ul>
@@ -53,7 +54,7 @@ const About = () => {
               <h2>{info.name}</h2>
               <h3>{info.profession}</h3>
             </div>
-            <div style={{ color: "grey", cursor: "pointer" }}>Edit Profile</div>
+            <div style={{ color: "gray", cursor: "pointer",}}>Edit Profile</div>
           </div>
           <div className='aboutIntro'>
             <h3>Your Info</h3>
