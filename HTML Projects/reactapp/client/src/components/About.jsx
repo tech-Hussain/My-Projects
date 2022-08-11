@@ -1,8 +1,22 @@
 import React,{ useEffect,useState} from 'react'
 import { useNavigate} from "react-router-dom";
+import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 import ProfilePicGen from './ProfilePicGen';
 const About = () => {
   let navigate = useNavigate();
+  const handleFile=async (event)=>{
+    let formData=new FormData();
+    formData.append("file",event.target.files[0])
+    formData.append("fileName",event.target.files[0].name)
+    const options = {
+      method:"POST",
+      body:formData,
+      redirect:"follow"
+    };
+    const data=await fetch('http://localhost:5000/file', options)
+    const res=await data.json()
+    console.log(res);
+  }
   const [info, setinfo] = useState({})
   const checkLogin=async()=>{
     const options = {
@@ -29,6 +43,11 @@ const About = () => {
         <div className='picLinkSection'>
           <div className='img'>
             <img src={ProfilePicGen(info.name)} alt="profilePic" />
+            <label htmlFor="profilePic" id='labelFile'><PhotoCameraIcon style={{color:"white"}}/>
+            <input type="file" name="profilePic" id="profilePic" accept="image/png, image/jpg, image/jpeg"
+               onChange={handleFile}
+            />
+            </label>
           </div>
           <div className='links'>
             <ul>

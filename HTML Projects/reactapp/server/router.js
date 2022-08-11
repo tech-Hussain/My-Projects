@@ -4,8 +4,10 @@ import cors from "cors"
 import bcrypt from 'bcryptjs'
 import cookieParser from "cookie-parser";
 import jwt from "jsonwebtoken"
+import fileUpload from "express-fileupload";
 const router=express.Router()
 router.use(express.json())
+router.use(fileUpload())
 router.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 router.use(cookieParser())
 const authenticate=async(req,res,next)=>{
@@ -66,6 +68,14 @@ router.post("/login",async (req,res)=>{
         return res.json("Server Error")
     }
 
+})
+router.post("/file",(req,res)=>{
+    if (req.files) {
+        res.json("milgaya")
+    }
+    else{
+        res.json("nhui mila")
+    }
 })
 router.get("/about",authenticate,(req,res)=>{
     res.json(req.user)
