@@ -52,6 +52,7 @@ const Register = () => {
       cpassword: '',
     },validate,
     onSubmit: (values,{resetForm}) => {
+      console.log(formik);
       const {name,email,phone,profession,password}=values
       const options = {
         method: 'POST',
@@ -63,7 +64,6 @@ const Register = () => {
       fetch('http://localhost:5000/register', options)
         .then(res=>res.json())
         .then(res=>{
-          console.log(res);
           if (res==="Registered Successfully") {
             resetForm({values:""})
             toast.success(res, {
@@ -108,10 +108,11 @@ const Register = () => {
          spellCheck="false"
          placeholder='Your Name'
          onChange={formik.handleChange}
+         onBlur={formik.handleBlur}
          value={formik.values.name}
        />
        </div>
-       {formik.errors.name ? <div className="errormsg">{formik.errors.name}</div> : null}
+       {formik.errors.name  && formik.touched.name ? <div className="errormsg">{formik.errors.name}</div> : null}
        <div className='inputs'>
        <label htmlFor="email"><Email/></label>
        <input
@@ -121,10 +122,11 @@ const Register = () => {
          spellCheck="false"
          placeholder='Your Email'
          onChange={formik.handleChange}
+         onBlur={formik.handleBlur}
          value={formik.values.email}
        />
        </div>
-       {formik.errors.email ? <div className="errormsg">{formik.errors.email}</div> : null}
+       {formik.errors.email && formik.touched.email ? <div className="errormsg">{formik.errors.email}</div> : null}
        <div className='inputs'>
        <label htmlFor="phone"><Phone/></label>
        <input
@@ -134,10 +136,11 @@ const Register = () => {
          spellCheck="false"
          placeholder='Mobile Number'
          onChange={formik.handleChange}
+         onBlur={formik.handleBlur}
          value={formik.values.phone}
        />
        </div>
-       {formik.errors.phone ? <div className="errormsg">{formik.errors.phone}</div> : null}
+       {formik.errors.phone  && formik.touched.phone ? <div className="errormsg">{formik.errors.phone}</div> : null}
        <div className='inputs'>
        <label htmlFor="profession"><AccountBalanceOutlined/></label>
        <input
@@ -147,10 +150,11 @@ const Register = () => {
          spellCheck="false"
          placeholder='Your Profession'
          onChange={formik.handleChange}
+         onBlur={formik.handleBlur}
          value={formik.values.profession}
        />
        </div>
-       {formik.errors.profession ? <div className="errormsg">{formik.errors.profession}</div> : null}
+       {formik.errors.profession  && formik.touched.profession ? <div className="errormsg">{formik.errors.profession}</div> : null}
        <div className='inputs'>
        <label htmlFor="password"><Lock/></label>
        <input
@@ -161,11 +165,12 @@ const Register = () => {
          type="password"
          placeholder='Password'
          onChange={formik.handleChange}
+         onBlur={formik.handleBlur}
          value={formik.values.password}
        />
        <ReactPasswordToggleIcon inputRef={inputRef1} showIcon={showIcon} hideIcon={hideIcon} style={{cursor:"pointer",width:"max-content"}}/>
        </div>
-       {formik.errors.password ? <div className="errormsg">{formik.errors.password}</div> : null}
+       {formik.errors.password  && formik.touched.password? <div className="errormsg">{formik.errors.password}</div> : null}
        <div className='inputs'>
        <label htmlFor="cpassword"><Lock/></label>
        <input
@@ -176,11 +181,12 @@ const Register = () => {
          type="password"
          placeholder='Confirm Your Password'
          onChange={formik.handleChange}
+         onBlur={formik.handleBlur}
          value={formik.values.cpassword}
        />
        <ReactPasswordToggleIcon inputRef={inputRef} showIcon={showIcon} hideIcon={hideIcon} style={{cursor:"pointer",width:"max-content"}}/>
        </div>
-       {formik.errors.cpassword ? <div className="errormsg">{formik.errors.cpassword}</div> : null}
+       {formik.errors.cpassword  && formik.touched.cpassword ? <div className="errormsg">{formik.errors.cpassword}</div> : null}
        <button type="submit">Register</button>
        <ToastContainer/>
        <p>Already Registered?<button className='linkbtn' onClick={()=>navigate("/login")}>Click to Sign In</button></p>
