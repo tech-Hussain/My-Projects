@@ -133,5 +133,47 @@ import math
 # # Print the schedule
 # for entry in schedule:
 #     print(f"Procedure: {entry['procedure']['name']}, Room: {entry['room']}, Start Time: {entry['start_time']}")
+#
+# import tkinter as tk
+#
+# root = tk.Tk()
+# container = tk.Frame(root)
+# canvas = tk.Canvas(container)
+# scrollbar = tk.Scrollbar(container, orient="vertical", command=canvas.yview)
+# frame = tk.Frame(canvas,width=100)
+#
+# frame.bind("<Configure>",lambda e: canvas.configure(scrollregion=canvas.bbox("all"),width=e.width))
+#
+# canvas.create_window((0, 0), window=frame, anchor="nw")
+#
+# canvas.configure(yscrollcommand=scrollbar.set)
+# container.pack()
+# canvas.pack(side="left", fill="both", expand=True)
+# scrollbar.pack(side="right", fill="y")
+#
+# for i in range(50):
+#     tk.Label(frame, text=f"{i}:     example1_example2_example3_example4_example5_example6_example7_example8_example9_example10_example11_example12_example13_example14_example15_example16_").pack()
+# root.update()
+# x=root.winfo_width()
+# print(x)
+#
+# root.mainloop()
 
+
+import tkinter as tk
+
+def open_new_window():
+    new_window = tk.Toplevel()
+    new_window.title("New Window")
+    label = tk.Label(new_window, text="This is a new window")
+    label.pack()
+    new_window.mainloop()
+
+root = tk.Tk()
+root.title("Main Window")
+
+button = tk.Button(root, text="Open New Window", command=open_new_window)
+button.pack()
+
+root.mainloop()
 
