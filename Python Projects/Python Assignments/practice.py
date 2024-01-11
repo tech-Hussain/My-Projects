@@ -160,20 +160,67 @@ import math
 # root.mainloop()
 
 
+# import customtkinter
+#
+#
+#
+# root = customtkinter.CTk()
+# root.title("Main Window")
+# def combobox_callback(choice):
+#     print("combobox dropdown clicked:", choice)
+#
+# combobox_var = customtkinter.StringVar()
+# combobox = customtkinter.CTkComboBox(root, values=["option 1", "option 2"],
+#                                      command=combobox_callback, variable=combobox_var)
+# combobox.pack()
+# button = customtkinter.CTkButton(root, text="Open New Window", )
+# button.pack()
+
+
+# def optionmenu_callback(choice):
+#     print("optionmenu dropdown clicked:", choice)
+#
+# optionmenu_var = customtkinter.StringVar(value="option 2")
+# optionmenu = customtkinter.CTkOptionMenu(root,values=["option 1", "option 2"],
+#                                          command=optionmenu_callback,
+#                                          variable=optionmenu_var)
+# optionmenu.pack()
+# root.mainloop()
+
+
 import tkinter as tk
 
-def open_new_window():
-    new_window = tk.Toplevel()
-    new_window.title("New Window")
-    label = tk.Label(new_window, text="This is a new window")
-    label.pack()
-    new_window.mainloop()
+def clear_selected_widgets():
+    # Iterate through the widgets in the frame
+    for widget in frame.winfo_children():
+        # Check if the widget is selected (you can use a specific condition)
+        if isinstance(widget, tk.Entry):
+            # Destroy the selected widget
+            widget.destroy()
 
+def some_condition(widget):
+    # Add your condition to determine if the widget should be cleared
+    # For example, you might want to clear Entry widgets or Labels based on a condition
+    return isinstance(widget, tk.Entry)
+
+# Create the main Tkinter window
 root = tk.Tk()
-root.title("Main Window")
 
-button = tk.Button(root, text="Open New Window", command=open_new_window)
+root.title("Clear Widgets Example")
+frame = tk.Frame(root)
+frame.pack(padx=10, pady=10)
+
+# Example widgets in the frame
+label = tk.Label(frame, text="Label")
+label.pack()
+
+entry = tk.Entry(frame)
+entry.pack()
+
+button = tk.Button(frame, text="Clear Selected Widgets", command=clear_selected_widgets)
 button.pack()
 
+print(frame.winfo_children())# Create a frame to hold widgets
+# Run the Tkinter event loop
 root.mainloop()
 
