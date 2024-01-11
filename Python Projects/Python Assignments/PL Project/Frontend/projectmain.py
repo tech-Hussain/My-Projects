@@ -26,4 +26,6 @@ btn2=CTkButton(master=interFrame,text="Book Appointment",corner_radius=15, font=
 btn2.pack(side=LEFT,ipadx=20,ipady=15,padx=10)
 btn3=CTkButton(master=interFrame,text="Patient History", corner_radius=15,font=("Helvetica",20),hover=True ,hover_color="#243959",image=CTkImage(historyicon))
 btn3.pack(side=LEFT,ipadx=20,ipady=15,padx=10)
+app.lower()
+
 app.mainloop()
