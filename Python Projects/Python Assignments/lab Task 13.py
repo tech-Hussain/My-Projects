@@ -5,6 +5,7 @@ root.geometry("1005x800")
 root.title("Scientific Calculator ")
 root.configure(background="#202f41")
 icon=PhotoImage(file="icon.png")
+print(icon)
 root.iconphoto(False,icon)
 # Functions
 def inputFunc(event):
