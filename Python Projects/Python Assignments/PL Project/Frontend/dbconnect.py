@@ -1,7 +1,7 @@
 import pyodbc
 db_path = r'../Backend/Hospital Database.accdb'
 conn_str = r'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=' + db_path
-
+from printpdf import generate_receipt
 def getDoctorData(data):
     conn = pyodbc.connect(conn_str)
     cursor = conn.cursor()
@@ -35,6 +35,7 @@ def getDoctorData(data):
 
 def updatePatientData(id,Name,Age,Gender,DocId):
     import datetime
+    import os
     x = datetime.datetime.now()
     conn = pyodbc.connect(conn_str)
     cursor = conn.cursor()
@@ -59,6 +60,11 @@ def updatePatientData(id,Name,Age,Gender,DocId):
     cursor.execute(appointment_query, (prevAppointments+1,DocId))
 
     cursor.commit()
+    cursor.execute(f"SELECT Patients.*, [Doctors List].[Doctor Name] FROM [Doctors List] INNER JOIN Patients ON [Doctors List].[Doctor ID] = Patients.docId WHERE (((Patients.PatientID)={id}));")
+    resultRow=cursor.fetchall()
+    lastRow=resultRow[-1]
+    generate_receipt("Receipt.pdf",lastRow[1],lastRow[2],lastRow[3],lastRow[-3],lastRow[5].strftime("%x"),lastRow[4].strftime("%I:%M:%S %p"),lastRow[-1])
+    os.system("Receipt.pdf")
     cursor.close()
     conn.close()
 
@@ -70,10 +76,19 @@ def reset_appointments():
     cursor.commit()
     cursor.close()
     conn.close()
+
+def getPatientData(id):
+    conn = pyodbc.connect(conn_str)
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT Patients.*, [Doctors List].[Doctor Name] FROM [Doctors List] INNER JOIN Patients ON [Doctors List].[Doctor ID] = Patients.docId WHERE (((Patients.PatientID)={id}));")
+    rows = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return rows
 # conn = pyodbc.connect(conn_str)
 # cursor = conn.cursor()
 # cursor.execute("DELETE FROM Patients")
 # cursor.commit()
 # cursor.close()
 # reset_appointments()
-updatePatientData(0,"h",12,"male",12)
+# updatePatientData(0,"h",12,"male",12)
