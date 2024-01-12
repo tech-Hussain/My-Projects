@@ -1,14 +1,16 @@
 from customtkinter import *
+from dbconnect import updatePatientData
+def openPatientsForm(docId):
 
-def openPatientsForm():
-
+    def genderValue(value):
+        gender_var.set(value)
     def submit_form():
 
+        patient_id = id_entry.get()
         patient_name = name_entry.get()
         patient_age = age_entry.get()
         patient_gender = gender_var.get()
-        patient_id = id_entry.get()
-
+        updatePatientData(patient_id,patient_name,patient_age,patient_gender,docId)
 
 
     app = CTk()
@@ -45,7 +47,7 @@ def openPatientsForm():
     gender_label.grid(row=3, column=0, padx=5, pady=5)
 
     gender_var = StringVar(value="Select")
-    gender_combobox = CTkComboBox(frame, variable=gender_var, values=["Male", "Female",],width=200)
+    gender_combobox = CTkComboBox(frame, variable=gender_var, values=["Male", "Female",],width=200,command=genderValue)
     gender_combobox.grid(row=3, column=1, padx=5, pady=5)
 
 

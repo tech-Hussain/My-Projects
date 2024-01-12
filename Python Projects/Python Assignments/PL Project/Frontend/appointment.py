@@ -8,7 +8,9 @@ def openAppointment():
     def on_frame_configure(event):
         canvas.configure(scrollregion=canvas.bbox("all"))
         canvas.itemconfigure(1, width=(app.winfo_width()) - 20)
-
+    def patientForm(x):
+        print(x)
+        openPatientsForm(12)
     set_appearance_mode("Dark")
     set_default_color_theme("dark-blue")
     app = CTkToplevel()
@@ -41,7 +43,7 @@ def openAppointment():
             DocPic.place(relx=0.99, rely=0.5, anchor="e")
 
             Docbtn = CTkButton(master=childDoctorFrame, text="Book ", corner_radius=10, font=("Helvetica", 18),
-                                   hover=True, hover_color="#243959", width=75, height=40,command=openPatientsForm)
+                                   hover=True, hover_color="#243959", width=75, height=40,command=lambda :patientForm(i))
             Docbtn.place(relx=0.3, rely=0.7, )
             Docappoint = CTkLabel(master=childDoctorFrame, text=f"No of Appointments: {i[6]}", font=("Helvetica", 17,"bold")
                                    , width=75, height=40,text_color="#646870")
@@ -84,4 +86,4 @@ def openAppointment():
     app.mainloop()
 
 
-# openAppointment()
+openAppointment()
