@@ -188,39 +188,59 @@ import math
 # root.mainloop()
 
 
+# import tkinter as tk
+#
+# def clear_selected_widgets():
+#     # Iterate through the widgets in the frame
+#     for widget in frame.winfo_children():
+#         # Check if the widget is selected (you can use a specific condition)
+#         if isinstance(widget, tk.Entry):
+#             # Destroy the selected widget
+#             widget.destroy()
+#
+# def some_condition(widget):
+#     # Add your condition to determine if the widget should be cleared
+#     # For example, you might want to clear Entry widgets or Labels based on a condition
+#     return isinstance(widget, tk.Entry)
+#
+# # Create the main Tkinter window
+# root = tk.Tk()
+#
+# root.title("Clear Widgets Example")
+# frame = tk.Frame(root)
+# frame.pack(padx=10, pady=10)
+#
+# # Example widgets in the frame
+# label = tk.Label(frame, text="Label")
+# label.pack()
+#
+# entry = tk.Entry(frame)
+# entry.pack()
+#
+# button = tk.Button(frame, text="Clear Selected Widgets", command=clear_selected_widgets)
+# button.pack()
+#
+# print(frame.winfo_children())# Create a frame to hold widgets
+# # Run the Tkinter event loop
+# root.mainloop()
+
 import tkinter as tk
 
-def clear_selected_widgets():
-    # Iterate through the widgets in the frame
-    for widget in frame.winfo_children():
-        # Check if the widget is selected (you can use a specific condition)
-        if isinstance(widget, tk.Entry):
-            # Destroy the selected widget
-            widget.destroy()
+def button_callback(button_number):
+    print(f"Button {button_number} clicked!")
 
-def some_condition(widget):
-    # Add your condition to determine if the widget should be cleared
-    # For example, you might want to clear Entry widgets or Labels based on a condition
-    return isinstance(widget, tk.Entry)
-
-# Create the main Tkinter window
 root = tk.Tk()
+root.title("Button Example")
 
-root.title("Clear Widgets Example")
-frame = tk.Frame(root)
-frame.pack(padx=10, pady=10)
+# Number of buttons you want to create
+num_buttons = 5
 
-# Example widgets in the frame
-label = tk.Label(frame, text="Label")
-label.pack()
+# List to store the buttons
+buttons = []
 
-entry = tk.Entry(frame)
-entry.pack()
+# Create buttons using a for loop
+for i in range(num_buttons):
+    button = tk.Button(root, text=f"Button {i+1}", command=lambda num=i: button_callback(num))
+    button.pack()
 
-button = tk.Button(frame, text="Clear Selected Widgets", command=clear_selected_widgets)
-button.pack()
-
-print(frame.winfo_children())# Create a frame to hold widgets
-# Run the Tkinter event loop
 root.mainloop()
-

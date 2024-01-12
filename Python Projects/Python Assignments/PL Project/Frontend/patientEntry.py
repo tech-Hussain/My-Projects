@@ -5,13 +5,14 @@ def openPatientsForm(docId):
     def genderValue(value):
         gender_var.set(value)
     def submit_form():
-
         patient_id = id_entry.get()
         patient_name = name_entry.get()
         patient_age = age_entry.get()
         patient_gender = gender_var.get()
+        if patient_id=="":
+            patient_id=0
         updatePatientData(patient_id,patient_name,patient_age,patient_gender,docId)
-
+        app.destroy()
 
     app = CTk()
     app.title("Patient Entry Form")

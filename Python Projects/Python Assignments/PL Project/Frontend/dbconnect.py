@@ -38,12 +38,42 @@ def updatePatientData(id,Name,Age,Gender,DocId):
     x = datetime.datetime.now()
     conn = pyodbc.connect(conn_str)
     cursor = conn.cursor()
-    sql_query = f"INSERT INTO Patients VALUES (?, ?, ? ,?,?,?,?);"
-
-    # Execute the query with parameters
-    cursor.execute(sql_query, (id,Name,Age,x.strftime("%X"),x.strftime("%x"),Gender,DocId))
-    cursor.commit()
-    cursor.execute("SELECT Patients.* FROM Patients;")
+    patient_query = "INSERT INTO Patients (PatientID,PatientName,Age,AppointTime,AppointDate,Gender,docId) VALUES (?, ?, ? ,?,?,?,?);"
+    appointment_query = "UPDATE [Doctors List] SET Appointments = ? WHERE [Doctor ID] = ?"
+    if id ==0:
+        cursor.execute("SELECT Patients.PatientID FROM Patients;")
+        rows = cursor.fetchall()
+        newRow=[]
+        if len(rows)==0:
+            id=1
+        else:
+            for row in rows:
+                newRow.append(row[0])
+            newRow.sort()
+            id=newRow[-1]+1
+    cursor.execute(f"SELECT  Appointments FROM [Doctors List] WHERE [Doctors List].[Doctor ID]={DocId}")
     rows = cursor.fetchall()
+    prevAppointments=rows[0][0]
+    cursor.execute(patient_query, (id,Name,Age,x.strftime("%X"),x.strftime("%x"),Gender,DocId))
 
-# getDoctorData("All")
+    cursor.execute(appointment_query, (prevAppointments+1,DocId))
+
+    cursor.commit()
+    cursor.close()
+    conn.close()
+
+def reset_appointments():
+    conn = pyodbc.connect(conn_str)
+    cursor = conn.cursor()
+    appointment_reset_query = "UPDATE [Doctors List] SET Appointments = ? "
+    cursor.execute(appointment_reset_query, (0))
+    cursor.commit()
+    cursor.close()
+    conn.close()
+# conn = pyodbc.connect(conn_str)
+# cursor = conn.cursor()
+# cursor.execute("DELETE FROM Patients")
+# cursor.commit()
+# cursor.close()
+# reset_appointments()
+updatePatientData(0,"h",12,"male",12)
