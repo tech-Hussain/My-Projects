@@ -33,5 +33,17 @@ def getDoctorData(data):
     conn.close()
     return updateData
 
+def updatePatientData(id,Name,Age,Gender,DocId):
+    import datetime
+    x = datetime.datetime.now()
+    conn = pyodbc.connect(conn_str)
+    cursor = conn.cursor()
+    sql_query = f"INSERT INTO Patients VALUES (?, ?, ? ,?,?,?,?);"
+
+    # Execute the query with parameters
+    cursor.execute(sql_query, (id,Name,Age,x.strftime("%X"),x.strftime("%x"),Gender,DocId))
+    cursor.commit()
+    cursor.execute("SELECT Patients.* FROM Patients;")
+    rows = cursor.fetchall()
 
 # getDoctorData("All")
