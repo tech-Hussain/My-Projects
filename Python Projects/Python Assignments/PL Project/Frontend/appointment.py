@@ -4,18 +4,25 @@ from PIL import Image
 import dbconnect
 from patientEntry import openPatientsForm
 
+
 def openAppointment():
     def on_frame_configure(event):
         canvas.configure(scrollregion=canvas.bbox("all"))
         canvas.itemconfigure(1, width=(app.winfo_width()) - 20)
-    def patientForm(x):
-        print(x)
-        openPatientsForm(12)
+
+    def PatientsForm(num):
+        openPatientsForm(num)
+
+    def reset():
+        dbconnect.reset_appointments()
+        displayRecords("All")
+
     set_appearance_mode("Dark")
     set_default_color_theme("dark-blue")
     app = CTkToplevel()
     app.geometry("1000x800")
     app.minsize(1300, 1000)
+
     def displayRecords(val):
         for x in DoctorMainFrame.winfo_children():
             if isinstance(x, CTkFrame):
@@ -43,15 +50,17 @@ def openAppointment():
             DocPic.place(relx=0.99, rely=0.5, anchor="e")
 
             Docbtn = CTkButton(master=childDoctorFrame, text="Book ", corner_radius=10, font=("Helvetica", 18),
-                                   hover=True, hover_color="#243959", width=75, height=40,command=lambda :patientForm(i))
+                               hover=True, hover_color="#243959", width=75, height=40,
+                               command=lambda num=i[0]: PatientsForm(num))
             Docbtn.place(relx=0.3, rely=0.7, )
-            Docappoint = CTkLabel(master=childDoctorFrame, text=f"No of Appointments: {i[6]}", font=("Helvetica", 17,"bold")
-                                   , width=75, height=40,text_color="#646870")
+            Docappoint = CTkLabel(master=childDoctorFrame, text=f"No of Appointments: {i[6]}",
+                                  font=("Helvetica", 17, "bold")
+                                  , width=75, height=40, text_color="#646870")
             Docappoint.place(relx=0.45, rely=0.7, )
             app.update()
+
     def selectDocs(choice):
         displayRecords(choice)
-
 
     app.title("CareYour Centre")
     header = CTkLabel(master=app, text="Appointment Dashboard", font=("Helvetica", 55), text_color="White")
@@ -60,7 +69,7 @@ def openAppointment():
     separator.pack(fill=X)
     canvas = CTkCanvas(master=app)
 
-    canvas.pack(fill=BOTH, expand=True,)
+    canvas.pack(fill=BOTH, expand=True, )
     scrollbar = CTkScrollbar(master=canvas, command=canvas.yview)
 
     scrollbar.pack(side=RIGHT, fill=Y)
@@ -74,16 +83,20 @@ def openAppointment():
     canvas.configure(yscrollcommand=scrollbar.set)
     docChoice_var = StringVar(value="All")
 
-
-
     docChoice = CTkComboBox(DoctorMainFrame,
                             values=["All", "General Physician", "Child Specialist", "Cardiologists", "Dermatologists",
                                     "Gastroenterologists", "Neurologists"],
                             command=selectDocs, variable=docChoice_var)
     docChoice.pack(anchor="e")
+    resetbtn = CTkButton(master=DoctorMainFrame, text="Reset Appointments", corner_radius=10, font=("Helvetica", 16),
+                         hover=True, hover_color="#243959", width=75, height=30, command=reset)
+    resetbtn.place(relx=0.5, rely=0.002, anchor='center')
+    updatebtn = CTkButton(master=DoctorMainFrame, text="Update Appointments", corner_radius=10, font=("Helvetica", 16),
+                          hover=True, hover_color="#243959", width=75, height=30, command=lambda: displayRecords("All"))
+    updatebtn.place(relx=0.1, rely=0.002, anchor='center')
     displayRecords("All")
     app.lift()
     app.mainloop()
 
 
-openAppointment()
+# openAppointment()
