@@ -63,6 +63,8 @@
 # print(bill)
 
 import math
+import os
+
 # radius=5
 # angvel=((5000)/60)*2*math.pi
 # print(angvel)
@@ -224,23 +226,132 @@ import math
 # # Run the Tkinter event loop
 # root.mainloop()
 
-import tkinter as tk
+# import tkinter as tk
+#
+# def button_callback(button_number):
+#     print(f"Button {button_number} clicked!")
+#
+# root = tk.Tk()
+# root.title("Button Example")
+#
+# # Number of buttons you want to create
+# num_buttons = 5
+#
+# # List to store the buttons
+# buttons = []
+#
+# # Create buttons using a for loop
+# for i in range(num_buttons):
+#     button = tk.Button(root, text=f"Button {i+1}", command=lambda num=i: button_callback(num))
+#     button.pack()
+#
+# root.mainloop()
+#
+# import tkinter as tk
+#
+# def display_records(records):
+#     row_index = 1  # Start from row 1 to leave row 0 for headers
+#     for record in records:
+#         # Display record ID
+#         record_id_label = tk.Label(root, text=str(row_index), borderwidth=1, relief="solid", width=5)
+#         record_id_label.grid(row=row_index, column=0, padx=5, pady=5)
+#
+#         # Display other fields (adjust the number of columns accordingly)
+#         col_index = 1
+#         for field in record:
+#             field_label = tk.Label(root, text=str(field), borderwidth=1, relief="solid", width=15)
+#             field_label.grid(row=row_index, column=col_index, padx=5, pady=5)
+#             col_index += 1
+#
+#         row_index += 1
+#
+# # Sample records (replace this with your actual data)
+# sample_records = [
+#     ["Name1", "Age1", "City1"],
+#     ["Name2", "Age2", "City2"],
+#     ["Name3", "Age3", "City3"],
+# ]
+#
+# # Create the main window
+# root = tk.Tk()
+# root.title("Table Display Without Treeview")
+#
+# # Display the header labels
+# header_labels = ["ID", "Field1", "Field2", "Field3"]
+# for j in range(len(header_labels)):
+#     header_label = tk.Label(root, text=header_labels[j], font=("bold", 10), borderwidth=1, relief="solid", width=15)
+#     header_label.grid(row=0, column=j, padx=5, pady=5)
+#
+# # Display the records
+# display_records(sample_records)
+#
+# # Run the Tkinter event loop
+# root.mainloop()
+#
+# from reportlab.pdfgen import canvas
+# from reportlab.lib.pagesizes import letter
+# from reportlab.lib import colors
+#
+# def generate_receipt(file_path, hospital_name, patient_id, patient_name, age, gender, appointment_date, appointment_time, doctor_name, doctor_timings, total_amount):
+#     pdf = canvas.Canvas(file_path, pagesize=letter)
+#
+#     # Set font and font size
+#     pdf.setFont("Helvetica-Bold", 16)  # Making the hospital name bold
+#     pdf.drawCentredString(300, 770, hospital_name)
+#
+#     pdf.setFont("Helvetica", 12)
+#
+#     # Add receipt header
+#     pdf.line(50, 755, 550, 755)
+#
+#     # Add patient information
+#     pdf.drawString(50, 735, f"Patient ID: {patient_id}")
+#     pdf.drawString(50, 720, f"Patient: {patient_name}")
+#     pdf.drawString(50, 705, f"Age: {age}")
+#     pdf.drawString(50, 690, f"Gender: {gender}")
+#
+#     # Add second column for appointment date and time
+#     pdf.drawString(300, 735, f"Appointment Date: {appointment_date}")
+#     pdf.drawString(300, 720, f"Appointment Time: {appointment_time}")
+#
+#     # Add doctor information
+#     pdf.drawString(50, 670, f"Doctor: {doctor_name}")
+#     pdf.drawString(50, 650, f"Doctor Timings: {doctor_timings}")
+#
+#     # Add total amount
+#     pdf.drawString(50, 630, f"Total Amount: ${total_amount}")
+#
+#     # Draw a line before the footer
+#     pdf.line(50, 60, 550, 60)
+#
+#     # Add receipt footer
+#     pdf.drawString(50, 40, "Thank you for choosing our hospital!")
+#
+#     # Save the PDF document
+#     pdf.save()
+#
+# if __name__ == "__main__":
+#     receipt_info = {
+#         'hospital_name': 'Your Hospital Name',
+#         'patient_id': '123456',
+#         'patient_name': 'John Doe',
+#         'age': 30,
+#         'gender': 'Male',
+#         'appointment_date': '2024-01-13',
+#         'appointment_time': '10:00 AM',
+#         'doctor_name': 'Dr. Smith',
+#         'doctor_timings': '9:00 AM - 5:00 PM',
+#         'total_amount': 150
+#     }
+#
+#     output_file = "hospital_receipt_with_id.pdf"
+#     generate_receipt(output_file, **receipt_info)
+#     print(f"Receipt generated successfully: {output_file}")
 
-def button_callback(button_number):
-    print(f"Button {button_number} clicked!")
 
-root = tk.Tk()
-root.title("Button Example")
+os.system("sample.txt")
 
-# Number of buttons you want to create
-num_buttons = 5
 
-# List to store the buttons
-buttons = []
 
-# Create buttons using a for loop
-for i in range(num_buttons):
-    button = tk.Button(root, text=f"Button {i+1}", command=lambda num=i: button_callback(num))
-    button.pack()
 
-root.mainloop()
+
