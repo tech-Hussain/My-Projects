@@ -349,7 +349,54 @@ import os
 #     print(f"Receipt generated successfully: {output_file}")
 
 
-os.system("sample.txt")
+# # os.system("sample.txt")
+# totalStudents=set(range(110))
+# totalStudentsSpeak=set(range(105))
+# englishSpeakers=set(range(75))
+# frenchSpeakers=set(range(50))
+# spanishSpeakers=set(range(52))
+# # english_french_Speakers=set(range(30))
+# english_spanish_Speakers=set(range(33))
+# # french_spanish_Speakers=set(range(22))
+# # english_french_spanish_Speakers=set(range(13))
+#
+# englishOnly=
+# # frenchOnly=frenchSpeakers-english_french_Speakers-french_spanish_Speakers+english_french_spanish_Speakers
+# # spanishOnly=spanishSpeakers-english_spanish_Speakers-french_spanish_Speakers+english_french_spanish_Speakers
+#
+
+# english_spanishOnly=totalStudentsSpeak.difference(frenchSpeakers)
+# noLang=totalStudents.difference()
+# # # anyTwolangSpeakers=english_french_Speakers+english_spanish_Speakers+french_spanish_Speakers-(english_french_spanish_Speakers)*3
+# print("The no of students who can speak English and Spanish but not French are:",len(english_spanishOnly))
+# print("The students who speak Neither English, Spanish, nor French are:",noLang)
+# print("The students who can speak French, but neither English nor Spanish are:",frenchOnly)
+# print("The students who can speak Only one of the three languages are:",frenchOnly+spanishOnly+englishOnly)
+# print("The students who can speak Exactly two of the three languages are:",anyTwolangSpeakers)
+
+
+import tkinter as tk
+
+def open_second_window(update_function):
+    second_window = tk.Toplevel(first_window)
+    second_window.title("Second Window")
+    second_window.geometry("300x300")
+    btn_update_first_window = tk.Button(second_window, text="Update First Window", command=lambda: update_function())
+    btn_update_first_window.pack()
+
+def update_first_window():
+    # Update the first window based on the data received from the second window
+    x=tk.Label(first_window,text="hllo")
+    x.pack()
+
+first_window = tk.Tk()
+update_first_window()
+first_window.title("First Window")
+first_window.geometry("300x300")
+btn_open_second_window = tk.Button(first_window, text="Open Second Window", command=lambda: open_second_window(update_first_window))
+btn_open_second_window.pack()
+
+first_window.mainloop()
 
 
 

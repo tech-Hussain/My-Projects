@@ -91,24 +91,24 @@
 # print("iv.  Total purchases:", total_purchases)
 
 # Q7
-# totalStudents=110
-# englishSpeakers=75
-# frenchSpeakers=50
-# spanishSpeakers=52
-# english_french_Speakers=30
-# english_spanish_Speakers=33
-# french_spanish_Speakers=22
-# english_french_spanish_Speakers=13
-#
-# englishOnly=englishSpeakers-english_french_Speakers-english_spanish_Speakers+english_french_spanish_Speakers
-# frenchOnly=frenchSpeakers-english_french_Speakers-french_spanish_Speakers+english_french_spanish_Speakers
-# spanishOnly=spanishSpeakers-english_spanish_Speakers-french_spanish_Speakers+english_french_spanish_Speakers
-#
-# english_spanishOnly=englishOnly+spanishOnly+english_spanish_Speakers-english_french_spanish_Speakers
-# noLang=totalStudents-frenchSpeakers-english_spanishOnly
-# anyTwolangSpeakers=english_french_Speakers+english_spanish_Speakers+french_spanish_Speakers-(english_french_spanish_Speakers)*3
-# print("The no of students who can speak English and Spanish but not French are:",english_spanishOnly)
-# print("The students who speak Neither English, Spanish, nor French are:",noLang)
-# print("The students who can speak French, but neither English nor Spanish are:",frenchOnly)
-# print("The students who can speak Only one of the three languages are:",frenchOnly+spanishOnly+englishOnly)
-# print("The students who can speak Exactly two of the three languages are:",anyTwolangSpeakers)
+totalStudents=110
+englishSpeakers=75
+frenchSpeakers=50
+spanishSpeakers=52
+english_french_Speakers=30
+english_spanish_Speakers=33
+french_spanish_Speakers=22
+english_french_spanish_Speakers=13
+
+englishOnly=englishSpeakers-english_french_Speakers-english_spanish_Speakers+english_french_spanish_Speakers
+frenchOnly=frenchSpeakers-english_french_Speakers-french_spanish_Speakers+english_french_spanish_Speakers
+spanishOnly=spanishSpeakers-english_spanish_Speakers-french_spanish_Speakers+english_french_spanish_Speakers
+
+english_spanishOnly=englishOnly+spanishOnly+english_spanish_Speakers-english_french_spanish_Speakers
+noLang=totalStudents-frenchSpeakers-english_spanishOnly
+anyTwolangSpeakers=english_french_Speakers+english_spanish_Speakers+french_spanish_Speakers-(english_french_spanish_Speakers)*3
+print("The no of students who can speak English and Spanish but not French are:",english_spanishOnly)
+print("The students who speak Neither English, Spanish, nor French are:",noLang)
+print("The students who can speak French, but neither English nor Spanish are:",frenchOnly)
+print("The students who can speak Only one of the three languages are:",frenchOnly+spanishOnly+englishOnly)
+print("The students who can speak Exactly two of the three languages are:",anyTwolangSpeakers)

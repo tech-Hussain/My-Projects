@@ -63,7 +63,9 @@ def updatePatientData(id,Name,Age,Gender,DocId):
     cursor.execute(f"SELECT Patients.*, [Doctors List].[Doctor Name] FROM [Doctors List] INNER JOIN Patients ON [Doctors List].[Doctor ID] = Patients.docId WHERE (((Patients.PatientID)={id}));")
     resultRow=cursor.fetchall()
     lastRow=resultRow[-1]
-    generate_receipt("Receipt.pdf",lastRow[1],lastRow[2],lastRow[3],lastRow[-3],lastRow[5].strftime("%x"),lastRow[4].strftime("%I:%M:%S %p"),lastRow[-1])
+    cursor.execute(f"SELECT [Doctors List].Appointments FROM [Doctors List] WHERE [Doctors List].[Doctor ID]={lastRow[-2]}")
+    noofAppoint=cursor.fetchall()
+    generate_receipt("Receipt.pdf",lastRow[1],lastRow[2],lastRow[3],lastRow[-3],lastRow[5].strftime("%x"),lastRow[4].strftime("%I:%M:%S %p"),lastRow[-1],noofAppoint[0][0])
     os.system("Receipt.pdf")
     cursor.close()
     conn.close()
@@ -85,10 +87,6 @@ def getPatientData(id):
     cursor.close()
     conn.close()
     return rows
-# conn = pyodbc.connect(conn_str)
-# cursor = conn.cursor()
-# cursor.execute("DELETE FROM Patients")
-# cursor.commit()
-# cursor.close()
+
 # reset_appointments()
 # updatePatientData(0,"h",12,"male",12)

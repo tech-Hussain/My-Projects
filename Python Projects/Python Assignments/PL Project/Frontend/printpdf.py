@@ -1,7 +1,7 @@
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 
-def generate_receipt(file_path, patient_id, patient_name, age, gender, appointment_date, appointment_time, doctor_name):
+def generate_receipt(file_path, patient_id, patient_name, age, gender, appointment_date, appointment_time, doctor_name,no):
     pdf = canvas.Canvas(file_path, pagesize=letter)
 
     # Set font and font size
@@ -30,6 +30,10 @@ def generate_receipt(file_path, patient_id, patient_name, age, gender, appointme
     # Add total amount
     pdf.drawString(50, 630, f"Total Amount: {1000}Rs")
 
+    pdf.setFont("Helvetica-Bold", 48)
+    pdf.drawCentredString(300, 540, f"{no}")
+
+    pdf.setFont("Helvetica", 12)
     # Draw a line before the footer
     pdf.line(50, 60, 550, 60)
 

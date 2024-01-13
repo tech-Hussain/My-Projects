@@ -5,7 +5,6 @@ root.geometry("1005x800")
 root.title("Scientific Calculator ")
 root.configure(background="#202f41")
 icon=PhotoImage(file="icon.png")
-print(icon)
 root.iconphoto(False,icon)
 # Functions
 def inputFunc(event):
@@ -26,6 +25,16 @@ def inputFunc(event):
                 updatedVal = (labelStr.get()).replace("x", "*")
                 updatedVal = updatedVal.replace("^", "**")
                 labelStr.set(str(round((math.sqrt(int(eval(updatedVal)))), 2)))
+                ansState = 1
+            elif text == "sin" or text == "cos" or text == "tan":
+                updatedVal = (labelStr.get()).replace("x", "*")
+                updatedVal = updatedVal.replace("^", "**")
+                if text == "sin":
+                    labelStr.set(str(round((math.sin(int(eval(updatedVal)))), 2)))
+                elif text == "cos":
+                    labelStr.set(str(round((math.cos(int(eval(updatedVal)))), 2)))
+                elif text == "tan":
+                    labelStr.set(str(round((math.tan(int(eval(updatedVal)))), 2)))
                 ansState = 1
             elif text=="CE":
                 labelStr.set("0")
@@ -64,16 +73,15 @@ mainBody=Frame(root,background="#1f747a",padx=10,pady=10)
 mainBody.pack(side="top", padx=20,pady=80)
 panel=Label(mainBody,width=25,height=1,textvariable=labelStr,fg="Black", font="STIX 15", bg="White",anchor="w",padx=6,pady=8)
 panel.grid(row=1,column=1,columnspan=4,padx=10,pady=8)
-ButtonsList=[["CE","DEL","x\u00b2","/"],["7","8","9","x"],["4","5","6","-"],["1","2","3","="],["0","√","+"]]
+ButtonsList=[["CE","DEL","x\u00b2","/"],["7","8","9","x"],["4","5","6","-"],["1","2","3","="],["0","√","+"],['sin','cos',"tan"]]
 r,c=2,1
 for i in ButtonsList:
     c=1
     for j in i:
          if j=="=":
-             button = Button(mainBody, width=4, height=5, bg="White", text=j, fg="Black", font="STIX 15")
-             button.grid(row=r, column=c, padx=11, pady=15,rowspan=2)
+             button = Button(mainBody, width=4, height=9, bg="White", text=j, fg="Black", font="STIX 15")
+             button.grid(row=r, column=c, padx=11, pady=15,rowspan=3)
              button.bind("<Button-1>", inputFunc)
-
          else:
              button = Button(mainBody, width=4, height=1, bg="White", text=j, fg="Black", font="STIX 15",pady=6)
              button.grid(row=r, column=c, padx=11, pady=15)
