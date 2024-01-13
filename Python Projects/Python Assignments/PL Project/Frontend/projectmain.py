@@ -1,6 +1,7 @@
 from customtkinter import *
 from PIL import Image
 from appointment import openAppointment
+from patientHistory import openPatientHistory
 set_appearance_mode("Dark")
 set_default_color_theme("dark-blue")
 app= CTk()
@@ -22,10 +23,8 @@ interFrame.place(relx = 0.5, rely = 0.5, anchor = CENTER)
 confirmicon=Image.open("../Img/icons/confirm.png")
 historyicon=Image.open("../Img/icons/history.png")
 
-btn2=CTkButton(master=interFrame,text="Book Appointment",corner_radius=15, font=("Helvetica",20),hover=True ,hover_color="#243959",image=CTkImage(confirmicon),command=openAppointment)
+btn2=CTkButton(master=interFrame,text="Book Appointment",corner_radius=15, font=("Helvetica",20),hover=True ,hover_color="#243959",image=CTkImage(confirmicon),command=lambda :openAppointment(app))
 btn2.pack(side=LEFT,ipadx=20,ipady=15,padx=10)
-btn3=CTkButton(master=interFrame,text="Patient History", corner_radius=15,font=("Helvetica",20),hover=True ,hover_color="#243959",image=CTkImage(historyicon))
+btn3=CTkButton(master=interFrame,text="Patient History", corner_radius=15,font=("Helvetica",20),hover=True ,hover_color="#243959",image=CTkImage(historyicon),command=lambda :openPatientHistory(app))
 btn3.pack(side=LEFT,ipadx=20,ipady=15,padx=10)
-app.lower()
-
 app.mainloop()

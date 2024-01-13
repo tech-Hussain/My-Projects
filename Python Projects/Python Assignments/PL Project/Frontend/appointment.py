@@ -5,13 +5,13 @@ import dbconnect
 from patientEntry import openPatientsForm
 
 
-def openAppointment():
+def openAppointment(mainapp):
     def on_frame_configure(event):
         canvas.configure(scrollregion=canvas.bbox("all"))
         canvas.itemconfigure(1, width=(app.winfo_width()) - 20)
 
     def PatientsForm(num):
-        openPatientsForm(num)
+        openPatientsForm(num,displayRecords,app)
 
     def reset():
         dbconnect.reset_appointments()
@@ -19,7 +19,8 @@ def openAppointment():
 
     set_appearance_mode("Dark")
     set_default_color_theme("dark-blue")
-    app = CTkToplevel()
+    app = CTkToplevel(mainapp)
+    mainapp.iconify()
     app.geometry("1000x800")
     app.minsize(1300, 1000)
 
@@ -67,7 +68,11 @@ def openAppointment():
     header.pack(side=TOP, fill=X, pady=40)
     separator = CTkLabel(master=app, text="", fg_color="Dark Blue", height=10)
     separator.pack(fill=X)
-    canvas = CTkCanvas(master=app)
+    DoctorMainContainer = CTkFrame(master=app, fg_color="#f0f0f0")
+    DoctorMainContainer.pack(fill=BOTH, expand=True, )
+    docOptionsFrame = CTkFrame(DoctorMainContainer, fg_color="transparent",height=40)
+    docOptionsFrame.pack(fill=X,side=TOP,ipady=6)
+    canvas = CTkCanvas(master=DoctorMainContainer)
 
     canvas.pack(fill=BOTH, expand=True, )
     scrollbar = CTkScrollbar(master=canvas, command=canvas.yview)
@@ -83,19 +88,18 @@ def openAppointment():
     canvas.configure(yscrollcommand=scrollbar.set)
     docChoice_var = StringVar(value="All")
 
-    docChoice = CTkComboBox(DoctorMainFrame,
+    docChoice = CTkComboBox(docOptionsFrame,
                             values=["All", "General Physician", "Child Specialist", "Cardiologists", "Dermatologists",
                                     "Gastroenterologists", "Neurologists"],
                             command=selectDocs, variable=docChoice_var)
-    docChoice.pack(anchor="e")
-    resetbtn = CTkButton(master=DoctorMainFrame, text="Reset Appointments", corner_radius=10, font=("Helvetica", 16),
-                         hover=True, hover_color="#243959", width=75, height=30, command=reset)
-    resetbtn.place(relx=0.5, rely=0.002, anchor='center')
-    updatebtn = CTkButton(master=DoctorMainFrame, text="Update Appointments", corner_radius=10, font=("Helvetica", 16),
+    docChoice.place(relx=0.98,rely=0.52,anchor="e")
+    resetbtn = CTkButton(master=docOptionsFrame, text="Reset Appointments", corner_radius=5, font=("Helvetica", 14),
+                         hover=True, hover_color="#243959", width=75, height=30, command=reset,)
+    resetbtn.place(relx=0.5, rely=0.52, anchor='center')
+    updatebtn = CTkButton(master=docOptionsFrame, text="Update Appointments", corner_radius=5, font=("Helvetica", 14),
                           hover=True, hover_color="#243959", width=75, height=30, command=lambda: displayRecords("All"))
-    updatebtn.place(relx=0.1, rely=0.002, anchor='center')
+    updatebtn.place(relx=0.1, rely=0.52, anchor='center')
     displayRecords("All")
-    app.lift()
     app.mainloop()
 
 
