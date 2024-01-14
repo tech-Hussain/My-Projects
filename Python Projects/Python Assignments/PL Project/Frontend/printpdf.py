@@ -20,8 +20,8 @@ def generate_receipt(file_path, patient_id, patient_name, age, gender, appointme
     pdf.drawString(50, 690, f"Gender: {gender}")
 
     # Add second column for appointment date and time
-    pdf.drawString(300, 735, f"Appointment Date: {appointment_date}")
-    pdf.drawString(300, 720, f"Appointment Time: {appointment_time}")
+    pdf.drawString(300, 735, f"Recipt Date: {appointment_date}")
+    pdf.drawString(300, 720, f"Receipt Time: {appointment_time}")
 
     # Add doctor information
     pdf.drawString(50, 670, f"Doctor: {doctor_name}")

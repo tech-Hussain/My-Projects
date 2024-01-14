@@ -1,5 +1,5 @@
-# Write Python algebraic expressions corresponding to the following statements:
-import math
+# # Write Python algebraic expressions corresponding to the following statements:
+# import math
 # sum=(1+2+3+4+5)
 # ageAvg=(23+19+31)/3
 # numTimes=403/73
@@ -7,7 +7,7 @@ import math
 # power=2**10
 # absval=abs(54-57)
 # minVal=min(34.99,29.95,31.50)
-# print(sum,ageAvg,numTimes,remainder,power,absval,minVal)
+# print("\n",sum,"\n",ageAvg,"\n",numTimes,"\n",remainder,"\n",power,"\n",absval,"\n",minVal)
 
 
 # 1. Write a program that asks the user for his name and then welcomes him.
@@ -15,11 +15,11 @@ import math
 # print("Welcome:",name)
 
 # 2. Write a program which accept principle, rate and time from user and print the simple interest
-# principle=int(input("Enter the amount of Money borrowed:"))
-# rate=float(input("Enter the rate of interest:"))
-# time=int(input("Enter the time duration:"))
-# simpleInterest=int((principle*rate*time)/100)
-# print("Simple interest is Rs",simpleInterest)
+principle=int(input("Enter the amount of Money borrowed:"))
+rate=float(input("Enter the rate of interest:"))
+time=int(input("Enter the time duration:"))
+simpleInterest=int((principle*rate*time)/100)
+print("Simple interest is Rs",simpleInterest)
 
 # Q3
 # x=int(input("Enter no of data calls:"))
