@@ -102,5 +102,3 @@ def openAppointment(mainapp):
     displayRecords("All")
     app.mainloop()
 
-
-# openAppointment()

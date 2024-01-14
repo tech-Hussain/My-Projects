@@ -43,21 +43,3 @@ def generate_receipt(file_path, patient_id, patient_name, age, gender, appointme
     # Save the PDF document
     pdf.save()
 
-#
-#
-# receipt_info = {
-#         'hospital_name': 'Your Hospital Name',
-#         'patient_id': '123456',
-#         'patient_name': 'John Doe',
-#         'age': 30,
-#         'gender': 'Male',
-#         'appointment_date': '2024-01-13',
-#         'appointment_time': '10:00 AM',
-#         'doctor_name': 'Dr. Smith',
-#         'doctor_timings': '9:00 AM - 5:00 PM',
-#         'total_amount': 150
-#     }
-#
-# output_file = "hospital_receipt_with_id.pdf"
-# generate_receipt(output_file, **receipt_info)
-# print(f"Receipt generated successfully: {output_file}")

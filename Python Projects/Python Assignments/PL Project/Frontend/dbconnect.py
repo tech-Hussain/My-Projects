@@ -87,6 +87,3 @@ def getPatientData(id):
     cursor.close()
     conn.close()
     return rows
-
-# reset_appointments()
-# updatePatientData(0,"h",12,"male",12)
