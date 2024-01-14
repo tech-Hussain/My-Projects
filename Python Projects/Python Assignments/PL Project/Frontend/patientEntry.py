@@ -24,6 +24,8 @@ def openPatientsForm(docId,func,mainapp):
             func("All")
     def submit_form2():
         id=id_entry.get()
+        if id=="":
+            id=0
         data = getPatientData(id)
         if len(data)==0:
             status_label.configure(text="Invalid Input")
@@ -39,8 +41,8 @@ def openPatientsForm(docId,func,mainapp):
 
     app.geometry("440x320")
     set_appearance_mode("dark")
-    # app.maxsize(308,200)
-    # app.minsize(308,200)
+    app.maxsize(440,320)
+    app.minsize(440,320)
     tabview = CTkTabview(master=app,width=400)
     tabview.pack(padx=20, pady=20)
     tabview.add("Already a User")

@@ -11,24 +11,19 @@
 # print(f"The {fahrTemp}\N{DEGREE SIGN}F is equal to {celsTemp}\N{DEGREE SIGN}C")
 
 # Calculate the area of rectangle
-
 # length=int(input("Enter the Length of Rectangle: "))
 # width=int(input("Enter the Width of Rectangle: "))
-#
 # print("The required area of Rectangle is",length*width)
 
 
 # # Calculate the volume of a sphere
-
-
 # import math
 # radInp=float(input("Enter the radius of Sphere: "))
 # volCalc=round((4/3 * math.pi * radInp**3),2)
 # print("The Volume of Sphere is",volCalc)
 
 # Write your name in upper case, lower case, and title case
-
-# nameInp=input("Enter your Name: ")
-# print("Your Name in Upper Case: ",nameInp.upper())
-# print("Your Name in Lower Case: ",nameInp.lower())
-# print("Your Name in Title Case: ",nameInp.title())
+nameInp=input("Enter your Name: ")
+print("Your Name in Upper Case: ",nameInp.upper())
+print("Your Name in Lower Case: ",nameInp.lower())
+print("Your Name in Title Case: ",nameInp.title())
