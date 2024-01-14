@@ -11,7 +11,6 @@
 # l.extend([19,63,25])
 # print(l)
 # del l
-# print(l)
 
 # Q2
 # def height(length,degangle):
@@ -64,11 +63,11 @@
 # print(monthsT)
 
 # Q5
-# a,b=6,7
-# c=(a+b)/2
-# inventory=['paper', 'staples', 'pencils']
-# first='John'
-# middle='Fitzgerald'
-# last='Kennedy'
-# fullname=first+" "+middle+" "+last
-# print(fullname)
+a,b=6,7
+c=(a+b)/2
+inventory=['paper', 'staples', 'pencils']
+first='John'
+middle='Fitzgerald'
+last='Kennedy'
+fullname=first+" "+middle+" "+last
+print(fullname)

@@ -76,4 +76,3 @@ def openPatientHistory(mainapp):
             header_label = CTkLabel(recordFrame, text=header_labels[j], font=("Helvetica", 16,"bold"),  width=55)
             header_label.grid(row=0, column=j, padx=5, pady=5)
     app.mainloop()
-# openPatientHistory()

@@ -15,11 +15,11 @@
 # print("Welcome:",name)
 
 # 2. Write a program which accept principle, rate and time from user and print the simple interest
-principle=int(input("Enter the amount of Money borrowed:"))
-rate=float(input("Enter the rate of interest:"))
-time=int(input("Enter the time duration:"))
-simpleInterest=int((principle*rate*time)/100)
-print("Simple interest is Rs",simpleInterest)
+# principle=int(input("Enter the amount of Money borrowed:"))
+# rate=float(input("Enter the rate of interest:"))
+# time=int(input("Enter the time duration:"))
+# simpleInterest=int((principle*rate*time)/100)
+# print("Simple interest is Rs",simpleInterest)
 
 # Q3
 # x=int(input("Enter no of data calls:"))
@@ -35,9 +35,9 @@ print("Simple interest is Rs",simpleInterest)
 # print("Your bill is Rs",int(bill))
 
 # Q4
-# x=int(input("Enter no 1:"))
-# y=int(input("Enter no 2:"))
-# x,y=y,x
-# print("Now your first number is",x)
-# print("Now your second number is",y)
+x=int(input("Enter no 1:"))
+y=int(input("Enter no 2:"))
+x,y=y,x
+print("Now your first number is",x)
+print("Now your second number is",y)
 
