@@ -24,11 +24,8 @@
 # # Q4
 # def shopping():
 #     items_set = {"tshirt", "jeans", "dress pant", "jacket", "sweater"}
-#
 #     item_prices = {"tshirt": 10, "jeans": 20, "dress pant": 15, "jacket": 25, "sweater": 30}
-#
 #     items_sold = []
-#
 #     while items_set:
 #         print("Available items:", items_set)
 #         item_to_purchase = input("Enter the Item name to purchase (q to exit): ")
@@ -42,7 +39,6 @@
 #             print(f"Item {item_to_purchase} purchased successfully!")
 #         else:
 #             print("Invalid item number. Please try again.")
-#
 #     if items_sold:
 #         total_amount = sum(items_sold)
 #         max_amount = max(items_sold)
@@ -54,7 +50,6 @@
 #         print(f"Minimum amount of an item sold: ${min_amount}")
 #     else:
 #         print("No items were sold.")
-#
 # shopping()
 
 # Q5
@@ -71,44 +66,39 @@
 # print(f"Players who love only cricket are {cricketOnlySet}")
 
 # # Q6
-# dog_purchases = 83
-# cat_purchases = 101
-# fish_purchases = 22
-# dog_and_cat_purchases = 31
-# dog_and_fish_purchases = 8
-# cat_and_fish_purchases = 10
-# dog_cat_fish_purchases = 6
-# other_purchases = 34
+# dog = set(range(1,39))|set(range(39,70))|set(range(70,78))|set(range(78,84))
+# cat = set(range(84,138))|set(range(39,70))|set(range(78,84))|set(range(138,148))
+# fish = set(range(70,78))|set(range(78,84))|set(range(138,148))|set(range(148,154))
+# others = set(range(154,188))
+# only_dogs = dog - (cat|fish)
+# print("people who purchased dog products only",len(only_dogs))
+# only_cats = cat - (fish|dog)
+# print("peopte who purchased cat products only",len(only_cats))
+# only_fish = fish - (cat|dog)
+# print("peopte who purchased fish products only",len(only_fish))
+# dog_or_fish = set(only_fish|only_dogs)
+# print("people who purchased dog or fish products only",len(dog_or_fish))
 #
-# dog_only = dog_purchases - dog_and_cat_purchases - dog_and_fish_purchases + dog_cat_fish_purchases
-# cat_only = cat_purchases - dog_and_cat_purchases - cat_and_fish_purchases + dog_cat_fish_purchases
-# fish_only = fish_purchases - dog_and_fish_purchases - cat_and_fish_purchases + dog_cat_fish_purchases
-# total_purchases = dog_only + cat_only + fish_only + dog_and_cat_purchases + dog_and_fish_purchases + cat_and_fish_purchases + other_purchases
-#
-# print("i.   Purchases for a dog product only:", dog_only)
-# print("ii.  Purchases for a cat product only:", cat_only)
-# print("iii. Purchases for a dog or a fish product:", dog_only + dog_and_fish_purchases)
-# print("iv.  Total purchases:", total_purchases)
+# total_purchase = dog|cat|fish|others
+# print("total purchases",len(total_purchase))
 
 # Q7
-totalStudents=110
-englishSpeakers=75
-frenchSpeakers=50
-spanishSpeakers=52
-english_french_Speakers=30
-english_spanish_Speakers=33
-french_spanish_Speakers=22
-english_french_spanish_Speakers=13
+students=set(range(1,111))
+eng=set(range(1,76))
+span=set(range(1,14))|set(range(56,95))
+fren=set(range(86,106))|set(range(1,14))|set(range(14,31))
+onlyengnspan=(eng&span)-fren
+onlyengnfren=(eng&fren)-span
+onlyfrennspan=(fren&span)-eng
+neither=students-(eng|span|fren)
+allthree=eng&fren&span
+onlyfren=fren-(eng|span)
+onlyspan=span-(eng|fren)
+onlyeng=eng-(span|fren)
 
-englishOnly=englishSpeakers-english_french_Speakers-english_spanish_Speakers+english_french_spanish_Speakers
-frenchOnly=frenchSpeakers-english_french_Speakers-french_spanish_Speakers+english_french_spanish_Speakers
-spanishOnly=spanishSpeakers-english_spanish_Speakers-french_spanish_Speakers+english_french_spanish_Speakers
-
-english_spanishOnly=englishOnly+spanishOnly+english_spanish_Speakers-english_french_spanish_Speakers
-noLang=totalStudents-frenchSpeakers-english_spanishOnly
-anyTwolangSpeakers=english_french_Speakers+english_spanish_Speakers+french_spanish_Speakers-(english_french_spanish_Speakers)*3
-print("The no of students who can speak English and Spanish but not French are:",english_spanishOnly)
-print("The students who speak Neither English, Spanish, nor French are:",noLang)
-print("The students who can speak French, but neither English nor Spanish are:",frenchOnly)
-print("The students who can speak Only one of the three languages are:",frenchOnly+spanishOnly+englishOnly)
-print("The students who can speak Exactly two of the three languages are:",anyTwolangSpeakers)
+print("Total Students =",len(students))
+print("Students who speak English and Spanish but not French:",len(onlyengnspan))
+print("Students who speak neither English, Spanish nor French:",len(neither))
+print("Students who speak French, but neither English nor Spanish:",len(onlyfren))
+print("Students who speak only one of the three languages:",len(onlyfren|onlyeng|onlyspan))
+print("Students who speak exactly two of the three languages:",len((onlyengnfren|onlyfrennspan|onlyengnspan)-allthree))

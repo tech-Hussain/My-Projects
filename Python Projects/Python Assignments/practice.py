@@ -375,28 +375,59 @@ import os
 # print("The students who can speak Exactly two of the three languages are:",anyTwolangSpeakers)
 
 
-import tkinter as tk
+# import tkinter as tk
+#
+# def open_second_window(update_function):
+#     second_window = tk.Toplevel(first_window)
+#     second_window.title("Second Window")
+#     second_window.geometry("300x300")
+#     btn_update_first_window = tk.Button(second_window, text="Update First Window", command=lambda: update_function())
+#     btn_update_first_window.pack()
+#
+# def update_first_window():
+#     # Update the first window based on the data received from the second window
+#     x=tk.Label(first_window,text="hllo")
+#     x.pack()
+#
+# first_window = tk.Tk()
+# update_first_window()
+# first_window.title("First Window")
+# first_window.geometry("300x300")
+# btn_open_second_window = tk.Button(first_window, text="Open Second Window", command=lambda: open_second_window(update_first_window))
+# btn_open_second_window.pack()
+#
+# first_window.mainloop()
 
-def open_second_window(update_function):
-    second_window = tk.Toplevel(first_window)
-    second_window.title("Second Window")
-    second_window.geometry("300x300")
-    btn_update_first_window = tk.Button(second_window, text="Update First Window", command=lambda: update_function())
-    btn_update_first_window.pack()
+# Number of students in the camp
+# Number of students in the camp
+# Number of students in the camp
+# Given data
+# Given data
 
-def update_first_window():
-    # Update the first window based on the data received from the second window
-    x=tk.Label(first_window,text="hllo")
-    x.pack()
+# Given data
+# Given data
+# Given data
+# Given data
+# BQNOO:
+dog = set(range(1,39))|set(range(39,70))|set(range(70,78))|set(range(78,84))
+cat = set(range(84,138))|set(range(39,70))|set(range(78,84))|set(range(138,148))
+fish = set(range(70,78))|set(range(78,84))|set(range(138,148))|set(range(148,154))
+others = set(range(154,188))
+only_dogs = dog - (cat|fish)
+print("people who purchased dog products only",len(only_dogs))
+only_cats = cat - (fish|dog)
+print("peopte who purchased cat products only",len(only_cats))
+only_fish = fish - (cat|dog)
+print("peopte who purchased fish products only",len(only_fish))
+dog_or_fish = set(only_fish|only_dogs)
+print("people who purchased dog or fish products only",len(dog_or_fish))
 
-first_window = tk.Tk()
-update_first_window()
-first_window.title("First Window")
-first_window.geometry("300x300")
-btn_open_second_window = tk.Button(first_window, text="Open Second Window", command=lambda: open_second_window(update_first_window))
-btn_open_second_window.pack()
+total_purchase = dog|cat|fish|others
+print("total purchases",len(total_purchase))
 
-first_window.mainloop()
+
+
+
 
 
 

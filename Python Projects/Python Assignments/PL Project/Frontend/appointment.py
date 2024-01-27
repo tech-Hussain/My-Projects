@@ -61,6 +61,7 @@ def openAppointment(mainapp):
             app.update()
 
     def selectDocs(choice):
+        scrollbar.set(0,0)
         displayRecords(choice)
 
     app.title("CareYour Centre")
