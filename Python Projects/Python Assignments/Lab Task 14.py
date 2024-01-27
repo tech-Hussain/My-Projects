@@ -5,11 +5,8 @@
 #     print("Reached end of file. Exiting.")
 
 # Q2
-# x=1
 # try:
-#     if x==1:
-#         print("hello")
-#          print("hello")
+#     import indent
 # except IndentationError:
 #     print("IndentationError")
 
