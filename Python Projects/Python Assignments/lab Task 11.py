@@ -38,20 +38,20 @@
 # print("No of Entries in your phone Directory are",len(phoneNoList))
 
 # Q3
-# def hexASCII():
-#     lowerCaseAscii={}
-#     alphabets="abcdefghijklmnopqrstuvwxyz"
-#     x=97
-#     for i in alphabets:
-#         lowerCaseAscii.update({i:str(x)})
-#         x+=1
-#     for i,j in lowerCaseAscii.items():
-#         hexNum="{0:X}"
-#         j=hexNum.format(int(j))
-#         lowerCaseAscii.update({i:j})
-#     print(lowerCaseAscii)
-#
-# hexASCII()
+def hexASCII():
+    lowerCaseAscii={}
+    alphabets="abcdefghijklmnopqrstuvwxyz"
+    x=97
+    for i in alphabets:
+        lowerCaseAscii.update({i:str(x)})
+        x+=1
+    for i,j in lowerCaseAscii.items():
+        hexNum="{0:X}"
+        j=hexNum.format(int(j))
+        lowerCaseAscii.update({i:j})
+    print(lowerCaseAscii)
+
+hexASCII()
 
 # # Q4
 # def compareDishes(myDish,weekDish):
@@ -88,40 +88,40 @@
 # compareDishes(favDish,weekDish)
 
 # Q5
-def compareGuests(guestl1,guestl2):
-    familyLists=list(set(guestl1.keys()).union(set(guestl2.keys())))
-    finalFamilyList=[]
-    totalGuest=0
-    sameGuest=0
-    for i in familyLists:
-        if guestl1.get(i)==None:
-            members=list(guestl2.get(i))
-        elif guestl2.get(i)==None:
-            members=list(guestl1.get(i))
-        else:
-            members=list(set(guestl1.get(i)).union(set(guestl2.get(i))))
-            sameGuest=sameGuest+len(list(set(guestl1.get(i)).intersection(set(guestl2.get(i)))))
-        finalFamilyList.append(members)
-    for i in finalFamilyList:
-        totalGuest=totalGuest+len(i)
-    print(f"You have invited {len(familyLists)} families and total {totalGuest} guests (in which {sameGuest} guests are same in both lists) in your Sister's wedding")
-    for i in range(len(familyLists)):
-        print(f"{familyLists[i]}: {', '.join(finalFamilyList[i])}")
-myList={
-    "Azhar Uncle Family":["Azhar","Samina","Ali"],
-    "Danish Uncle Family":["Danish","Alina","Faiz"],
-    "Tabish Uncle Family":["Tabish","Nimra","Adnan"],
-    "Khalid Uncle Family":["Khalid","Sadaf","Aisha","Haider"],
-    "Faiza Aunt Family":["Faiza","Mehmood","Rashida","Salman"],
-    "Amreen Aunt Family":["Amreen","Aqeel","Bilal","Umer"]
-}
-parentsList={
-    "Azhar Uncle Family":["Azhar","Samina","Ali","Usman"],
-    "Danish Uncle Family":["Danish","Alina"],
-    "Khalid Uncle Family":["Khalid","Sadaf","Aisha","Maryam","Haider"],
-    "Faiza Aunt Family":["Faiza","Mehmood","Rashida","Laiba","Lubna","Salman"],
-    "Tariq Uncle Family":["Huzaifa","Ali","Saba","Samreen"],
-    "Amreen Aunt Family":["Amreen","Aqeel","Bilal","Umer","Imran"]
-}
-
-compareGuests(myList,parentsList)
+# def compareGuests(guestl1,guestl2):
+#     familyLists=list(set(guestl1.keys()).union(set(guestl2.keys())))
+#     finalFamilyList=[]
+#     totalGuest=0
+#     sameGuest=0
+#     for i in familyLists:
+#         if guestl1.get(i)==None:
+#             members=list(guestl2.get(i))
+#         elif guestl2.get(i)==None:
+#             members=list(guestl1.get(i))
+#         else:
+#             members=list(set(guestl1.get(i)).union(set(guestl2.get(i))))
+#             sameGuest=sameGuest+len(list(set(guestl1.get(i)).intersection(set(guestl2.get(i)))))
+#         finalFamilyList.append(members)
+#     for i in finalFamilyList:
+#         totalGuest=totalGuest+len(i)
+#     print(f"You have invited {len(familyLists)} families and total {totalGuest} guests (in which {sameGuest} guests are same in both lists) in your Sister's wedding")
+#     for i in range(len(familyLists)):
+#         print(f"{familyLists[i]}: {', '.join(finalFamilyList[i])}")
+# myList={
+#     "Azhar Uncle Family":["Azhar","Samina","Ali"],
+#     "Danish Uncle Family":["Danish","Alina","Faiz"],
+#     "Tabish Uncle Family":["Tabish","Nimra","Adnan"],
+#     "Khalid Uncle Family":["Khalid","Sadaf","Aisha","Haider"],
+#     "Faiza Aunt Family":["Faiza","Mehmood","Rashida","Salman"],
+#     "Amreen Aunt Family":["Amreen","Aqeel","Bilal","Umer"]
+# }
+# parentsList={
+#     "Azhar Uncle Family":["Azhar","Samina","Ali","Usman"],
+#     "Danish Uncle Family":["Danish","Alina"],
+#     "Khalid Uncle Family":["Khalid","Sadaf","Aisha","Maryam","Haider"],
+#     "Faiza Aunt Family":["Faiza","Mehmood","Rashida","Laiba","Lubna","Salman"],
+#     "Tariq Uncle Family":["Huzaifa","Ali","Saba","Samreen"],
+#     "Amreen Aunt Family":["Amreen","Aqeel","Bilal","Umer","Imran"]
+# }
+#
+# compareGuests(myList,parentsList)

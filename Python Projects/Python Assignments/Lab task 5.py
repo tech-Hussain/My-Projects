@@ -43,14 +43,15 @@
 #     i-=1
 
 # Q3
-def fact(num):
-    factAns=1
-    if num ==1 or num == 0:
-        return 1
-    else:
-        return num*fact(num-1)
+# def fact(num):
+#     factAns=1
+#     if num ==1 or num == 0:
+#         return 1
+#     else:
+#         return num*fact(num-1)
+#
+# i=0
+# while i<=10:
+#     print("Factorial of",i,"is",fact(i))
+#     i+=1
 
-i=0
-while i<=10:
-    print("Factorial of",i,"is",fact(i))
-    i+=1
