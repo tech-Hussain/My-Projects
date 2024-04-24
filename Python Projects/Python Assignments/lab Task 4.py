@@ -124,42 +124,7 @@
 
 # # program which will add two square matrices
 #
-# print("Welcome to Matrix Addition Calculator!!!")
-# matA=[]
-# matArow=[]
-# matB=[]
-# matBrow=[]
-#
-# order=int(input("Enter the order of square Matrices:"))
-# print("You are entering Data for Matrix A")
-# for i in range(order):
-#     matArow=[]
-#     for j in range(order):
-#         inp=int(input(f"Enter data for {i+1} row and {j+1} column:"))
-#         matArow.append(inp)
-#     matA.append(matArow)
-# print("You are entering Data for Matrix B")
-# for i in range(order):
-#     matBrow=[]
-#     for j in range(order):
-#         inp=int(input(f"Enter data for {i+1} row and {j+1} column:"))
-#         matBrow.append(inp)
-#     matB.append(matBrow)
-# sumMat=[]
-# sumMatrow=[]
-# for i in range(order):
-#     sumMatrow=[]
-#     for j in range(order):
-#         sum=matA[i][j]+matB[i][j]
-#         sumMatrow.append(sum)
-#     sumMat.append(sumMatrow)
-#
-# print("The sum of Matrices is: ")
-# for i in sumMat:
-#     print(i,end="\n")
-
-# Q7
-print("Welcome to Matrix Multiplication Calculator!!!")
+print("Welcome to Matrix Addition Calculator!!!")
 matA=[]
 matArow=[]
 matB=[]
@@ -180,20 +145,55 @@ for i in range(order):
         inp=int(input(f"Enter data for {i+1} row and {j+1} column:"))
         matBrow.append(inp)
     matB.append(matBrow)
-print("Answer is")
-multMat=[]
-multMatrow=[]
-result=0
+sumMat=[]
+sumMatrow=[]
 for i in range(order):
-    multMatrow=[]
+    sumMatrow=[]
     for j in range(order):
-        result=0
-        for k in range(order):
-            result+=matA[i][k]*matB[k][j]
-        multMatrow.append(result)
-    multMat.append(multMatrow)
-for i in multMat:
-    print(i)
+        sum=matA[i][j]+matB[i][j]
+        sumMatrow.append(sum)
+    sumMat.append(sumMatrow)
+
+print("The sum of Matrices is: ")
+for i in sumMat:
+    print(i,end="\n")
+
+# Q7
+# print("Welcome to Matrix Multiplication Calculator!!!")
+# matA=[]
+# matArow=[]
+# matB=[]
+# matBrow=[]
+#
+# order=int(input("Enter the order of square Matrices:"))
+# print("You are entering Data for Matrix A")
+# for i in range(order):
+#     matArow=[]
+#     for j in range(order):
+#         inp=int(input(f"Enter data for {i+1} row and {j+1} column:"))
+#         matArow.append(inp)
+#     matA.append(matArow)
+# print("You are entering Data for Matrix B")
+# for i in range(order):
+#     matBrow=[]
+#     for j in range(order):
+#         inp=int(input(f"Enter data for {i+1} row and {j+1} column:"))
+#         matBrow.append(inp)
+#     matB.append(matBrow)
+# print("Answer is")
+# multMat=[]
+# multMatrow=[]
+# result=0
+# for i in range(order):
+#     multMatrow=[]
+#     for j in range(order):
+#         result=0
+#         for k in range(order):
+#             result+=matA[i][k]*matB[k][j]
+#         multMatrow.append(result)
+#     multMat.append(multMatrow)
+# for i in multMat:
+#     print(i)
 
 
 

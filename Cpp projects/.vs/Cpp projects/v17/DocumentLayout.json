@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Hussain projects\\Cpp projects\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3623F875-41FD-482B-BD41-7E9CA2881759}|Cpp projects\\Cpp projects.vcxproj|D:\\Hussain projects\\Cpp projects\\Cpp projects\\lab2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3623F875-41FD-482B-BD41-7E9CA2881759}|Cpp projects\\Cpp projects.vcxproj|solutionrelative:Cpp projects\\lab2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3623F875-41FD-482B-BD41-7E9CA2881759}|Cpp projects\\Cpp projects.vcxproj|D:\\Hussain projects\\Cpp projects\\Cpp projects\\lab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3623F875-41FD-482B-BD41-7E9CA2881759}|Cpp projects\\Cpp projects.vcxproj|solutionrelative:Cpp projects\\lab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "lab2.cpp",
+              "DocumentMoniker": "D:\\Hussain projects\\Cpp projects\\Cpp projects\\lab2.cpp",
+              "RelativeDocumentMoniker": "Cpp projects\\lab2.cpp",
+              "ToolTip": "D:\\Hussain projects\\Cpp projects\\Cpp projects\\lab2.cpp",
+              "RelativeToolTip": "Cpp projects\\lab2.cpp",
+              "ViewState": "AQIAADgBAAAAAAAAAAAkwF4BAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-22T14:22:35.133Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "lab1.cpp",
+              "DocumentMoniker": "D:\\Hussain projects\\Cpp projects\\Cpp projects\\lab1.cpp",
+              "RelativeDocumentMoniker": "Cpp projects\\lab1.cpp",
+              "ToolTip": "D:\\Hussain projects\\Cpp projects\\Cpp projects\\lab1.cpp",
+              "RelativeToolTip": "Cpp projects\\lab1.cpp",
+              "ViewState": "AQIAAB4AAAAAAAAAAADwvz4AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-22T14:58:16.99Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

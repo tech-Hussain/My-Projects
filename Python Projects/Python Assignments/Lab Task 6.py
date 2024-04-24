@@ -23,21 +23,21 @@
 # print(height(24,80))
 
 # Q3
-# l=[1,2,69,87,45,69,3,12]
-# l1=l.copy()
-# if len(l)%2==0:
-#     indexMid=(len(l))/2
-#     print("Index of middle element is",int(indexMid))
-#     print("Middle element is",l[int(indexMid)])
-# else:
-#     indexMid=(len(l)-1)/2
-#     print("Index of middle element is",int(indexMid))
-#     print("Middle element is",l[int(indexMid)])
-# l.sort(reverse=True)
-# x=l1.pop(0)
-# l1.insert(len(l1),x)
-# print(l)
-# print(l1)
+l=[1,2,69,87,45,69,3,12]
+l1=l.copy()
+if len(l)%2==0:
+    indexMid=(len(l))/2
+    print("Index of middle element is",int(indexMid))
+    print("Middle element is",l[int(indexMid)])
+else:
+    indexMid=(len(l)-1)/2
+    print("Index of middle element is",int(indexMid))
+    print("Middle element is",l[int(indexMid)])
+l.sort(reverse=True)
+
+l1.insert(len(l1),l1.pop(0))
+print(l)
+print(l1)
 
 # Q4
 # monthsL=['Jan','Feb','Mar','May']
@@ -63,11 +63,11 @@
 # print(monthsT)
 
 # Q5
-a,b=6,7
-c=(a+b)/2
-inventory=['paper', 'staples', 'pencils']
-first='John'
-middle='Fitzgerald'
-last='Kennedy'
-fullname=first+" "+middle+" "+last
-print(fullname)
+# a,b=6,7
+# c=(a+b)/2
+# inventory=['paper', 'staples', 'pencils']
+# first='John'
+# middle='Fitzgerald'
+# last='Kennedy'
+# fullname=first+" "+middle+" "+last
+# print(fullname)

@@ -1,13 +1,13 @@
 # # Write Python algebraic expressions corresponding to the following statements:
-# import math
-# sum=(1+2+3+4+5)
-# ageAvg=(23+19+31)/3
-# numTimes=403/73
-# remainder=403/73
-# power=2**10
-# absval=abs(54-57)
-# minVal=min(34.99,29.95,31.50)
-# print("\n",sum,"\n",ageAvg,"\n",numTimes,"\n",remainder,"\n",power,"\n",absval,"\n",minVal)
+import math
+sum=(1+2+3+4+5)
+ageAvg=(23+19+31)/3
+numTimes=403/73
+remainder=403%73
+power=2**10
+absval=abs(54-57)
+minVal=min(34.99,29.95,31.50)
+print("\n",sum,"\n",ageAvg,"\n",numTimes,"\n",remainder,"\n",power,"\n",absval,"\n",minVal)
 
 
 # 1. Write a program that asks the user for his name and then welcomes him.
@@ -35,9 +35,9 @@
 # print("Your bill is Rs",int(bill))
 
 # Q4
-x=int(input("Enter no 1:"))
-y=int(input("Enter no 2:"))
-x,y=y,x
-print("Now your first number is",x)
-print("Now your second number is",y)
-
+# x=int(input("Enter no 1:"))
+# y=int(input("Enter no 2:"))
+# x,y=y,x
+# print("Now your first number is",x)
+# print("Now your second number is",y)
+#

@@ -1,0 +1,3 @@
+﻿  lab2.cpp
+D:\Hussain projects\Cpp projects\Cpp projects\lab2.cpp(283,28): warning C4101: 'temprun': unreferenced local variable
+  Cpp projects.vcxproj -> D:\Hussain projects\Cpp projects\x64\Debug\Cpp projects.exe
