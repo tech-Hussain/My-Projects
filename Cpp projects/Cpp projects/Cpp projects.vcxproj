@@ -127,8 +127,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Assignment Q1.cpp" />
+    <ClCompile Include="Ass Q2 v2.cpp" />
+    <ClCompile Include="lab 11.cpp" />
+    <ClCompile Include="lab 12.cpp" />
+    <ClCompile Include="lab 13.cpp" />
     <ClCompile Include="lab1.cpp" />
     <ClCompile Include="lab2.cpp" />
+    <ClCompile Include="lab3.cpp" />
+    <ClCompile Include="lab4.cpp" />
+    <ClCompile Include="lab5.cpp" />
+    <ClCompile Include="lab6.cpp" />
+    <ClCompile Include="lab7.cpp" />
+    <ClCompile Include="lab9.cpp" />
+    <ClCompile Include="OEL Practice.cpp" />
     <ClCompile Include="Practice.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
