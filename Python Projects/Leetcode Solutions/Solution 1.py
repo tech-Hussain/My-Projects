@@ -586,18 +586,25 @@
 # print(searchRange([2,2], 2))
 
 
-def compressStr(digitstr:str):
-    count=0
-    strans=""
-    tempstr=digitstr[0]
-    for i in digitstr:
-        if i!=tempstr:
-            strans+=str(count)+tempstr
-            tempstr=i
-            count=0
-        count+=1
-    strans+=str(count)+tempstr
 
-    return strans
-print(compressStr("3322251"))
+def countAndSay(n: int) -> str:
+    def compressStr(digitstr:str):
+        count=0
+        strans=""
+        tempstr=digitstr[0]
+        for i in digitstr:
+            if i!=tempstr:
+                strans+=str(count)+tempstr
+                tempstr=i
+                count=0
+            count+=1
+        strans+=str(count)+tempstr
+        return strans
+    ans="1"
+    for i in range(n-1):
+        ans=compressStr(ans)
+        print(ans)
+    return ans
+
+print(countAndSay(1))
 
