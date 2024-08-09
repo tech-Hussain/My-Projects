@@ -386,13 +386,218 @@
 # print(transformSentence("UDaxiHhEXDvxrCSnBacgHqTArgwuWRnHOSIZaYzfwnKIegYkdCmDlLTiZBxORdmCRjuTLSGWcBVHyJchDMioulfLLGViWVUCTUFR"))
 
 
-def findMedianSortedArrays( nums1, nums2):
-    nums1.extend(nums2)
-    nums1.sort()
-    length=len(nums1)
-    print(7/2)
-    if length%2==0:
-        return (nums1[int(length/2)]+nums1[int(length/2)-1])/2
-    else:
-        return nums1[int((length-1)/2)]
-print(findMedianSortedArrays([1,2],[3,4]))
+# def findMedianSortedArrays( nums1, nums2):
+#     nums1.extend(nums2)
+#     nums1.sort()
+#     length=len(nums1)
+#     print(7/2)
+#     if length%2==0:
+#         return (nums1[int(length/2)]+nums1[int(length/2)-1])/2
+#     else:
+#         return nums1[int((length-1)/2)]
+# print(findMedianSortedArrays([1,2],[3,4]))
+#
+# def reverse(x:int):
+#     strnum= str(x)
+#     newsrt= 0
+#     if strnum[0]=="-":
+#         newsrt=int("-"+strnum[:0:-1])
+#     else:
+#         newsrt=int(strnum[::-1])
+#     print(newsrt)
+#     if newsrt >= pow(-2,31) and newsrt<=(pow(2,31)-1):
+#         return newsrt
+#     else:
+#         return 0
+#
+# print(reverse(-123))
+
+# def atoi(s:str):
+#     s=s.strip()
+#     num=""
+#     intnum=0
+#     negflag=False
+#     for i in range(len(s)):
+#         if s[i]=="-" and i==0:
+#             negflag=True
+#         elif s[i]=="+" and i==0:
+#             negflag=False
+#         else:
+#             if s[i].isnumeric():
+#                 num+=s[i]
+#             else:break
+#
+#     if len(num)>0:
+#         if negflag:
+#             intnum=int("-"+num)
+#         else:
+#             intnum=int(num)
+#     else:
+#         intnum=0
+#     if intnum<pow(-2,31):
+#         intnum=pow(-2,31)
+#     elif intnum>(pow(2,31)-1):
+#         intnum=(pow(2,31)-1)
+#
+#     return intnum
+#
+# print(atoi("+1"))
+
+# def get_all_substrings(s):
+#     substrings = []
+#     length = len(s)
+#     for i in range(length):
+#         for j in range(i + 1, length + 1):
+#             substrings.append(s[i:j])
+#     return substrings
+#
+# def lengthOfLongestSubstring(s: str):
+#
+#     length = len(s)
+#     max=0
+#     for i in range(length):
+#         for j in range(i + 1, length + 1):
+#             # substrings.append(s[i:j])
+#
+#             charstr=""
+#             for k in s[i:j]:
+#                 if k not in charstr:
+#                     charstr+=k
+#                 else:
+#                     charstr=""
+#                     break
+#
+#             if len(charstr)>max:
+#                 max=len(charstr)
+#     return max
+#
+# print(lengthOfLongestSubstring("abcabcbb"))
+
+# def intToRoman(num: int) :
+#     # strnum=str(num)
+    # length=len(strnum)
+    # digitsplit=[]
+    # result=""
+    # romanvar = {
+    #         'I':1,
+    #         'V':5,
+    #         'X':10,
+    #         'L':50,
+    #         'C':100,
+    #         'D':500,
+    #         'M':1000
+    #     }
+    # exceptionvar={
+    #         'IV':4,
+    #         'IX':9,
+    #         'XL':40,
+    #         'XC':90,
+    #         'CD':400,
+    #         'CM':900
+    #     }
+    # for i in range(length):
+    #     digitsplit.append(int(strnum[i]+"0"*(length-1-i)))
+    # for i in digitsplit:
+    #     minnum=i
+    #     while i!=0:
+    #         maxchar=""
+    #         for x,y in exceptionvar.items():
+    #             if y==i:
+    #                 result+=x
+    #                 i=0
+    #                 break
+    #         if i>0:
+    #             for x,y in romanvar.items():
+    #                 if y<=i:
+    #                     if abs(y-i)<=minnum :
+    #                         minnum=abs(y-i)
+    #                         maxchar=x
+    #             result+=maxchar
+    #             if i>0 :
+    #                 i-=romanvar.get(maxchar)
+    # return result
+
+# print(intToRoman(3749))
+
+
+# def searchInsert( nums:list, target):
+#     nums.sort()
+#     # if target in nums:
+#     #     position=nums.index(target)
+#     #     return position
+#     # else:
+#     if target>max(nums):
+#         return len(nums)
+#     elif target<min(nums):
+#         return 0
+#     start,end=0,len(nums)
+#     middle=int(len(nums)/2)
+#     while target!=nums[middle]:
+#         middle=int((start+end)/2)
+#         if target>nums[middle]:
+#             start=middle
+#         else:
+#             end=middle
+#         print(start,middle,end)
+#         if start==middle and end-middle==1:
+#              return middle+1
+#     return middle
+#
+#
+# print(searchInsert([1,3],2))
+
+# def searchRange(nums: list[int], target: int) :
+
+    # if count>1:
+    #     first=middle
+    #     nums.pop(first)
+    #     start, end = 0, len(nums)
+    #     middle=int(len(nums)/2)
+    #     while target!=nums[middle]:
+    #         middle=int((start+end)/2)
+    #         if target>nums[middle]:
+    #             start=middle
+    #         else:
+    #             end=middle
+    #     return [first,middle+1]
+    # else:
+    #     return [middle,middle]
+#     if target not in nums:
+#         return [-1, -1]
+#     count = nums.count(target)
+#     start, end = 0, len(nums)
+#     middle=int((start+end)/2)
+#     while target!=nums[middle]:
+#         print(start,middle,end)
+#         middle=int((start+end)/2)
+#         if target>nums[middle]:
+#             start=middle
+#         else:
+#             end=middle
+#
+#     if count > 1:
+#         while nums[middle]==target:
+#             middle-=1
+#             if middle<0:break
+#         return [middle+1,middle+count]
+#     else:
+#         return [middle,middle]
+#
+# print(searchRange([2,2], 2))
+
+
+def compressStr(digitstr:str):
+    count=0
+    strans=""
+    tempstr=digitstr[0]
+    for i in digitstr:
+        if i!=tempstr:
+            strans+=str(count)+tempstr
+            tempstr=i
+            count=0
+        count+=1
+    strans+=str(count)+tempstr
+
+    return strans
+print(compressStr("3322251"))
+
