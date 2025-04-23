@@ -606,5 +606,84 @@ def countAndSay(n: int) -> str:
         print(ans)
     return ans
 
-print(countAndSay(1))
+# print(countAndSay(1))
 
+
+def merge( nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+    for i in range(n):
+        nums1[m+i]=nums2[i]
+    nums1.sort()
+    print(nums1)
+# merge([1,2,3,0,0,0], 3, [2,5,6],3)
+
+def isPalindrome( s: str) -> bool:
+    newstr=""
+    s=s.lower()
+    for i in s:
+        if i.isalnum():
+            newstr+=i
+    return newstr==newstr[::-1]
+
+# print(isPalindrome("A man, a plan, a canal: Panama"))
+
+# def singleNumber( nums: list[int]) -> int:
+#     setint=list(set(nums))
+#     for i in setint:
+#         if nums.count(i)==1:
+#             return i
+
+# def missingNumber(nums:list[int]):
+#     return int((len(nums)*(len(nums)+1)/2)-sum(nums))
+# print(missingNumber([1]))
+
+
+# def containsNearbyDuplicate( nums: list[int], k: int) -> bool:
+#     list={}
+#     for i in range(len(nums)):
+#         if nums[i] in list and abs(i-list[nums[i]])<=k:
+#             print(list)
+#             print(nums[i],i)
+#             return True
+#         list[nums[i]]=i
+#     return False
+
+# print(containsNearbyDuplicate([1,2,3,1,2,3],2))
+
+# def isPerfectSquare(num:int) -> bool:
+#     square=num**(1/2)
+#     if int(square)-square==0:
+#         return True
+#     else:
+#         return False
+#
+# print(isPerfectSquare(16))
+
+def singleNumber(nums):
+    ans = 0
+
+    for i in range(32):
+        bit_sum = 0
+        for num in nums:
+            # Convert the number to two's complement representation to handle large test case
+            if num < 0:
+                num = (1 << 32) + num
+            bit_sum += (num >> i) & 1
+        bit_sum %= 3
+        ans |= bit_sum << i
+
+    if ans & (1 << (32 - 1)):
+        ans = ans - (1 << 32)
+
+    return ans
+# print(singleNumber([-2,-2,1,1,4,1,4,4,-4,-2]))
+
+def reverseBits(n: int):
+    # ans=0
+    # for i in range(32):
+    #     last=(n>>i)&1
+    #     ans|=(last<<(31-i))
+    # return ans
+    arr=list()
+    arr[0]=1
+    print(arr)
+print(reverseBits(22))
