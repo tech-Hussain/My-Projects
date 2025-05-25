@@ -1,0 +1,48 @@
+Build a Windows desktop application using Electron.js with the following features:
+
+1. UI Components:
+   - **Login Screen** with two options:
+     - LinkedIn Email & Password input
+     - OR Import LinkedIn cookies
+   - **Filters section** for job title, location, etc.
+   - **Log area** to display real-time scraping progress
+   - **Export button** to download results as CSV or Excel
+
+2. Persistent Settings:
+   - Use `electron-store` to save:
+     - User login email (if they choose “Remember Me”)
+     - Last-used search filters
+     - Export file format preference (CSV/Excel)
+     - Chrome profile used (optional)
+
+3. Background Automation:
+   - Integrate a Node.js script called `chrome-apollo-finder.js` in the Electron backend.
+     - This script should:
+       - Detect Chrome’s install location
+       - Search Chrome user profiles in:
+         `%LOCALAPPDATA%\Google\Chrome\User Data`
+       - Find which one has the Apollo extension (`felngcljkkmcmgfbnjcibkcnnlfpcegg`)
+       - Launch Chrome with that user profile using Puppeteer
+       - Check if LinkedIn is logged in
+       - Visit LinkedIn profiles
+       - Extract emails/phones shown via Apollo in the DOM
+       - Send scraped data to Electron frontend in real-time
+
+4. Workflow Integration:
+   - After GUI login, automatically start `chrome-apollo-finder.js` in the background using `child_process.spawn` or `fork`
+   - Use `ipcMain` and `ipcRenderer` to send scraping progress and results to the UI
+   - Show the log in the GUI in real time
+   - After completion, allow exporting leads
+
+5. Technologies to Use:
+   - **Electron.js** for GUI
+   - **Node.js** for Puppeteer automation
+   - **puppeteer-extra** and `puppeteer-extra-plugin-stealth`
+   - **electron-store** for storing login info and preferences
+   - `fs-extra` and `csv-writer` or `xlsx` for exports
+
+6. Optional Features:
+   - Add a “Remember Me” checkbox to auto-fill saved email from `electron-store`
+   - Allow toggling auto-start scraping after login
+   - System tray integration to show background status
+

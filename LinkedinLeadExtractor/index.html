@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Lead Extractor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row header">
+      <div class="col">
+        <h1>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          LinkedIn Lead Extractor
+        </h1>
+      </div>
+    </div>
+
+    <div class="row main-content">
+      <!-- Section 1: Login Panel -->
+      <div class="col-md-4 section login-section">
+        <div class="card">
+          <div class="card-header">
+            <h2>LinkedIn Login</h2>
+          </div>
+          <div class="card-body">
+            <div class="login-tabs">
+              <ul class="nav nav-tabs" id="loginTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="manual-tab" data-bs-toggle="tab" data-bs-target="#manual-login" type="button" role="tab" aria-controls="manual-login" aria-selected="true">Manual Login</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="loginTabsContent">
+                <div class="tab-pane fade show active" id="manual-login" role="tabpanel" aria-labelledby="manual-tab">
+                  <form id="credentials-form">
+                    <div class="mb-3">
+                      <label for="email" class="form-label">LinkedIn Email</label>
+                      <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label">LinkedIn Password</label>
+                      <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="remember-me">
+                      <label class="form-check-label" for="remember-me">Remember Me</label>
+                    </div>
+                      <div class="mb-3">
+                        <button type="submit" class="btn btn-primary" id="login-button">Login to LinkedIn</button>
+                      </div>
+                      <div>
+                        <button id="launch-chrome-manual" class="btn btn-secondary">
+                          <i class="bi bi-browser-chrome"></i> Launch Chrome Manually
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <div class="tab-pane fade" id="cookies-login" role="tabpanel" aria-labelledby="cookies-tab">
+                  <div class="mb-3">
+                    <label for="cookies-json" class="form-label">Paste LinkedIn Cookies (JSON format)</label>
+                    <textarea class="form-control" id="cookies-json" rows="5" placeholder='[{"name": "cookie_name", "value": "cookie_value", "domain": ".linkedin.com"}]'></textarea>
+                  </div>
+                  <div class="d-flex">
+                    <button class="btn btn-primary me-2" id="cookies-login-button">Login with Cookies</button>
+                    <button class="btn btn-secondary" id="import-cookies-file">Import from File</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Search Filters -->
+      <div class="col-md-4 section filters-section">
+        <div class="card">
+          <div class="card-header">
+            <h2>Search Filters</h2>
+          </div>
+          <div class="card-body">
+            <form id="search-filters-form">
+              <div class="mb-3">
+                <label for="job-title" class="form-label">Job Title</label>
+                <input type="text" class="form-control" id="job-title" placeholder="e.g. Marketing Director">
+              </div>
+              <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" placeholder="e.g. New York">
+              </div>
+              <div class="mb-3">
+                <label for="industry" class="form-label">Industry</label>
+                <input type="text" class="form-control" id="industry" placeholder="e.g. Technology">
+              </div>
+              <div class="mb-3">
+                <label for="limit" class="form-label">Number of Leads to Extract</label>
+                <input type="number" class="form-control" id="limit" min="1" max="1000" value="50">
+              </div>
+              <div class="mb-3">
+                <label for="start-page" class="form-label">Start Page</label>
+                <input type="number" class="form-control" id="start-page" min="1" value="1">
+              </div>
+              <div class="mb-3">
+                <label for="end-page" class="form-label">End Page</label>
+                <input type="number" class="form-control" id="end-page" min="1" value="1">
+              </div>
+              <button type="submit" class="btn btn-success" id="start-extraction">Start Extraction</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Logs and Export -->
+      <div class="col-md-4 section logs-section">
+        <div class="card">
+          <div class="card-header">
+            <h2>Activity Log</h2>
+          </div>
+          <div class="card-body">
+            <div class="progress mb-3">
+              <div class="progress-bar" id="extraction-progress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+            </div>
+            <div class="log-container">
+              <div id="log-panel" class="log-messages"></div>
+            </div>
+            <div class="export-buttons d-flex flex-column align-items-stretch mb-3" style="max-width: 350px;">
+              <div class="d-flex flex-row gap-2 mb-2">
+                <button id="export-csv" class="btn btn-primary export-btn w-50">Export to CSV</button>
+                <button id="export-excel" class="btn btn-primary export-btn w-50">Export to Excel</button>
+              </div>
+              <button id="clear-leads" class="btn btn-danger export-btn w-100">Clear All Leads</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Preview Table -->
+    <!-- Settings Modal -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="settingsModalLabel">Application Settings</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="settings-form">
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="auto-start-scraping">
+                <label class="form-check-label" for="auto-start-scraping">Auto-start scraping after login</label>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">Preferred Export Format</label>
+                <div class="btn-group w-100" role="group">
+                  <input type="radio" class="btn-check" name="export-format" id="export-format-csv" value="csv" checked>
+                  <label class="btn btn-outline-primary" for="export-format-csv">CSV</label>
+                  
+                  <input type="radio" class="btn-check" name="export-format" id="export-format-excel" value="excel">
+                  <label class="btn btn-outline-primary" for="export-format-excel">Excel</label>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <p class="mb-2">Chrome Profile Information</p>
+                <div class="d-flex align-items-center">
+                  <button type="button" class="btn btn-sm btn-outline-secondary me-2" id="settings-find-chrome-profiles">
+                    Scan for Chrome Profiles
+                  </button>
+                  <span id="settings-chrome-profile-info" class="text-muted small">No Chrome profile selected</span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="save-settings">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Selection Modal -->
+    <div class="modal fade" id="profileSelectModal" tabindex="-1" aria-labelledby="profileSelectModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="profileSelectModalLabel">Select Chrome Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul id="profile-list" class="list-group"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h2>Extracted Leads Preview</h2>
+            
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped table-hover" id="leads-table">
+                <thead>
+                  <tr>
+                    <th>Full Name</th>
+                    <th>Job Title</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>LinkedIn URL</th>
+                  </tr>
+                </thead>
+                <tbody id="leads-tbody">
+                  <!-- Lead data will be added here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer mt-auto py-3">
+    <div class="container text-center">
+      <span class="text-muted">LinkedIn Lead Extractor with Apollo Integration</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
