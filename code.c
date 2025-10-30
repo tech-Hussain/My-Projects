@@ -15,7 +15,7 @@ typedef struct {
     int end;
 } ThreadData;
 
-#define VECLEN 50000000  // Large size to expose race condition
+#define VECLEN 1000000  // Large size to expose race condition
 DOTDATA dotstr;
 
 pthread_mutex_t mutexsum;
